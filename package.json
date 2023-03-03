@@ -5,14 +5,14 @@
     "packages/components/**/*"
   ],
   "scripts": {
-    "clean": "npm cache clean --force",
+    "clean": "yarn cache clean --force",
+    "hard-clean": "rm -rf node_modules && yarn cache clean --force",
     "build": "tsc && node ./esbuild.js"
   },
   "devDependencies": {
     "@types/node": "^18.14.5",
     "@types/preact-custom-element": "^4.0.1",
     "esbuild": "^0.17.10",
-    "esbuild-node-externals": "^1.6.0",
     "lerna": "^6.5.1",
     "tiny-glob": "^0.2.9",
     "typescript": "^4.9.5"
