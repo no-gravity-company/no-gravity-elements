@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "esnext",
+      "jsx": "react",
+      "strict": true,
+      "esModuleInterop": true,
+      "jsxFactory": "h",
+      "moduleResolution": "node",
+      "noImplicitAny": true,
+      "removeComments": true,
+      "noLib": false,
+      "experimentalDecorators": true,
+      "noEmit": true,
+      "paths": {
+        "react": ["./node_modules/preact/compat/"],
+        "react-dom": ["./node_modules/preact/compat/"]
+      }
+    },
+    "include": [
+      "**/*.ts", 
+      "**/*.tsx",
+      "typings/**/*.d.ts", 
+    ],
+    "exclude": ["node_modules", "**/*.spec.ts"]
+  }
+  
