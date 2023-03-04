@@ -1,21 +1,16 @@
 const esbuild = require('esbuild');
 const glob = require('tiny-glob');
 (async () => {
-  const tsxPaths = await glob('packages/components/**/*.tsx');
-  const componentPaths = tsxPaths.filter(
-    (filePath) =>
-      !filePath.includes('.spec.tsx') && !filePath.includes('.stories.tsx')
-  );
+  const componentPaths = await glob('packages/components/**/*.ts');
   esbuild
     .build({
-      entryNames: '[dir]/lib/[name]',
+      entryNames: '[dir]/lib/index',
       entryPoints: componentPaths,
       bundle: true,
       minify: true,
       outdir: 'packages/components/',
       sourcemap: true,
       platform: 'browser',
-      target: ['chrome58', 'firefox57', 'safari11', 'edge16'],
     })
     .catch(() => process.exit(1));
 })();
