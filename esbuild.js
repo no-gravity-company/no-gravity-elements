@@ -1,7 +1,7 @@
 const esbuild = require('esbuild');
 const glob = require('tiny-glob');
 (async () => {
-  const componentPaths = await glob('packages/components/**/*.ts');
+  const componentPaths = await glob('packages/components/**/register.ts');
   esbuild
     .build({
       entryNames: '[dir]/lib/index',
