@@ -1,8 +1,7 @@
 import { h } from 'preact';
-import './lib/Counter';
 
 export default {
-  title: 'My Counter',
+  title: 'My Counterr',
   parameters: {
     // Specify that the component is a Web Component
     webComponents: {

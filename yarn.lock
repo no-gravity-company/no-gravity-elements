@@ -1618,10 +1618,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@no-gravity-tools/component-generator@1.0.6":
-  version "1.0.6"
-  resolved "https://registry.npmjs.org/@no-gravity-tools/component-generator/-/component-generator-1.0.6.tgz#1aad1fbde75471860b84cb4b22caac9cf36caed8"
-  integrity sha512-7uqjZp2q5WfOam4hup/YubYdXv4rEih5XxCwtHgnQFn+CMa37Lm288M6FzlsTugMNfyztxhe7MbQdAL/Z9W+Dw==
+"@no-gravity-tools/component-generator@1.0.9":
+  version "1.0.9"
+  resolved "https://registry.npmjs.org/@no-gravity-tools/component-generator/-/component-generator-1.0.9.tgz#64206e17ac28624a73a28a62a344c66815cf08a3"
+  integrity sha512-aHbsEwRpGLTT1F5cWXGitwRzLF8PJiusWr0M4wVgBD8wpiPwBpM83GlFH2FXCnSlHoViiFsYJoMu9JsOyV+0Hg==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"

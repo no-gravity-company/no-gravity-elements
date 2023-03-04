@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import './lib/Counter';
+import './lib/index';
 
 export default {
   title: 'My Counter Molecules',
