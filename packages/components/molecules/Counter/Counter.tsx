@@ -16,4 +16,3 @@ function Counter() {
 }
 
 register(Counter, 'my-counter', [], { shadow: true });
-
