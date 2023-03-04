@@ -1,5 +1,5 @@
 import { signal } from '@preact/signals';
-import { h, render } from 'preact';
+import { h } from 'preact';
 import register from 'preact-custom-element';
 
 const count = signal(0);
