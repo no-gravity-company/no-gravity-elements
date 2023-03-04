@@ -7,7 +7,8 @@
   "scripts": {
     "clean": "yarn cache clean --force",
     "hard-clean": "rm -rf node_modules && yarn cache clean --force",
-    "build": "tsc && node ./esbuild.js"
+    "build": "tsc && node ./esbuild.js",
+    "component-generator": "node node_modules/@no-gravity-tools/component-generator/lib/index.js"
   },
   "devDependencies": {
     "@types/node": "^18.14.5",
@@ -15,7 +16,8 @@
     "esbuild": "^0.17.10",
     "lerna": "^6.5.1",
     "tiny-glob": "^0.2.9",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "@no-gravity-tools/component-generator": "1.0.6"
   },
   "dependencies": {
     "@preact/signals": "^1.1.3",
