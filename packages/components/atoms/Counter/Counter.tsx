@@ -1,6 +1,5 @@
 import { signal } from '@preact/signals';
 import { h } from 'preact';
-import register from 'preact-custom-element';
 
 const count = signal(0);
 
@@ -15,4 +14,4 @@ function Counter() {
   );
 }
 
-register(Counter, 'my-counter', [], { shadow: true });
+export default Counter;
