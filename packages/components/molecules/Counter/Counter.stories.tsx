@@ -7,9 +7,9 @@ export default {
         // Specify that the component is a Web Component
         webComponents: {
             // Set the tag name of the Web Component
-            tagName: 'my-counter',
+            tagName: 'your-counter',
         },
     },
 };
 
-export const DefaultMolecules = () => <my-counter />;
+export const Default = () => <your-counter />;
