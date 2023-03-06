@@ -33,8 +33,8 @@ module.exports = function (config) {
         singleRun: true,
         concurrency: Infinity,
         snapshot: {
-            // updateSnapshots: !!process.env.UPDATE,
             update: !!process.env.UPDATE,
+            prune: !!process.env.PRUNE,
             pathResolver: function (basePath, suiteName) {
                 return path.join(basePath, '__snapshots__', suiteName + '.md');
             },

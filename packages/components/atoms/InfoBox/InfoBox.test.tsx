@@ -1,6 +1,6 @@
 import { html, fixture, expect } from '@open-wc/testing';
 import Sinon from 'sinon';
-import './lib/index.js';
+import './lib/index';
 
 const snapshotCases = [{ label: 'FOO' }, { label: 'BAR' }];
 

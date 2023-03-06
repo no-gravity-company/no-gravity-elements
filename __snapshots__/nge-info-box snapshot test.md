@@ -8,9 +8,6 @@
     HEY
   </span>
   <span>
-    HO
-  </span>
-  <span>
     FOO
   </span>
   <input type="text">
@@ -30,9 +27,6 @@
     HEY
   </span>
   <span>
-    HO
-  </span>
-  <span>
     BAR
   </span>
   <input type="text">
@@ -42,21 +36,5 @@
   </button>
 </div>
 
-```
-
-#### `renders the component with the correct label`
-
-```html
-<div>
-  <span>
-    HEY
-  </span>
-  <span>
-    HO
-  </span>
-  <span>
-    BAR
-  </span>
-</div>
 ```
 

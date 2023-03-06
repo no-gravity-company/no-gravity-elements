@@ -20,7 +20,6 @@ const InfoBox: FunctionComponent<InfoBoxProps> = ({ label }: InfoBoxProps) => {
     return (
         <div>
             <span>HEY</span>
-            <span>HO</span>
             <span>{label}</span>
             <input type="text" value={inputValue} onInput={handleInputChange} />
             <span>{inputValue}</span>

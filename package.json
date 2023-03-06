@@ -20,7 +20,7 @@
         "link-tools": "lerna exec -- yarn link",
         "unlink-tools": "lerna exec -- yarn link",
         "test": "karma start",
-        "test:update": "UPDATE=1 karma start"
+        "test:update": "UPDATE=1 PRUNE=1 karma start"
     },
     "devDependencies": {
         "@babel/core": "^7.21.0",
