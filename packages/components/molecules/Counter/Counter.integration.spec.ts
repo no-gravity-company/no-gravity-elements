@@ -10,5 +10,6 @@ context('Counter', () => {
     it('increments count on button click', () => {
         cy.get('my-counter').shadow().find('button').first().click();
         cy.get('my-counter').should('be.visible');
+        cy.screenshot();
     });
 });

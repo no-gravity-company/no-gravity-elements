@@ -14,7 +14,7 @@
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
         "cypress:open": "cypress open",
-        "cypress": "yarn cypress run",
+        "e2e": "cypress run",
         "format": "yarn prettier --write ."
     },
     "devDependencies": {

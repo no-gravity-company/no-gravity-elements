@@ -2,7 +2,7 @@ import { defineConfig } from 'cypress';
 
 export default defineConfig({
     chromeWebSecurity: false,
-    screenshotsFolder: '.cypress/snapshots',
+    screenshotsFolder: 'e2e-snapshots/local',
     video: false,
     retries: {
         runMode: 0,
