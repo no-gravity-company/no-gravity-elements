@@ -16,7 +16,9 @@
         "build-storybook": "build-storybook",
         "cypress:open": "cypress open",
         "e2e": "cypress run",
-        "format": "yarn prettier --write ."
+        "format": "yarn prettier --write .",
+        "link-tools": "lerna exec -- yarn link",
+        "unlink-tools": "lerna exec -- yarn link"
     },
     "devDependencies": {
         "@babel/core": "^7.21.0",
