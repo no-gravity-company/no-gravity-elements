@@ -10,10 +10,14 @@ module.exports = function (config) {
         frameworks: ['mocha', 'chai', 'snapshot', 'mocha-snapshot'],
         reporters: ['spec'],
         files: [
-            'packages/**/*.test.ts',
-            'packages/**/*.test.tsx',
+            'packages/**/*.spec.ts',
+            'packages/**/*.spec.tsx',
             'packages/**/*/lib/index.js',
             './__snapshots__/**/*.md',
+        ],
+        exclude: [
+            'packages/**/*.integration.spec.ts',
+            'packages/**/*.integration.spec.tsx',
         ],
         plugins: [
             require('karma-chrome-launcher'),
@@ -25,8 +29,8 @@ module.exports = function (config) {
             'karma-esbuild',
         ],
         preprocessors: {
-            'packages/**/*.test.ts': ['esbuild'],
-            'packages/**/*.test.tsx': ['esbuild'],
+            'packages/**/*.spec.ts': ['esbuild'],
+            'packages/**/*.spec.tsx': ['esbuild'],
             'packages/**/*/lib/index.js': ['esbuild'],
             './__snapshots__/**/*.md': ['snapshot'],
         },
