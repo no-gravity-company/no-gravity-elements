@@ -1,4 +1,8 @@
 import register from 'preact-custom-element';
-import Counter from './Counter';
+import Counter from '@atoms/Counter/Counter';
 
-register(Counter, 'my-counter', [], { shadow: true });
+const alreadyDefined = (tagName: string) =>
+    customElements.get(tagName) !== undefined;
+if (!alreadyDefined('my-counter')) {
+    register(Counter, 'my-counter', [], { shadow: true });
+}

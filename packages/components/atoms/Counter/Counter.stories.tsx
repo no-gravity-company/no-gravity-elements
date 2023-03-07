@@ -1,4 +1,5 @@
 import { h } from 'preact';
+import './lib/index';
 
 export default {
     title: 'My Counterr',
