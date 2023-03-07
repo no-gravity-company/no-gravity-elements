@@ -19,7 +19,7 @@
     },
     "devDependencies": {
         "@babel/core": "^7.21.0",
-        "@no-gravity-tools/component-generator": "1.0.12",
+        "@no-gravity-tools/component-generator": "1.0.14",
         "@storybook/addon-actions": "^6.5.16",
         "@storybook/addon-essentials": "^6.5.16",
         "@storybook/addon-interactions": "^6.5.16",
