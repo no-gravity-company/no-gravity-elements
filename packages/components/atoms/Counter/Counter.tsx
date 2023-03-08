@@ -1,12 +1,13 @@
 import { signal } from '@preact/signals';
 import { h } from 'preact';
+import { CounterProps } from './types';
 
 const count = signal(0);
 
-function Counter() {
+function Counter({ title }: CounterProps) {
     return (
         <div>
-            <h2>Counter from atoms</h2>
+            <h2>{title}</h2>
             <p>Count: {count.value}</p>
             <button onClick={() => count.value++}>+</button>
             <button onClick={() => count.value--}>-</button>

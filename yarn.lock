@@ -1655,10 +1655,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@no-gravity-tools/component-generator@1.0.13":
-  version "1.0.13"
-  resolved "https://registry.npmjs.org/@no-gravity-tools/component-generator/-/component-generator-1.0.13.tgz#4900f9090a3bb7c0e1f7f0b31e83ddeace4dc139"
-  integrity sha512-VFAWEL6M/xlZ8eInvipLuF95hsmUSR0QAVhMs/aym7IcsZQPzJpSVsiz4dRviPzNDtf4gtgT4oF6lFOg3xz8gw==
+"@no-gravity-tools/component-generator@1.0.14":
+  version "1.0.14"
+  resolved "https://registry.npmjs.org/@no-gravity-tools/component-generator/-/component-generator-1.0.14.tgz#5c965206c06994429032e152e09528250d7d5eb6"
+  integrity sha512-keK1esNXbe97qhu9nPlJ5CRvUYjij6NPkqWMPRMaljmjFMx/JcFziKXF0a7LB9tjuZ39i/Z8I1YTme13WwkJxw==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -2119,7 +2119,7 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-controls@6.5.16":
+"@storybook/addon-controls@6.5.16", "@storybook/addon-controls@^6.5.16":
   version "6.5.16"
   resolved "https://registry.npmjs.org/@storybook/addon-controls/-/addon-controls-6.5.16.tgz#5017805b8ca413edf6e9d87b90a9436e79eb5e59"
   integrity sha512-kShSGjq1MjmmyL3l8i+uPz6yddtf82mzys0l82VKtcuyjrr5944wYFJ5NTXMfZxrO/U6FeFsfuFZE/k6ex3EMg==

@@ -22,8 +22,8 @@
     },
     "devDependencies": {
         "@babel/core": "^7.21.0",
-        "@no-gravity-tools/component-generator": "1.0.14",
         "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+        "@no-gravity-tools/component-generator": "1.0.14",
         "@storybook/addon-actions": "^6.5.16",
         "@storybook/addon-essentials": "^6.5.16",
         "@storybook/addon-interactions": "^6.5.16",
