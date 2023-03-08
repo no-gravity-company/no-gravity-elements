@@ -12,6 +12,7 @@
         "noLib": false,
         "experimentalDecorators": true,
         "noEmit": true,
+        "skipLibCheck": true,
         "paths": {
             "@atoms/*": ["packages/components/atoms/*"],
             "@molecules/*": ["packages/components/molecules/*"],
