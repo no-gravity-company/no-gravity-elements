@@ -4,5 +4,5 @@ import InfoBox from './InfoBox';
 const alreadyDefined = (tagName: string) =>
     customElements.get(tagName) !== undefined;
 if (!alreadyDefined('nge-info-box')) {
-    register(InfoBox, 'nge-info-box', [], { shadow: true });
+    register(InfoBox, 'nge-info-box', ['label'], { shadow: true });
 }

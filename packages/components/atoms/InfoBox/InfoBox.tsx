@@ -12,9 +12,14 @@ const InfoBox: FunctionComponent<InfoBoxProps> = ({ label }: InfoBoxProps) => {
 
     const handleDivClick = () => {
         const event = new CustomEvent('buttonClick', {
-            detail: 'Event detail',
+            detail: {
+                'nge-event': true,
+            },
+            bubbles: true,
+            composed: true,
         });
-        window.dispatchEvent(event);
+
+        dispatchEvent(event);
     };
 
     return (
