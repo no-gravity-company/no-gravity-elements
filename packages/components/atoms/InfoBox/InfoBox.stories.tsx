@@ -1,7 +1,6 @@
-import { addDecorator, Story } from '@storybook/preact';
+import { Story } from '@storybook/preact';
 import { h } from 'preact';
-import { useEffect } from 'preact/hooks';
-import { action, withActions } from '@storybook/addon-actions';
+import { action } from '@storybook/addon-actions';
 import './lib/index';
 import { InfoBoxProps } from './types';
 
@@ -19,13 +18,11 @@ export default {
 };
 
 const Template: Story<InfoBoxProps> = (props) => {
-    window.addEventListener('buttonClick', (event) => {
-        const { type } = event;
-        action(type)();
-    });
-
     return (
-        <nge-info-box {...props} onbuttonclick={() => console.log('aaad')} />
+        <nge-info-box
+            {...props}
+            onButtonClick={() => action('onButtonClick')()}
+        />
     );
 };
 
