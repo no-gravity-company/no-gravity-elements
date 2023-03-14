@@ -15,9 +15,7 @@ const InfoBox: FunctionComponent<InfoBoxProps> = ({ label }: InfoBoxProps) => {
         // TODO extract to function in tools repo -> publish(eventName, payload, element)
         if (event && event.target) {
             const customEvent = new CustomEvent('ButtonClick', {
-                detail: {
-                    'nge-event': true,
-                },
+                detail: 'Test detail',
                 // TODO try to consume it without those attrs (maybe they are only needed if we want to cacth them with a listener)
                 bubbles: true,
                 composed: true,

@@ -24,16 +24,17 @@ describe('nge-info-box functionality test', () => {
         expect(output?.textContent).to.equal('42');
     });
 
-    it('WHEN the button is clicked THEN it emits the buttonClick event', async () => {
+    it('WHEN the button is clicked THEN it emits the ButtonClick event', async () => {
         const el = await fixture('<nge-info-box label="FOO" />');
         const button = el.shadowRoot!.querySelector('button');
         const eventSpy = Sinon.spy();
-        window.addEventListener('buttonClick', eventSpy);
+
+        button?.addEventListener('ButtonClick', eventSpy);
         button?.click();
 
         expect(eventSpy.calledOnce).to.be.true;
         expect(eventSpy).to.have.been.calledWith(
-            Sinon.match.has('detail', 'Event detail')
+            Sinon.match.has('detail', 'Test detail')
         );
     });
 });
