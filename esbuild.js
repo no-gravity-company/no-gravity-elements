@@ -16,7 +16,6 @@ const getCommonOps = (componentPaths) => {
         target: 'esnext',
         format: 'esm',
         allowOverwrite: true,
-        legalComments: 'none',
         plugins: [
             sassPlugin({
                 type: 'css-text',
