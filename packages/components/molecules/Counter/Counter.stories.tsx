@@ -7,9 +7,9 @@ export default {
         // Specify that the component is a Web Component
         webComponents: {
             // Set the tag name of the Web Component
-            tagName: 'your-counter',
+            tagName: 'nge-counter',
         },
     },
 };
 
-export const Default = () => <your-counter />;
+export const Default = () => <nge-counter title="My counter molecules" />;

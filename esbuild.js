@@ -1,6 +1,8 @@
 const esbuild = require('esbuild');
 const chokidar = require('chokidar');
+const { sassPlugin } = require('esbuild-sass-plugin');
 const glob = require('tiny-glob');
+const webComponentsPlugin = require('./plugins/web-components-plugin');
 
 const getCommonOps = (componentPaths) => {
     const ops = {
@@ -14,15 +16,23 @@ const getCommonOps = (componentPaths) => {
         target: 'esnext',
         format: 'esm',
         allowOverwrite: true,
+        plugins: [
+            sassPlugin({
+                type: 'css-text',
+            }),
+            webComponentsPlugin(),
+        ],
     };
     return ops;
 };
 
 (async () => {
-    const componentPaths = await glob('packages/components/**/register.ts');
+    let componentPaths = await glob('packages/components/**/*.tsx');
+    componentPaths = componentPaths.filter(
+        (path) => !path.includes('.stories.tsx') && !path.includes('.spec.tsx')
+    );
     const buildOps = getCommonOps(componentPaths);
     await esbuild.build(buildOps);
-
     if (process.argv.includes('--watch')) {
         const watcher = chokidar.watch([
             'packages/components/**/*.{ts,tsx}',
