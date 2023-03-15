@@ -9,7 +9,7 @@ export default {
         // Specify that the component is a Web Component
         webComponents: {
             // Set the tag name of the Web Component
-            tagName: 'my-counter',
+            tagName: 'nge-counter',
         },
     },
     // Set the controls
@@ -25,7 +25,7 @@ export default {
 } as Meta;
 
 const Template: Story<CounterProps> = (props) => {
-    return <my-counter title={props.title} onPop={() => console.log('pop')} />;
+    return <nge-counter title={props.title} onPop={() => console.log('pop')} />;
 };
 
 export const Default = Template;

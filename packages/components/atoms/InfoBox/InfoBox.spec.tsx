@@ -1,6 +1,6 @@
 import { html, fixture, expect } from '@open-wc/testing';
 import Sinon from 'sinon';
-import './lib/index';
+import '@atoms/InfoBox/lib/index';
 
 const snapshotCases = [{ label: 'FOO' }, { label: 'BAR' }];
 
