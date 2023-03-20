@@ -1,0 +1,12 @@
+{
+    "extends": "../../tsconfig.json",
+    "include": [
+        "**/*.integration.spec.ts",
+        "../../cypress.config.ts",
+        "../../typings/jsx.d.ts"
+    ],
+    "exclude": [],
+    "compilerOptions": {
+        "types": ["cypress", "preact"]
+    }
+}
