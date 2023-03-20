@@ -3,10 +3,13 @@
     "resetModules": true,
     "transform": {
         "^.+\\.(ts|tsx')$'": [
-            "ts-jest",
+            "esbuild-jest",
             {
-                "tsconfig": "tsconfig.json",
-                "useESM": true
+                "jsxFactory": "h",
+                "jsxFragment": "Fragment",
+                "sourcemap": true,
+                "target": "esnext",
+                "format": "esm"
             }
         ]
     },
