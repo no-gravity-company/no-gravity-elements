@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`display-box web component snapshot test should match the snapshot 1`] = `
+<div>
+  <span>
+    DISPLAY BOX
+  </span>
+  <span>
+    foo
+  </span>
+  <span>
+    value
+  </span>
+  <span>
+    1
+  </span>
+  <button
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`display-box web component snapshot test should match the snapshot 2`] = `
+<div>
+  <span>
+    DISPLAY BOX
+  </span>
+  <span>
+    bar
+  </span>
+  <span>
+    value
+  </span>
+  <span>
+    5
+  </span>
+  <button
+    onClick={[Function]}
+  />
+</div>
+`;

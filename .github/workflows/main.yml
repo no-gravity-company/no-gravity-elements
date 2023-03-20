@@ -18,7 +18,18 @@ jobs:
         run: yarn install
 
       - name: Build
-        run: npm run build
+        run: yarn build
 
-      # - name: Test
-      #   run: npm test
+  unitary-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Unitary Test
+        run: yarn test
+
