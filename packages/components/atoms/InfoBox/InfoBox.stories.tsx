@@ -5,28 +5,23 @@ import './lib/index';
 import { InfoBoxProps } from './types';
 
 export default {
-    title: 'InfoBox',
-    // decorators: [withCustomEventListeners],
-    parameters: {
-        // Specify that the component is a Web Component
-        webComponents: {
-            // Set the tag name of the Web Component
-            tagName: 'nge-info-box',
-        },
+  title: 'InfoBox',
+  // decorators: [withCustomEventListeners],
+  parameters: {
+    // Specify that the component is a Web Component
+    webComponents: {
+      // Set the tag name of the Web Component
+      tagName: 'nge-info-box',
     },
-    controls: {},
+  },
+  controls: {},
 };
 
 const Template: Story<InfoBoxProps> = (props) => {
-    return (
-        <nge-info-box
-            {...props}
-            onButtonClick={() => action('onButtonClick')()}
-        />
-    );
+  return <nge-info-box {...props} onButtonClick={() => action('onButtonClick')()} />;
 };
 
 export const Default = Template;
 Default.args = {
-    label: 'Default label',
+  label: 'Default label',
 };

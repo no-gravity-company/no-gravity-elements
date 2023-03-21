@@ -13,4 +13,3 @@ export default {
 };
 
 export const Default = () => <nge-display-box />;
-    

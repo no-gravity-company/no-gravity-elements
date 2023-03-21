@@ -1,6 +1,5 @@
 import { signal } from '@preact/signals';
 import { Fragment, FunctionComponent, h } from 'preact';
-import { useRef } from 'preact/hooks';
 import { InfoBoxProps } from './types';
 
 const inputValue = signal('');
@@ -10,9 +9,6 @@ const InfoBox: FunctionComponent<InfoBoxProps> = ({ label }: InfoBoxProps) => {
     const inputElement = event.target as HTMLInputElement;
     inputValue.value = inputElement.value;
   };
-
-  console.log('wha');
-  const a = 0;
 
   const handleDivClick = (event: Event) => {
     // TODO extract to function in tools repo -> publish(eventName, payload, element)
@@ -35,7 +31,7 @@ const InfoBox: FunctionComponent<InfoBoxProps> = ({ label }: InfoBoxProps) => {
       <span>{label}</span>
       <input type='text' value={inputValue} onInput={handleInputChange} />
       <span>{inputValue}</span>
-      <button onClick={handleDivClick}></button>
+      <button onClick={handleDivClick} />
     </Fragment>
   );
 };
