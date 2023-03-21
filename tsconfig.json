@@ -28,17 +28,6 @@
         "types": ["jest", "preact"],
         "outDir": "lib"
     },
-    "include": [
-        "**/*.ts",
-        "**/*.tsx",
-        "typings/**/*.d.ts",
-        "jest.config.js",
-        "jest.setup.js"
-    ],
-    "exclude": [
-        "node_modules",
-        "**/*.integration.spec.ts",
-        "cypress.config.ts",
-        "packages/components/tsconfig.json"
-    ]
+    "include": ["**/*.ts", "**/*.tsx", "typings/**/*.d.ts"],
+    "exclude": ["node_modules", "**/*.integration.spec.ts", "cypress.config.ts"]
 }
