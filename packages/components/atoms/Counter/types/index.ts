@@ -1,3 +1,3 @@
 export interface CounterProps {
-    title: string;
+  title: string;
 }

@@ -1,16 +1,37 @@
 {
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "prettier"
-    ],
-    "plugins": ["@typescript-eslint", "prettier"],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module",
-        "project": "./tsconfig.json"
-    },
-    "ignorePatterns": ["**/*.js"],
-    "rules": {}
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier", "preact"],
+  "plugins": ["@typescript-eslint", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "ignorePatterns": ["**/*.js", "cypress.config.ts", "**/*.integration.spec.ts", "**/*.d.ts"],
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-unused-expressions": "warn",
+    "no-undef": "error",
+    "prefer-const": "warn",
+    "no-param-reassign": "error",
+    "no-else-return": "warn",
+    "consistent-return": "error",
+    "no-return-assign": "error",
+    "no-use-before-define": "error",
+    "no-magic-numbers": "warn",
+    "no-shadow": "warn",
+    "no-console": "warn",
+    "no-empty-function": "warn",
+    "max-params": ["warn", 4],
+    "max-depth": ["error", 5]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.spec.tsx", "**/*spec.ts", "**/*.stories.tsx"],
+      "rules": {
+        "no-console": "off",
+        "no-magic-numbers": "off"
+      }
+    }
+  ]
 }

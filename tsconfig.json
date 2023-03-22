@@ -1,33 +1,33 @@
 {
-    "compilerOptions": {
-        "target": "esnext",
-        "module": "esnext",
-        "jsx": "react",
-        "strict": true,
-        "esModuleInterop": true,
-        "jsxFactory": "h",
-        "moduleResolution": "node",
-        "noImplicitAny": true,
-        "removeComments": true,
-        "noLib": false,
-        "experimentalDecorators": true,
-        "noEmit": true,
-        "skipLibCheck": true,
-        "paths": {
-            "@atoms/*": ["packages/components/atoms/*"],
-            "@molecules/*": ["packages/components/molecules/*"],
-            "@organisms/*": ["packages/components/organisms/*"],
-            "@templates/*": ["packages/components/templates/*"],
-            "@pages/*": ["packages/components/pages/*"],
-            "@components/*": ["packages/components/*"],
-            "react": ["./node_modules/preact/compat/"],
-            "react-dom": ["./node_modules/preact/compat/"]
-        },
-        "jsxFragmentFactory": "Fragment",
-        "baseUrl": "./",
-        "types": ["jest", "preact"],
-        "outDir": "lib"
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "jsxFactory": "h",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "noLib": false,
+    "experimentalDecorators": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@atoms/*": ["packages/components/atoms/*"],
+      "@molecules/*": ["packages/components/molecules/*"],
+      "@organisms/*": ["packages/components/organisms/*"],
+      "@templates/*": ["packages/components/templates/*"],
+      "@pages/*": ["packages/components/pages/*"],
+      "@components/*": ["packages/components/*"],
+      "react": ["./node_modules/preact/compat/"],
+      "react-dom": ["./node_modules/preact/compat/"]
     },
-    "include": ["**/*.ts", "**/*.tsx", "typings/**/*.d.ts"],
-    "exclude": ["node_modules", "**/*.integration.spec.ts", "cypress.config.ts"]
+    "jsxFragmentFactory": "Fragment",
+    "baseUrl": "./",
+    "types": ["jest", "preact"],
+    "outDir": "lib"
+  },
+  "include": ["**/*.ts", "**/*.tsx", "typings/**/*.d.ts"],
+  "exclude": ["node_modules", "**/*.integration.spec.ts", "cypress.config.ts"]
 }

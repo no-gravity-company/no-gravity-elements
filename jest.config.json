@@ -1,43 +1,39 @@
 {
-    "preset": "jest-preset-preact",
-    "resetModules": true,
-    "transform": {
-        "^.+\\.(ts|tsx')$'": [
-            "esbuild-jest",
-            {
-                "jsxFactory": "h",
-                "jsxFragment": "Fragment",
-                "sourcemap": true,
-                "target": "esnext",
-                "format": "esm"
-            }
-        ]
-    },
-    "testEnvironment": "jest-environment-jsdom",
-    "transformIgnorePatterns": ["<rootDir>/tests/fixtures"],
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx"],
-    "extensionsToTreatAsEsm": [".ts", ".tsx"],
-    "moduleNameMapper": {
-        "^(\\.{1,2}/.*)\\.js'$'": "$1"
-    },
-    "testMatch": ["**/?(*.)(spec).ts?(x)"],
-    "moduleDirectories": ["node_modules"],
-    "testPathIgnorePatterns": [
-        "/node_modules/",
-        "/*.integration.*",
-        ".*\\.stories\\.tsx$"
-    ],
-    "setupFilesAfterEnv": ["./jest.setup.ts"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
-    "collectCoverage": true,
-    "collectCoverageFrom": ["./packages/components/**/*.tsx"],
-    "coverageThreshold": {
-        "global": {
-            "lines": 0,
-            "statements": 0,
-            "functions": 0,
-            "branches": 0
-        }
-    },
-    "coveragePathIgnorePatterns": [".*\\.stories\\.tsx$"]
+  "preset": "jest-preset-preact",
+  "resetModules": true,
+  "transform": {
+    "^.+\\.(ts|tsx')$'": [
+      "esbuild-jest",
+      {
+        "jsxFactory": "h",
+        "jsxFragment": "Fragment",
+        "sourcemap": true,
+        "target": "esnext",
+        "format": "esm"
+      }
+    ]
+  },
+  "testEnvironment": "jest-environment-jsdom",
+  "transformIgnorePatterns": ["<rootDir>/tests/fixtures"],
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx"],
+  "extensionsToTreatAsEsm": [".ts", ".tsx"],
+  "moduleNameMapper": {
+    "^(\\.{1,2}/.*)\\.js'$'": "$1"
+  },
+  "testMatch": ["**/?(*.)(spec).ts?(x)"],
+  "moduleDirectories": ["node_modules"],
+  "testPathIgnorePatterns": ["/node_modules/", "/*.integration.*", ".*\\.stories\\.tsx$"],
+  "setupFilesAfterEnv": ["./jest.setup.ts"],
+  "snapshotSerializers": ["enzyme-to-json/serializer"],
+  "collectCoverage": true,
+  "collectCoverageFrom": ["./packages/components/**/*.tsx"],
+  "coverageThreshold": {
+    "global": {
+      "lines": 0,
+      "statements": 0,
+      "functions": 0,
+      "branches": 0
+    }
+  },
+  "coveragePathIgnorePatterns": [".*\\.stories\\.tsx$"]
 }

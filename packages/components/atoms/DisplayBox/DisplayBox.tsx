@@ -1,23 +1,26 @@
-import { Fragment, FunctionComponent, h } from 'preact';
+import { FunctionComponent, h } from 'preact';
 import { DisplayBoxProps } from './types';
 
-const DisplayBox: FunctionComponent<DisplayBoxProps> = ({
-    label = '',
-    value = 0,
-}: DisplayBoxProps) => {
-    const handleClick = () => {
-        console.log('clicked');
-    };
+const INITIAL_VALUE = 0;
 
-    return (
-        <div>
-            <span>DISPLAY BOX</span>
-            <span>{label}</span>
-            <span>value</span>
-            <span>{value}</span>
-            <button onClick={handleClick}></button>
-        </div>
-    );
+const DisplayBox: FunctionComponent<DisplayBoxProps> = ({
+  label = '',
+  value = INITIAL_VALUE,
+}: DisplayBoxProps) => {
+  const handleClick = () => {
+    // eslint-disable-next-line no-console
+    console.log('clicked');
+  };
+
+  return (
+    <div>
+      <span>DISPLAY BOX</span>
+      <span>{label}</span>
+      <span>value</span>
+      <span>{value}</span>
+      <button onClick={handleClick} />
+    </div>
+  );
 };
 
 export default DisplayBox;
