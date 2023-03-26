@@ -6,8 +6,8 @@ context('Counter', () => {
   });
 
   it('increments count on button click', () => {
-    cy.get('my-counter').shadow().find('button').first().click();
-    cy.get('my-counter').should('be.visible');
+    cy.get('nge-counter').shadow().find('button').first().click();
+    cy.get('nge-counter').should('be.visible');
     cy.screenshot();
   });
 });
