@@ -10,13 +10,14 @@
   "homepage": "https://github.com/no-gravity-company/no-gravity-elements#readme",
   "license": "ISC",
   "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
+  "typings": "types/index.d.ts",
   "directories": {
     "lib": "lib"
   },
   "files": [
     "lib/index.js",
-    "lib/index.js.map"
+    "lib/index.js.map",
+    "types/index.d.ts"
   ],
   "repository": {
     "type": "git",
