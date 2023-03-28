@@ -2,14 +2,12 @@ const esbuild = require('esbuild');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
-  stories: [
-    '../packages/components/**/*.stories.mdx',
-    '../packages/components/**/*.stories.@(js|jsx|ts|tsx)',
-  ],
+  stories: ['../packages/components/**/*.stories.@(ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    '@storybook/web-components',
   ],
   framework: '@storybook/preact',
   webpackFinal: async (config, { configType }) => {

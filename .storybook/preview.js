@@ -1,4 +1,10 @@
 // .storybook/preview.js
+import { setCustomElements } from '@storybook/web-components';
+
+// funcion que mezcle todos los json
+const counter = require('./custom-elements.json');
+
+setCustomElements(counter);
 
 const customViewports = {
   Tablet: {
