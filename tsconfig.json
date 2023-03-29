@@ -20,6 +20,11 @@
       "@templates/*": ["packages/components/templates/*"],
       "@pages/*": ["packages/components/pages/*"],
       "@components/*": ["packages/components/*"],
+      "@hooks/*": ["packages/hooks"],
+      "@utils/*": ["packages/utils"],
+      "@context/*": ["packages/context"],
+      "@const/*": ["packages/const"],
+      "@types/*": ["packages/types"],
       "react": ["./node_modules/preact/compat/"],
       "react-dom": ["./node_modules/preact/compat/"]
     },
