@@ -4,13 +4,28 @@ const { sassPlugin } = require('esbuild-sass-plugin');
 const glob = require('tiny-glob');
 const webComponentsPlugin = require('./plugins/web-components-plugin');
 
+function findCommonPath(componentPaths) {
+  const separator = '/';
+  let commonPrefix = '';
+  const substrings = componentPaths.map((str) => str.split(separator));
+  for (let i = 0; i < substrings[0].length; i++) {
+    const substring = substrings[0][i];
+    if (substrings.every((arr) => arr[i] === substring)) {
+      commonPrefix += substring + separator;
+    } else {
+      break;
+    }
+  }
+  return commonPrefix;
+}
+
 const getCommonOps = (componentPaths) => {
   const ops = {
     entryNames: '[dir]/lib/index',
     entryPoints: componentPaths,
     bundle: true,
     minify: true,
-    outdir: 'packages/components/',
+    outdir: findCommonPath(componentPaths),
     sourcemap: true,
     platform: 'browser',
     target: 'esnext',
