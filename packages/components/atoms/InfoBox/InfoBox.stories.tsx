@@ -1,9 +1,11 @@
-import { Story } from '@storybook/preact';
 import { h } from 'preact';
 import { action } from '@storybook/addon-actions';
-import './lib/index';
-import { InfoBoxProps } from './types';
+import { Story } from '@storybook/preact';
 import { html } from 'lit-html';
+
+import { InfoBoxProps } from '@atoms/InfoBox/types';
+
+import '@atoms/InfoBox/lib/index';
 
 export default {
   title: 'InfoBox',

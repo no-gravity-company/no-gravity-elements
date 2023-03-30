@@ -1,6 +1,7 @@
-import { signal } from '@preact/signals';
 import { Fragment, FunctionComponent, h } from 'preact';
-import { InfoBoxProps } from './types';
+import { signal } from '@preact/signals';
+
+import { InfoBoxProps } from '@atoms/InfoBox/types';
 
 const inputValue = signal('');
 

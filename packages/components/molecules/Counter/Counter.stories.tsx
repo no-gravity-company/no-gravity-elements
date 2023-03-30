@@ -1,7 +1,8 @@
+import { h } from 'preact';
 import { Story } from '@storybook/preact';
 import { html } from 'lit-html';
-import { h } from 'preact';
-import './lib/index';
+
+import '@molecules/Counter/lib/index';
 
 export default {
   title: 'My Counter Molecules',

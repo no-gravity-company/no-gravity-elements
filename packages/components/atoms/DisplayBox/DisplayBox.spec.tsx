@@ -1,6 +1,7 @@
-import { shallow } from 'enzyme';
 import { h } from 'preact';
-import DisplayBox from './DisplayBox';
+import { shallow } from 'enzyme';
+
+import DisplayBox from '@atoms/DisplayBox/DisplayBox';
 
 describe('display-box web component snapshot test', () => {
   it.each`

@@ -1,5 +1,6 @@
 import { FunctionComponent, h } from 'preact';
-import { DisplayBoxProps } from './types';
+
+import { DisplayBoxProps } from '@atoms/DisplayBox/types';
 
 const INITIAL_VALUE = 0;
 

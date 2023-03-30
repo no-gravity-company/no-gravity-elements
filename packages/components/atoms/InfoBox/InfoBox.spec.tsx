@@ -1,6 +1,7 @@
-import { shallow } from 'enzyme';
 import { h } from 'preact';
-import InfoBox from './InfoBox';
+import { shallow } from 'enzyme';
+
+import InfoBox from '@atoms/InfoBox/InfoBox';
 
 describe('InfoBox', () => {
   it.each`

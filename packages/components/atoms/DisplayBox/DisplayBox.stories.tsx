@@ -1,8 +1,10 @@
+import { h } from 'preact';
 import { Story } from '@storybook/preact';
 import { html } from 'lit-html';
-import { h } from 'preact';
-import './lib/index';
-import { DisplayBoxProps } from './types';
+
+import { DisplayBoxProps } from '@atoms/DisplayBox/types';
+
+import '@atoms/DisplayBox/lib/index';
 
 export default {
   title: 'DisplayBox',
