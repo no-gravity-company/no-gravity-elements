@@ -1,6 +1,7 @@
+import { Fragment,h } from 'preact';
 import { signal } from '@preact/signals';
-import { h, Fragment } from 'preact';
-import { CounterProps } from './types';
+
+import { CounterProps } from '@atoms/Counter/types';
 
 const INITIAL_COUNT = 0;
 

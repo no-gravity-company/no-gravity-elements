@@ -1,8 +1,10 @@
 import { h } from 'preact';
-import { html, render } from 'lit-html';
-import './lib/index';
 import { Meta, Story } from '@storybook/preact';
-import { CounterProps } from './types';
+import { html, render } from 'lit-html';
+
+import { CounterProps } from '@atoms/Counter/types';
+
+import '@atoms/Counter/lib/index';
 
 export default {
   title: 'My Counterr',

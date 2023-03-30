@@ -1,5 +1,5 @@
+import { Fragment,h } from 'preact';
 import { signal } from '@preact/signals';
-import { h, Fragment } from 'preact';
 
 const INITIAL_COUNT = 0;
 
