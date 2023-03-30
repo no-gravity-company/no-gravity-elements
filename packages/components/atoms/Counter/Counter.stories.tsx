@@ -1,10 +1,12 @@
 import { h } from 'preact';
+import { html, render } from 'lit-html';
 import './lib/index';
 import { Meta, Story } from '@storybook/preact';
 import { CounterProps } from './types';
 
 export default {
   title: 'My Counterr',
+  component: 'nge-counter',
   parameters: {
     // Specify that the component is a Web Component
     webComponents: {
@@ -22,13 +24,15 @@ export default {
       },
     },
   },
-} as Meta;
-
-const Template: Story<CounterProps> = (props) => {
-  return <nge-counter title={props.title} onPop={() => console.log('pop')} />;
 };
 
-export const Default = Template;
+export const Default: Story<CounterProps> = (args): any => {
+  const { title } = args;
+
+  return html` <nge-counter title=${title} onPop={() => console.log('pop')} /> `;
+
+  // Return an empty template literal as required by Storybook
+};
 
 // Default value for title
 Default.args = {

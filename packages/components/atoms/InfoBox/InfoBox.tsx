@@ -4,6 +4,22 @@ import { InfoBoxProps } from './types';
 
 const inputValue = signal('');
 
+/**
+ * @element nge-info-box
+ * @slot - Default slot content.
+ * @slot header - Header slot content.
+ * @cssprop --primary-color - The primary color of the element.
+ *
+ * @fires my-event - Fired when the element is clicked.
+ *
+ * @prop {string} [label] - The label of the element.
+ *
+ * @example
+ * <nge-info-box label="Hello world">
+ *   <div slot="header">Header content</div>
+ *   <div>Default content</div>
+ * </nge-info-box>
+ */
 const InfoBox: FunctionComponent<InfoBoxProps> = ({ label }: InfoBoxProps) => {
   const handleInputChange = (event: Event) => {
     const inputElement = event.target as HTMLInputElement;

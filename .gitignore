@@ -1,5 +1,6 @@
 node_modules/
-lib
+**/lib
 yarn-error.log
 coverage
+.storybook/custom-elements.json
 .DS_Store

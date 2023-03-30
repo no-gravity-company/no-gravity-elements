@@ -1,8 +1,11 @@
+import { Story } from '@storybook/preact';
+import { html } from 'lit-html';
 import { h } from 'preact';
 import './lib/index';
 
 export default {
   title: 'My Counter Molecules',
+  component: 'nge-counter',
   parameters: {
     // Specify that the component is a Web Component
     webComponents: {
@@ -12,4 +15,6 @@ export default {
   },
 };
 
-export const Default = () => <nge-counter title='My counter molecules' />;
+export const Default: Story<any> = (args): any => {
+  return html` <nge-counter title="My counter molecules" />`;
+};

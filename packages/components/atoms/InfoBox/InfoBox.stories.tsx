@@ -3,10 +3,12 @@ import { h } from 'preact';
 import { action } from '@storybook/addon-actions';
 import './lib/index';
 import { InfoBoxProps } from './types';
+import { html } from 'lit-html';
 
 export default {
   title: 'InfoBox',
   // decorators: [withCustomEventListeners],
+  component: 'nge-info-box',
   parameters: {
     // Specify that the component is a Web Component
     webComponents: {
@@ -16,12 +18,10 @@ export default {
   },
   controls: {},
 };
-
-const Template: Story<InfoBoxProps> = (props) => {
-  return <nge-info-box {...props} onButtonClick={() => action('onButtonClick')()} />;
+export const Default: Story<InfoBoxProps> = (args): any => {
+  return html` <nge-info-box {...props} onButtonClick={() => action('onButtonClick')()} /> `;
 };
 
-export const Default = Template;
 Default.args = {
   label: 'Default label',
 };

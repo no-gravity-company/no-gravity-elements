@@ -1,4 +1,9 @@
 // .storybook/preview.js
+import { setCustomElements } from '@storybook/web-components';
+
+const wcaReport = require('./custom-elements.json');
+
+setCustomElements(wcaReport);
 
 const customViewports = {
   Tablet: {
