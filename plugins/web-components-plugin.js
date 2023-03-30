@@ -81,16 +81,6 @@ function webComponentsPlugin() {
         } else {
           webComponentsAnalysis.tags = webComponentsAnalysis.tags.concat(componentAnalysis.tags);
         }
-
-        /*const dirPath = path.join(
-          '.storybook',
-          'components',
-          componentType,
-          `${componentName}.json`,
-        );
-
-        await writeFileWithDir(dirPath, output);
-        */
         // TODO css needs to be minified
         return {
           contents: newContent,
@@ -98,7 +88,7 @@ function webComponentsPlugin() {
         };
       });
 
-      build.onEnd(async ({ errors, outputFiles }) => {
+      build.onEnd(async ({ errors }) => {
         if (!errors.length) {
           let seenObjects = new Set();
           const result = JSON.stringify(webComponentsAnalysis, (key, value) => {
