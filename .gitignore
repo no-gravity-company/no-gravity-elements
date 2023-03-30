@@ -3,3 +3,4 @@ node_modules/
 yarn-error.log
 coverage
 .storybook/custom-elements.json
+.DS_Store
