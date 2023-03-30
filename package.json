@@ -21,7 +21,8 @@
     "unlink-tools": "lerna exec -- yarn link",
     "test": "jest",
     "coverage": "http-server -o coverage/lcov-report",
-    "test:coverage": "yarn test && yarn coverage"
+    "test:coverage": "yarn test && yarn coverage",
+    "source-map": "yarn build --source-map-explorer && yarn source-map-explorer source-map-results/**/*.{js,js.map} --only-mapped --html source-map-results/results.html && http-server -o source-map-results/results.html -p 8081"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
@@ -78,6 +79,7 @@
     "prettier": "^2.8.4",
     "sass": "^1.59.2",
     "sinon": "^15.0.1",
+    "source-map-explorer": "^2.5.3",
     "tiny-glob": "^0.2.9",
     "ts-loader": "^9.4.2",
     "tsconfig-paths-webpack-plugin": "^4.0.0",

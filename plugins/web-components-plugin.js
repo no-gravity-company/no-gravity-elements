@@ -12,12 +12,6 @@ function camelToKebab(camelCase) {
   return camelCase.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
 }
 
-function getComponentType(filePath) {
-  const splitPath = filePath.split('/');
-  const indexOfComponents = splitPath.indexOf('components');
-  return splitPath[indexOfComponents + 1];
-}
-
 function replaceFunctionWithClass(str, componentName) {
   const regex = new RegExp(
     `const\\s+${componentName}:\\s*.+|function\\s+${componentName}\\s*\\(`,
@@ -29,7 +23,7 @@ function replaceFunctionWithClass(str, componentName) {
 }
 
 // TODO Refactor the logic
-function webComponentsPlugin() {
+function webComponentsPlugin(isSourceMapExplorer) {
   let webComponentsAnalysis = {};
   return {
     name: 'web-components-plugin',
@@ -41,10 +35,13 @@ function webComponentsPlugin() {
         const importCss = `import classes from './${componentName}.modules.scss'`;
         let newContent = `${importCss}\nimport register from 'preact-custom-element';\n${contents}`;
         // TODO It can be improved to handle the location of the style tag better, instead of searching for a Fragment. Right now it forces us to use Fragment
-        newContent = newContent.replace(
-          /<\/Fragment>(?!.*<\/Fragment>)/,
-          '    <style type="text/css">{classes}</style>\n\t</Fragment>',
-        );
+        if (!isSourceMapExplorer) {
+          newContent = newContent.replace(
+            /<\/Fragment>(?!.*<\/Fragment>)/,
+            '    <style type="text/css">{classes}</style>\n\t</Fragment>',
+          );
+        }
+
         const componentNameInKebab = camelToKebab(componentName);
         // Create analyzer
         let analyzeContent = newContent.replace(
@@ -59,28 +56,30 @@ function webComponentsPlugin() {
                             register(${componentName}, 'nge-${componentNameInKebab}', [], { shadow: true });
                     }`,
         );
-        // Web component analyzer
-        analyzeContent = replaceFunctionWithClass(analyzeContent, componentName);
-        const { results, program } = analyzeText(analyzeContent);
-        const format = 'json';
-        let output = transformAnalyzerResult(format, results, program);
-        // const componentType = getComponentType(args.path);
-        const componentAnalysis = JSON.parse(output, (key, value) => {
-          if (Array.isArray(value)) {
-            return value.map((v) => {
-              if (typeof v === 'object') {
-                return Object.assign({}, v);
-              }
-              return v;
-            });
+        if (!isSourceMapExplorer) {
+          // Web component analyzer
+          analyzeContent = replaceFunctionWithClass(analyzeContent, componentName);
+          const { results, program } = analyzeText(analyzeContent);
+          const format = 'json';
+          let output = transformAnalyzerResult(format, results, program);
+          const componentAnalysis = JSON.parse(output, (key, value) => {
+            if (Array.isArray(value)) {
+              return value.map((v) => {
+                if (typeof v === 'object') {
+                  return Object.assign({}, v);
+                }
+                return v;
+              });
+            }
+            return value;
+          });
+          if (!webComponentsAnalysis?.tags) {
+            webComponentsAnalysis = componentAnalysis;
+          } else {
+            webComponentsAnalysis.tags = webComponentsAnalysis.tags.concat(componentAnalysis.tags);
           }
-          return value;
-        });
-        if (!webComponentsAnalysis?.tags) {
-          webComponentsAnalysis = componentAnalysis;
-        } else {
-          webComponentsAnalysis.tags = webComponentsAnalysis.tags.concat(componentAnalysis.tags);
         }
+
         // TODO css needs to be minified
         return {
           contents: newContent,
@@ -90,18 +89,20 @@ function webComponentsPlugin() {
 
       build.onEnd(async ({ errors }) => {
         if (!errors.length) {
-          let seenObjects = new Set();
-          const result = JSON.stringify(webComponentsAnalysis, (key, value) => {
-            if (typeof value === 'object' && value !== null) {
-              if (seenObjects.has(value)) {
-                return;
+          if (!isSourceMapExplorer) {
+            let seenObjects = new Set();
+            const result = JSON.stringify(webComponentsAnalysis, (key, value) => {
+              if (typeof value === 'object' && value !== null) {
+                if (seenObjects.has(value)) {
+                  return;
+                }
+                seenObjects.add(value);
               }
-              seenObjects.add(value);
-            }
-            return value;
-          });
+              return value;
+            });
 
-          await writeFileWithDir('.storybook/custom-elements.json', result);
+            await writeFileWithDir('.storybook/custom-elements.json', result);
+          }
         } else {
           console.error(errors);
         }

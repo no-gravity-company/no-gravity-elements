@@ -19,13 +19,13 @@ function findCommonPath(componentPaths) {
   return commonPrefix;
 }
 
-const getCommonOps = (componentPaths) => {
+const getCommonOps = (componentPaths, isSourceMapExplorerAnalyzer) => {
   const ops = {
-    entryNames: '[dir]/lib/index',
+    entryNames: `[dir]${isSourceMapExplorerAnalyzer ? '' : '/lib'}/index`,
     entryPoints: componentPaths,
     bundle: true,
     minify: true,
-    outdir: findCommonPath(componentPaths),
+    outdir: isSourceMapExplorerAnalyzer ? 'source-map-results' : findCommonPath(componentPaths),
     sourcemap: true,
     platform: 'browser',
     target: 'esnext',
@@ -35,7 +35,7 @@ const getCommonOps = (componentPaths) => {
       sassPlugin({
         type: 'css-text',
       }),
-      webComponentsPlugin(),
+      webComponentsPlugin(isSourceMapExplorerAnalyzer),
     ],
   };
   return ops;
@@ -46,7 +46,8 @@ const getCommonOps = (componentPaths) => {
   componentPaths = componentPaths.filter(
     (path) => !path.includes('.stories.tsx') && !path.includes('.spec.tsx'),
   );
-  const buildOps = getCommonOps(componentPaths);
+  const isSourceMapExplorerAnalyzer = process.argv.includes('--source-map-explorer');
+  const buildOps = getCommonOps(componentPaths, isSourceMapExplorerAnalyzer);
   await esbuild.build(buildOps);
   if (process.argv.includes('--watch')) {
     const watcher = chokidar.watch([
