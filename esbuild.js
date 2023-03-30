@@ -4,10 +4,10 @@ const { sassPlugin } = require('esbuild-sass-plugin');
 const glob = require('tiny-glob');
 const webComponentsPlugin = require('./plugins/web-components-plugin');
 
-function findCommonPath(array) {
+function findCommonPath(componentPaths) {
   const separator = '/';
   let commonPrefix = '';
-  const substrings = array.map((str) => str.split(separator));
+  const substrings = componentPaths.map((str) => str.split(separator));
   for (let i = 0; i < substrings[0].length; i++) {
     const substring = substrings[0][i];
     if (substrings.every((arr) => arr[i] === substring)) {
