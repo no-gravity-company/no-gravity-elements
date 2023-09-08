@@ -56,7 +56,7 @@ function webComponentsPlugin() {
           `export default ${componentName};`,
           `const alreadyDefined = (tagName: string) => customElements.get(tagName) !== undefined;
                     if (!alreadyDefined('nge-${componentNameInKebab}')) {
-                            register(${componentName}, 'nge-${componentNameInKebab}', [], { shadow: true });
+                            register(${componentName}, 'nge-${componentNameInKebab}', ${componentName}?.observedAttributes || [], { shadow: true });
                     }`,
         );
         // Web component analyzer

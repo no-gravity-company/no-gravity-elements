@@ -1,5 +1,6 @@
 const esbuild = require('esbuild');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   stories: ['../packages/components/**/*.stories.@(ts|tsx)'],
@@ -27,6 +28,21 @@ module.exports = {
         target: 'esnext',
       },
     });
+
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@atoms': path.resolve(__dirname, '../packages/components/atoms'),
+      '@molecules': path.resolve(__dirname, '../packages/components/molecules'),
+      '@organisms': 'packages/components/organisms',
+      '@templates': 'packages/components/templates',
+      '@pages': 'packages/components/pages',
+      '@components': 'packages/components',
+      '@hooks': 'packages/hooks',
+      '@utils': 'packages/utils',
+      '@context': 'packages/context',
+      '@const': 'packages/const',
+    };
+
     return config;
   },
 };
