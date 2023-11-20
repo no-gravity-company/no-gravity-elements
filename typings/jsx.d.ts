@@ -8,5 +8,11 @@ declare module 'preact/src/jsx' {
     interface IntrinsicElements {
       [elemName: string]: Attributes & { [propName: string]: any };
     }
+    export interface FunctionComponent<P = {}> {
+      (props: RenderableProps<P>, context?: any): VNode<any> | null;
+      displayName?: string;
+      defaultProps?: Partial<P>;
+      observedAttributes?: string[];
+    }
   }
 }

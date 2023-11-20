@@ -24,7 +24,6 @@
       "@utils/*": ["packages/utils"],
       "@context/*": ["packages/context"],
       "@const/*": ["packages/const"],
-      "@types/*": ["packages/types"],
       "react": ["./node_modules/preact/compat/"],
       "react-dom": ["./node_modules/preact/compat/"]
     },
