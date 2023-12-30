@@ -1,0 +1,20 @@
+name: Build
+on: workflow_call
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Setup job
+        uses: ./.github/actions/setup-job
+
+      - name: Build packages
+        run: yarn build
+
+      - name: Save build cache
+        uses: actions/cache@v3
+        with:
+          path: 'packages/components/**/lib'
+          key: build-${{ github.sha }}
