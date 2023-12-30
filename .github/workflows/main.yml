@@ -12,16 +12,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-      - name: Recover modules cache
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.20'
-          cache: 'yarn'
+      - name: Setup job
+        uses: ./.github/actions/setup-job
       - name: Install Dependencies
         run: yarn
 
@@ -31,16 +23,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-      - name: Recover modules cache
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.20'
-          cache: 'yarn'
+      - name: Setup job
+        uses: ./.github/actions/setup-job
       - name: Build packages
         run: yarn build
       - name: Save build cache
@@ -55,16 +39,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-      - name: Recover modules cache
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.20'
-          cache: 'yarn'
+      - name: Setup job
+        uses: ./.github/actions/setup-job
       - name: Lint files
         run: yarn lint
 
@@ -77,16 +53,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-      - name: Recover modules cache
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.20'
-          cache: 'yarn'
+      - name: Setup job
+        uses: ./.github/actions/setup-job
       - name: Run unit tests for ${{ matrix.folder }}
         run: yarn test packages/components/${{ matrix.folder }} --passWithNoTests
 
@@ -99,16 +67,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.20'
-          cache: 'yarn'
-      - name: Recover modules cache
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
+      - name: Setup job
+        uses: ./.github/actions/setup-job
       - name: Recover build cache
         uses: actions/cache@v3
         with:
@@ -134,16 +94,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.20'
-          cache: 'yarn'
-      - name: Recover modules cache
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
+      - name: Setup job
+        uses: ./.github/actions/setup-job
       - name: Set git config
         run: |
           git config --global user.email "jackblakeston93@gmail.com"
