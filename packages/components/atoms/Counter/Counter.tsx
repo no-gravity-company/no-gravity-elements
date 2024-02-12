@@ -1,4 +1,4 @@
-import { Fragment,h } from 'preact';
+import { Fragment, h } from 'preact';
 import { signal } from '@preact/signals';
 
 import { CounterProps } from '@atoms/Counter/types';
@@ -13,7 +13,6 @@ const count = signal(INITIAL_COUNT);
  *  The super counter component
  *
  * @element nge-counter
- * @slot - Default slot content.
  * @slot header - Header slot content.
  * @cssprop --primary-color - The primary color of the element.
  *

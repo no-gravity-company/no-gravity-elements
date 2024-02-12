@@ -41,6 +41,8 @@ function webComponentsPlugin() {
         const importCss = `import classes from './${componentName}.modules.scss'`;
         let newContent = `${importCss}\nimport register from 'preact-custom-element';\n${contents}`;
         // TODO It can be improved to handle the location of the style tag better, instead of searching for a Fragment. Right now it forces us to use Fragment
+        // Aqui lo que hay que hacer es acceder al shadowdom e inyectar el estilo (attachstyle)
+        // si uso el hook de useCssStyle, no necesito esto
         newContent = newContent.replace(
           /<\/Fragment>(?!.*<\/Fragment>)/,
           '    <style type="text/css">{classes}</style>\n\t</Fragment>',
@@ -90,13 +92,13 @@ function webComponentsPlugin() {
 
       build.onEnd(async ({ errors }) => {
         if (!errors.length) {
-          let seenObjects = new Set();
           const result = JSON.stringify(webComponentsAnalysis, (key, value) => {
-            if (typeof value === 'object' && value !== null) {
-              if (seenObjects.has(value)) {
-                return;
-              }
-              seenObjects.add(value);
+            const auxValueArray = [];
+            if (key === 'properties' && Array.isArray(value)) {
+              value.forEach((v) => {
+                if (v?.description) auxValueArray.push(v);
+              });
+              return auxValueArray;
             }
             return value;
           });
