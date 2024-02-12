@@ -31,7 +31,7 @@ export default {
 export const Default: Story<CounterProps> = (args): any => {
   const { title } = args;
 
-  return html` <nge-counter title=${title} onPop={() => console.log('pop')} /> `;
+  return html` <nge-counter title=${title} onPop=${() => console.log('pop')} /> `;
 
   // Return an empty template literal as required by Storybook
 };
