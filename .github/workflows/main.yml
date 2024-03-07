@@ -6,158 +6,25 @@ on:
     types: [closed]
 
 jobs:
-
   install:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v3
-      - name: Recover modules cache
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.20'
-          cache: 'yarn'
-      - name: Install Dependencies
-        run: yarn
+    uses: ./.github/workflows/install.yml
 
   build:
     needs: install
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v3
-      - name: Recover modules cache
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.20'
-          cache: 'yarn'
-      - name: Build packages
-        run: yarn build
-      - name: Save build cache
-        uses: actions/cache@v3
-        with:
-          path: 'packages/components/**/lib'
-          key: build-${{ github.sha }}
+    uses: ./.github/workflows/build.yml
 
   lint:
     needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v3
-      - name: Recover modules cache
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.20'
-          cache: 'yarn'
-      - name: Lint files
-        run: yarn lint
+    uses: ./.github/workflows/lint.yml
 
   unit-test:
     needs: build
-    strategy:
-      matrix:
-        folder: ["atoms", "molecules", "organisms"]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v3
-      - name: Recover modules cache
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.20'
-          cache: 'yarn'
-      - name: Run unit tests for ${{ matrix.folder }}
-        run: yarn test packages/components/${{ matrix.folder }} --passWithNoTests
+    uses: ./.github/workflows/unit-test.yml
 
   integration-test:
     needs: build
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        folder: ["atoms", "molecules", "organisms"]
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v3
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.20'
-          cache: 'yarn'
-      - name: Recover modules cache
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
-      - name: Recover build cache
-        uses: actions/cache@v3
-        with:
-          path: 'packages/components/**/lib'
-          key: build-${{ github.sha }}
-      - name: Start storybook
-        run: yarn storybook --ci &
-      - name: Wait for Storybook to start
-        run: npx wait-on http://localhost:6006 -t 120000
-      - name: Run integration tests for ${{ matrix.folder }}
-        run: yarn e2e --spec "packages/components/${{ matrix.folder }}/**/*.integration.spec.ts" || echo 'No tests found'
+    uses: ./.github/workflows/integration-test.yml
 
   publish:
     needs: [lint, unit-test, integration-test]
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      issues: write
-      packages: write
-      actions: write
-      security-events: write
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v3
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.20'
-          cache: 'yarn'
-      - name: Recover modules cache
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
-      - name: Set git config
-        run: |
-          git config --global user.email "jackblakeston93@gmail.com"
-          git config --global user.name "Jack Blakeston"
-      - name: Bump and Publish changed packages
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-            if lerna changed --json --loglevel=error | grep -qF "packages/"; then
-              echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > ~/.npmrc
-              yarn lerna version --yes --conventional-commits --no-changelog
-              yarn lerna publish from-package --yes --no-verify-access --no-git-reset --no-git-tag-version --no-push
-              rm -f ~/.npmrc
-            else
-              echo "No changes in packages"
-            fi
+    uses: ./.github/workflows/publish.yml
