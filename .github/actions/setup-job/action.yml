@@ -15,3 +15,9 @@ runs:
       with:
         node-version: '16.20.0'
         cache: 'yarn'
+
+    - name: Cache installation
+      uses: actions/cache@v3
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
