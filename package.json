@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "engines": {
+    "node": "16.20"
+  },
   "workspaces": [
     "packages/components/**/*"
   ],
@@ -87,7 +90,6 @@
   "dependencies": {
     "@preact/signals": "^1.1.3",
     "preact": "^10.13.0",
-    "preact-compat": "^3.19.0",
     "preact-custom-element": "^4.2.1"
   }
 }
