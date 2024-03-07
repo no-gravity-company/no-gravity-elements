@@ -1,0 +1,77 @@
+@import './variables';
+
+$font-weight-light: 200;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-extraBold: 800;
+$font-weight-black: 900;
+
+.h1 {
+  font-size: baseUnit(8);
+  line-height: baseUnit(8);
+  font-weight: $font-weight-black;
+  text-transform: var(--nge-typography-text-transform, uppercase);
+}
+
+.h2 {
+  font-size: baseUnit(6);
+  line-height: baseUnit(6);
+  font-weight: $font-weight-black;
+  text-transform: var(--nge-typography-text-transform, uppercase);
+}
+
+.h3 {
+  font-size: baseUnit(4);
+  line-height: baseUnit(4.5);
+  font-weight: $font-weight-extraBold;
+  text-transform: var(--nge-typography-text-transform, uppercase);
+}
+
+.h4 {
+  font-size: baseUnit(3);
+  line-height: baseUnit(4);
+  font-weight: $font-weight-extraBold;
+  text-transform: var(--nge-typography-text-transform, uppercase);
+}
+
+.h5 {
+  font-size: baseUnit(2.5);
+  line-height: baseUnit(4);
+  font-weight: $font-weight-medium;
+}
+
+.h6 {
+  font-size: baseUnit(2);
+  line-height: baseUnit(3);
+  font-weight: $font-weight-medium;
+}
+
+.h7 {
+  font-size: baseUnit(1.5);
+  line-height: baseUnit(2.25);
+  font-weight: $font-weight-medium;
+}
+
+.sp {
+  font-size: baseUnit(1.5);
+  line-height: baseUnit(2.25);
+  font-weight: $font-weight-light;
+}
+
+.p {
+  font-size: baseUnit(2);
+  line-height: baseUnit(3);
+  font-weight: $font-weight-light;
+}
+
+.lp {
+  font-size: baseUnit(2.5);
+  line-height: baseUnit(4);
+  font-weight: $font-weight-light;
+}
+
+.legal {
+  font-size: baseUnit(1.125);
+  line-height: baseUnit(1.5);
+  font-weight: $font-weight-medium;
+}

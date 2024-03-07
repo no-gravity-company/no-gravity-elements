@@ -39,6 +39,7 @@ module.exports = {
       '@components': 'packages/components',
       '@hooks': 'packages/hooks',
       '@utils': 'packages/utils',
+      '@types': 'packages/types',
       '@context': 'packages/context',
       '@const': 'packages/const',
     };
