@@ -16,8 +16,8 @@ runs:
         node-version: '16.20.0'
         cache: 'yarn'
 
-    - name: Cache installation
+    - name: Cache cypress
       uses: actions/cache@v3
       with:
-        path: '**/node_modules'
+        path: '/home/runner/.cache/Cypress'
         key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
