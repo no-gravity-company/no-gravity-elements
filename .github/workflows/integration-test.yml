@@ -13,6 +13,9 @@ jobs:
       - name: Setup job
         uses: ./.github/actions/setup-job
 
+      - name: Install Dependencies
+        run: yarn
+
       - name: Recover build cache
         uses: actions/cache@v3
         with:
