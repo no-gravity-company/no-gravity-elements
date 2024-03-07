@@ -11,8 +11,8 @@ declare module 'preact/src/jsx' {
     export interface FunctionComponent<P = {}> {
       (props: RenderableProps<P>, context?: any): VNode<any> | null;
       displayName?: string;
-      defaultProps?: Partial<P>;
       observedAttributes?: string[];
+      defaultProps?: Partial<P>;
     }
   }
 }

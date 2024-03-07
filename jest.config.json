@@ -24,7 +24,8 @@
     "^@organisms/(.*)$": "<rootDir>/packages/components/organisms/$1",
     "^@templates/(.*)$": "<rootDir>/packages/components/templates/$1",
     "^@pages/(.*)$": "<rootDir>/packages/components/pages/$1",
-    "^@components/(.*)$": "<rootDir>/packages/components/$1"
+    "^@components/(.*)$": "<rootDir>/packages/components/$1",
+    "^@types": "<rootDir>/packages/types"
   },
   "testMatch": ["**/?(*.)(spec).ts?(x)"],
   "moduleDirectories": ["node_modules"],

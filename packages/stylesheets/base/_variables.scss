@@ -1,0 +1,6 @@
+@function baseUnit($value: 1) {
+  @if ($value == 0) {
+    @return 0;
+  }
+  @return calc(var(--nge-base-unit, 8px) * #{$value});
+}

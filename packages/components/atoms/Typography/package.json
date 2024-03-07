@@ -1,0 +1,25 @@
+{
+  "name": "@no-gravity-elements/typography",
+  "version": "1.0.0",
+  "description": "No Gravity Element",
+  "author": "No Gravity Team",
+  "private": false,
+  "homepage": "https://github.com/no-gravity-company/no-gravity-elements#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/no-gravity-company/no-gravity-elements.git"
+  },
+  "scripts": {
+    "build": "tsc --jsx react --emitDeclarationOnly --esModuleInterop --module ESNext --target ESNext --moduleResolution node --declaration --declarationDir ./lib/types src/*.ts && esbuild src/index.ts --bundle --outfile=lib/index.js --platform=node --target=es2018 --minify --sourcemap --external:react --external:react-dom",
+    "publish-component": "yarn publish --access=public"
+  },
+  "bugs": {
+    "url": "https://github.com/no-gravity-company/no-gravity-elements/issues"
+  }
+}

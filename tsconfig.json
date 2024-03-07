@@ -22,6 +22,7 @@
       "@components/*": ["packages/components/*"],
       "@hooks/*": ["packages/hooks"],
       "@utils/*": ["packages/utils"],
+      "@types": ["packages/types/"],
       "@context/*": ["packages/context"],
       "@const/*": ["packages/const"],
       "react": ["./node_modules/preact/compat/"],
