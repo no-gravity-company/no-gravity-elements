@@ -1,0 +1,22 @@
+name: Branch push workflow
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  install:
+    uses: ./.github/workflows/install.yml
+
+  build:
+    needs: install
+    uses: ./.github/workflows/build.yml
+
+  unit-test:
+    needs: build
+    uses: ./.github/workflows/unit-test.yml
+
+  integration-test:
+    needs: build
+    uses: ./.github/workflows/integration-test.yml

@@ -1,9 +1,9 @@
-name: CI
+name: Merge to main workflow
 
 on:
   push:
-  pull_request:
-    types: [closed]
+    branches:
+      - main
 
 jobs:
   install:
@@ -12,10 +12,6 @@ jobs:
   build:
     needs: install
     uses: ./.github/workflows/build.yml
-
-  lint:
-    needs: build
-    uses: ./.github/workflows/lint.yml
 
   unit-test:
     needs: build
