@@ -1,6 +1,7 @@
 @import './variables';
 
 $font-weight-light: 200;
+$font-weight-button: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 $font-weight-extraBold: 800;
@@ -73,5 +74,11 @@ $font-weight-black: 900;
 .legal {
   font-size: baseUnit(1.125);
   line-height: baseUnit(1.5);
+  font-weight: $font-weight-medium;
+}
+
+.button {
+  font-size: baseUnit(1.75);
+  line-height: baseUnit(2);
   font-weight: $font-weight-medium;
 }

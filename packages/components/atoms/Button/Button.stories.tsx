@@ -1,7 +1,7 @@
 import { Story } from '@storybook/preact';
 import { html } from 'lit-html';
 
-import { ButtonProps } from '@atoms/Button/types';
+import { ButtonProps, ButtonTypes } from '@atoms/Button/types';
 
 import '@atoms/Button/lib/index';
 
@@ -24,7 +24,7 @@ export default {
       },
     },
     type: {
-      description: 'Primary colors',
+      description: 'Button type',
       control: { type: 'text' },
       table: {
         defaultValue: { summary: 'primary' },
@@ -32,15 +32,15 @@ export default {
     },
   },
 };
+type StoryButtonProps = ButtonProps & { text: string };
 
-export const Default: Story<ButtonProps> = (args): any => {
+export const Default: Story<StoryButtonProps> = (args): any => {
   const { text, type } = args;
 
-  return html` <nge-button text=${text} type=${type} /> `;
+  return html` <nge-button type=${type}>${text}</nge-button> `;
 };
 
-// Default value for title
 Default.args = {
-  type: 'secondary',
-  text: 'Click me!',
+  type: ButtonTypes.primary,
+  text: 'Button',
 };

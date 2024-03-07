@@ -11,7 +11,7 @@ import { CustomFunctionComponent, TypographySizes } from '@types';
  *
  * @element nge-typography
  *
- * @prop {h1|h2|h3|h4|h5|h6|h7|sp|p|lp|legal} [size] - Sixe of the text.
+ * @prop {h1|h2|h3|h4|h5|h6|h7|sp|p|lp|legal|button} [size] - Sixe of the text.
  * @prop {string} [tag] - Tag that will be rendered inside the Shadow DOM
  *
  * @example
