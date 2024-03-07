@@ -1,0 +1,14 @@
+name: Lint
+on: workflow_call
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Setup job
+        uses: ./.github/actions/setup-job
+
+      - name: Lint files
+        run: yarn lint
