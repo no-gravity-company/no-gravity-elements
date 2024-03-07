@@ -11,7 +11,7 @@ a {
     height: baseUnit(0.125);
     background-color: var(--color, #{$primary-color});
     position: absolute;
-    bottom: baseUnit(-0.25);
+    bottom: baseUnit(-0.125);
     left: 0;
     border-radius: baseUnit(0.75);
   }
