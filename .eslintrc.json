@@ -20,7 +20,7 @@
     "no-use-before-define": "error",
     "no-magic-numbers": "warn",
     "no-shadow": "warn",
-    "no-console": "warn",
+    "no-console": "error",
     "no-empty-function": "warn",
     "max-params": ["warn", 4],
     "max-depth": ["error", 5],
