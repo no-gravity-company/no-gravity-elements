@@ -1,6 +1,7 @@
 import { Fragment, h, VNode } from 'preact';
 
 import { TypographyProps } from '@atoms/Typography/types';
+
 import { CustomFunctionComponent, TypographySizes } from '@types';
 
 /**
@@ -24,7 +25,7 @@ const Typography: CustomFunctionComponent<TypographyProps> = ({ size, tag }: Typ
     return h(
       typographyTag,
       { class: (size && TypographySizes[size]) || TypographySizes.p },
-      <slot></slot>,
+      <slot />,
     );
   };
 

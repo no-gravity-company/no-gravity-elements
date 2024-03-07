@@ -1,10 +1,10 @@
 import { Story } from '@storybook/preact';
 import { html } from 'lit-html';
+import { TypographySizes } from 'packages/types';
 
 import { TypographyProps } from '@atoms/Typography/types';
 
 import '@atoms/Typography/lib/index';
-import { TypographySizes } from 'packages/types';
 
 type StoryTypography = TypographyProps & { text: string };
 

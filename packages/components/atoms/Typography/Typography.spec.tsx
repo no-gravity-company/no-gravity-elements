@@ -2,6 +2,7 @@ import { h } from 'preact';
 import { shallow } from 'enzyme';
 
 import Typography from '@atoms/Typography/Typography';
+
 import { TypographySizes } from '@types';
 
 describe('Typography', () => {
@@ -27,6 +28,6 @@ describe('Typography', () => {
     );
     const element = wrapper.find(tag || 'span');
     expect(element).not.toBe(null);
-    expect(element.hasClass(size || 'p'));
+    expect(element.hasClass(size || 'p')).toBeTruthy();
   });
 });
