@@ -16,8 +16,9 @@ runs:
         node-version: '16.20.0'
         cache: 'yarn'
 
-    - name: Cache cypress
-      uses: actions/cache@v3
+    - name: Cache Cypress Binary
+      id: cache-cypress-binary
+      uses: actions/cache@v2
       with:
-        path: '/home/runner/.cache/Cypress'
-        key: ${{ runner.os }}-cypress
+        path: ~/.cache/Cypress
+        key: binary-${{ hashFiles('package-lock.json') }}
