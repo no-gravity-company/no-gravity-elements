@@ -18,3 +18,9 @@ jobs:
         with:
           path: 'packages/components/**/lib'
           key: build-${{ github.sha }}
+      
+      - name: Recover .storybook cache
+        uses: actions/cache@v3
+        with:
+          path: '.storybook'
+          key: ${{ runner.os }}-storybook-${{ hashFiles('yarn.lock') }}
