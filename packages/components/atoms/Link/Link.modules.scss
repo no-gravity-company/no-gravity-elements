@@ -1,0 +1,17 @@
+@import '../../../stylesheets/base/variables';
+
+a {
+  text-decoration: none;
+  position: relative;
+  &:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: baseUnit(0.125);
+    background-color: var(--color, #{$primary-color});
+    position: absolute;
+    bottom: baseUnit(-0.125);
+    left: 0;
+    border-radius: baseUnit(0.75);
+  }
+}
