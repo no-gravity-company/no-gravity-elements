@@ -23,5 +23,5 @@ jobs:
         id: cache-storybook
         uses: actions/cache@v2
         with:
-          path: '**/custom-elements.json'
+          path: '.storybook/custom-elements.json'
           key: storybook-${{ hashFiles('package-lock.json') }}
