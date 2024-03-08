@@ -18,18 +18,8 @@ jobs:
         with:
           path: 'packages/components/**/lib'
           key: build-${{ github.sha }}
-      
-      - name: Save Cache Storybook
-        id: cache-storybook
-        uses: actions/cache@v3
-        with:
-          path: ~/.storybook
-          key: ${{ runner.os }}-storybook-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-storybook-
-            ${{ runner.os }}-
 
-      - name: Save Cache Storybook
+      - name: Save Storybook cache
         uses: actions/cache@v3
         with:
           path: .storybook

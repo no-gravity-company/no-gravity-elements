@@ -10,33 +10,8 @@ runs:
         path: '**/node_modules'
         key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
 
-    - name: Cache Storybook
-      id: cache-storybook
-      uses: actions/cache@v3
-      with:
-        path: ~/.storybook
-        key: ${{ runner.os }}-storybook-${{ hashFiles('yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-storybook-
-          ${{ runner.os }}-
-
-    - name: Cache Storybook packages
-      uses: actions/cache@v3
-      with:
-        path: "~/.storybook/custom-elements.json"
-        restore-keys: |
-          yarn-storybook-${{ hashFiles('package-lock.json') }}
-          ${{ runner.os }}-storybook-${{ hashFiles('yarn.lock') }}
-          storybook-${{ hashFiles('yarn.lock') }}
-
     - name: Set up node
       uses: actions/setup-node@v3
       with:
         node-version: '16.20.0'
         cache: 'yarn'
-
-    - name: Recover .storybook cache
-      uses: actions/cache@v3
-      with:
-        path: '.storybook'
-        key: ${{ runner.os }}-storybook-${{ hashFiles('yarn.lock') }}
