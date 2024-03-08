@@ -15,7 +15,7 @@ import { CustomFunctionComponent, TypographySizes } from '@types';
  * @prop {string} [tag] - Tag that will be rendered inside the Shadow DOM
  *
  * @example
- * <nge-typography tag="h4">Example</nge-typography>
+ * <nge-typography tag="h4">Typography</nge-typography>
  */
 
 const Typography: CustomFunctionComponent<TypographyProps> = ({ size, tag }: TypographyProps) => {

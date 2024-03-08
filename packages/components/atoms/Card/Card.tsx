@@ -8,7 +8,7 @@ import { Fragment, FunctionComponent, h } from 'preact';
  * @element nge-card
  *
  * @example
- * <nge-card>Button</nge-card>
+ * <nge-card></nge-card>
  */
 
 const Card: FunctionComponent = () => {
