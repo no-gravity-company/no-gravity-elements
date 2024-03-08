@@ -33,10 +33,8 @@ export default {
     },
     size: {
       description: 'size',
-      control: { type: 'text' },
-      table: {
-        defaultValue: { summary: 'h1' },
-      },
+      control: 'select',
+      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'sp', 'p', 'lp', 'legal', 'button'],
     },
   },
 };
