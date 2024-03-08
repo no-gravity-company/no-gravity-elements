@@ -6,6 +6,6 @@ context('Button', () => {
   });
 
   it('should check if <nge-button> is present in the dom', () => {
-    cy.get('nge-button').should('be.visible');
+    cy.get('nge-fail').should('be.visible');
   });
 });

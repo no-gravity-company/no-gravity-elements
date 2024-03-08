@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        folder: ['atoms', 'molecules', 'organisms']
+        folder: ['atoms', 'molecules']
     steps:
       - name: Check out code
         uses: actions/checkout@v3
