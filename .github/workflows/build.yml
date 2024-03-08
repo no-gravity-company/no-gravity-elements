@@ -20,7 +20,6 @@ jobs:
           key: build-${{ github.sha }}
       
       - name: Save Cache Storybook
-          id: cache-storybook
           uses: actions/cache@v3
           with:
             path: ~/.storybook

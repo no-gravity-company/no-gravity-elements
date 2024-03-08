@@ -11,7 +11,6 @@ runs:
         key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
 
     - name: Cache Storybook
-        id: cache-storybook
         uses: actions/cache@v3
         with:
           path: ~/.storybook
