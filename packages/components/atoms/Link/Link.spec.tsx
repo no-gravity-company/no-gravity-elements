@@ -1,23 +1,32 @@
 import { h } from 'preact';
 import { shallow } from 'enzyme';
 
-import Button from '@atoms/Button/Button';
-import { ButtonTypes } from '@atoms/Button/types';
+import Link from '@atoms/Link/Link';
 
-describe('Button', () => {
+import { TypographySizes } from '@types';
+
+describe('Link', () => {
   it('should match the snapshot', () => {
-    const wrapper = shallow(<Button type={ButtonTypes.primary}>Test</Button>);
+    const wrapper = shallow(
+      <Link size={TypographySizes.h1} href='/'>
+        Link
+      </Link>,
+    );
     expect(wrapper).toMatchSnapshot();
   });
 
   it.each`
-    type
-    ${ButtonTypes.secondary}
-    ${ButtonTypes.destructive}
+    size
+    ${TypographySizes.h1}
+    ${TypographySizes.h4}
     ${undefined}
-  `('should render correctly with the provided size and tag', ({ type }) => {
-    const wrapper = shallow(<Button type={type}>Button</Button>);
-    const element = wrapper.find(type || 'primary');
+  `('should render correctly with the provided size', ({ size }) => {
+    const wrapper = shallow(
+      <Link size={size} href='/'>
+        Link
+      </Link>,
+    );
+    const element = wrapper.find(size || TypographySizes.p);
     expect(element).not.toBe(null);
   });
 });

@@ -4,7 +4,7 @@ import { TypographySizes } from 'packages/types';
 
 import { LinkProps } from '@atoms/Link/types';
 
-import '@atoms/Link/lib/index';
+import '@no-gravity-elements/link';
 
 export default {
   title: 'Link',
