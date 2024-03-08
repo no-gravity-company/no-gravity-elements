@@ -76,7 +76,7 @@
     "jest-extended": "^3.2.4",
     "jest-preset-preact": "^4.0.5",
     "jest-resolve": "^29.5.0",
-    "lerna": "^6.5.1",
+    "lerna": "6.5.1",
     "lit-html": "^2.7.0",
     "postcss": "^8.4.21",
     "postcss-modules": "^6.0.0",
