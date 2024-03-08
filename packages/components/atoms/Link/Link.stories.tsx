@@ -24,16 +24,14 @@ export default {
     },
     size: {
       description: 'Text size',
-      control: { type: 'text' },
-      table: {
-        defaultValue: { summary: 'h6' },
-      },
+      control: 'select',
+      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'sp', 'p', 'lp', 'legal', 'button'],
     },
     href: {
       description: 'Link url',
       control: { type: 'text' },
       table: {
-        defaultValue: { summary: 'primary' },
+        defaultValue: { summary: '/' },
       },
     },
   },
