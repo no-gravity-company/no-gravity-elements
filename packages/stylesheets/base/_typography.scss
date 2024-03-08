@@ -75,3 +75,9 @@ $font-weight-black: 900;
   line-height: baseUnit(1.5);
   font-weight: $font-weight-medium;
 }
+
+.button {
+  font-size: baseUnit(1.75);
+  line-height: baseUnit(2);
+  font-weight: $font-weight-medium;
+}

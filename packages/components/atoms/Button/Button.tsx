@@ -1,10 +1,10 @@
 import { Fragment, h } from 'preact';
-import { CustomFunctionComponent } from 'packages/types';
 
-import { ButtonProps } from '@atoms/Button/types';
+import { ButtonProps, ButtonTypes } from '@atoms/Button/types';
 
-// import { useCssStyle } from 'packages/hooks/useCssStyle';
+import { CustomFunctionComponent, TypographySizes } from '@types';
 
+import '@no-gravity-elements/typography';
 /**
  * <nge-button>
  *
@@ -12,27 +12,25 @@ import { ButtonProps } from '@atoms/Button/types';
  *
  * @element nge-button
  *
- * @fires onClick - Fired when the element is clicked.
- *
- * @prop {string} [text] - The label of the element.
- * @prop {'primary' | 'secondary'} [type] - Use primary button styles.
+ * @prop {'primary'|'secondary'|'destructive'|'outline'|'ghost'|'disabled'} [type] - Button type
  *
  * @example
- * <nge-button text="Click me!" />
+ * <nge-button type="primary">Button</nge-button>
  */
 
-const Button: CustomFunctionComponent<ButtonProps> = ({ text, onClick, type }: ButtonProps) => {
-  //useCssStyle('nge-button', classes);
-  const buttonClass = `custom-button${type ? ` ${type}` : ' primary'}`;
+const Button: CustomFunctionComponent<ButtonProps> = ({ type }: ButtonProps) => {
+  const buttonClass = (type && ButtonTypes[type]) || ButtonTypes.primary;
   return (
     <Fragment>
-      <button class={buttonClass} onClick={onClick}>
-        {text}
+      <button className={buttonClass} disabled={type === ButtonTypes.disabled}>
+        <nge-typography size={TypographySizes.button}>
+          <slot />
+        </nge-typography>
       </button>
     </Fragment>
   );
 };
 
-Button.observedAttributes = ['text', 'type'];
+Button.observedAttributes = ['type'];
 
 export default Button;
