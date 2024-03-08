@@ -18,4 +18,5 @@ jobs:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           lerna -v
-          echo $PATH
+          yarn global add lerna@^6.5.1
+          lerna -v
