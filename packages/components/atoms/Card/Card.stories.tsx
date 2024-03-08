@@ -1,9 +1,9 @@
-import { Story } from '@storybook/preact';
+import { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit-html';
 
 import '@no-gravity-elements/card';
 
-export default {
+const meta: Meta = {
   title: 'Card',
   component: 'nge-card',
   parameters: {
@@ -12,18 +12,19 @@ export default {
     },
   },
   argTypes: {},
-};
-
-export const Default: Story = (): any => {
-  return html`
+  render: () => html`
     <style>
       div {
         height: 200px;
         width: 200px;
       }
     </style>
-    <nge-card><div></div></nge-card>
-  `;
+    <nge-card><div /></nge-card>
+  `,
 };
 
-Default.args = {};
+export default meta;
+
+export const Default: StoryObj = {
+  args: {},
+};

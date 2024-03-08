@@ -1,14 +1,15 @@
-import { Story } from '@storybook/preact';
+import { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { TypographySizes } from 'packages/types';
 
 import { TypographyProps } from '@atoms/Typography/types';
 
+import { TypographySizes } from '@types';
+
 import '@no-gravity-elements/typography';
 
-type StoryTypography = TypographyProps & { text: string };
+type CustomArgs = TypographyProps & { text: string };
 
-export default {
+const meta: Meta<CustomArgs> = {
   title: 'Typography',
   component: 'nge-typography',
   parameters: {
@@ -18,34 +19,35 @@ export default {
   },
   argTypes: {
     text: {
-      description: 'Typography text',
+      description: 'Custom text',
       control: { type: 'text' },
-      table: {
-        defaultValue: { summary: 'Example typography' },
-      },
     },
     tag: {
-      description: 'tag',
+      description: 'HTML tag used for the typography',
       control: { type: 'text' },
       table: {
-        defaultValue: { summary: 'h4' },
+        defaultValue: { summary: 'span' },
       },
     },
     size: {
-      description: 'size',
-      control: 'select',
-      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'sp', 'p', 'lp', 'legal', 'button'],
+      description: 'Typography size',
+      options: Object.values(TypographySizes),
+      table: {
+        defaultValue: { summary: TypographySizes.p },
+      },
     },
   },
+  render: ({ tag, text, size }) =>
+    html` <nge-typography tag="${tag}" size="${size}">${text}</nge-typography> `,
 };
 
-export const Default: Story<StoryTypography> = (args): any => {
-  const { tag, text, size } = args;
-  return html`<nge-typography tag="${tag}" size="${size}">${text}</nge-typography>`;
-};
+export default meta;
+type Story = StoryObj<CustomArgs>;
 
-Default.args = {
-  tag: 'h4',
-  text: 'Example typography',
-  size: TypographySizes.h1,
+export const Default: Story = {
+  args: {
+    tag: 'h4',
+    text: 'Example typography',
+    size: TypographySizes.h1,
+  },
 };
