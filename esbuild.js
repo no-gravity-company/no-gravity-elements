@@ -3,6 +3,7 @@ const chokidar = require('chokidar');
 const { sassPlugin } = require('esbuild-sass-plugin');
 const glob = require('tiny-glob');
 const webComponentsPlugin = require('./plugins/web-components-plugin');
+const { execSync } = require('child_process');
 
 function findCommonPath(componentPaths) {
   const separator = '/';
@@ -18,6 +19,7 @@ function findCommonPath(componentPaths) {
   }
   return commonPrefix;
 }
+const lernaJsonList = JSON.parse(execSync('lerna ls --json').toString());
 
 const getCommonOps = (componentPaths) => {
   const ops = {
@@ -31,6 +33,7 @@ const getCommonOps = (componentPaths) => {
     target: 'esnext',
     format: 'esm',
     allowOverwrite: true,
+    external: lernaJsonList.map((i) => i.name),
     plugins: [
       sassPlugin({
         type: 'css-text',

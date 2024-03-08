@@ -4,7 +4,7 @@ import { TypographySizes } from 'packages/types';
 
 import { TypographyProps } from '@atoms/Typography/types';
 
-import '@atoms/Typography/lib/index';
+import '@no-gravity-elements/typography';
 
 type StoryTypography = TypographyProps & { text: string };
 
