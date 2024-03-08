@@ -16,4 +16,5 @@ export enum TypographySizes {
   p = 'p',
   lp = 'lp',
   legal = 'legal',
+  button = 'button',
 }

@@ -1,17 +1,15 @@
 import { Story } from '@storybook/preact';
 import { html } from 'lit-html';
 
-import { ButtonProps } from '@atoms/Button/types';
+import { ButtonProps, ButtonTypes } from '@atoms/Button/types';
 
-import '@atoms/Button/lib/index';
+import '@no-gravity-elements/button';
 
 export default {
   title: 'Button',
   component: 'nge-button',
   parameters: {
-    // Specify that the component is a Web Component
     webComponents: {
-      // Set the tag name of the Web Component
       tagName: 'nge-button',
     },
   },
@@ -24,23 +22,21 @@ export default {
       },
     },
     type: {
-      description: 'Primary colors',
-      control: { type: 'text' },
-      table: {
-        defaultValue: { summary: 'primary' },
-      },
+      description: 'Button type',
+      control: 'select',
+      options: ['primary', 'secondary', 'destructive', 'outline', 'ghost', 'disabled'],
     },
   },
 };
+type StoryButtonProps = ButtonProps & { text: string };
 
-export const Default: Story<ButtonProps> = (args): any => {
+export const Default: Story<StoryButtonProps> = (args): any => {
   const { text, type } = args;
 
-  return html` <nge-button text=${text} type=${type} /> `;
+  return html` <nge-button type=${type}>${text}</nge-button> `;
 };
 
-// Default value for title
 Default.args = {
-  type: 'secondary',
-  text: 'Click me!',
+  type: ButtonTypes.primary,
+  text: 'Button',
 };

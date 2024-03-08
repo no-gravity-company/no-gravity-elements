@@ -1,0 +1,10 @@
+@import '../../../stylesheets/base/variables';
+
+:host {
+  border-radius: baseUnit(0.75);
+  background-color: $background-color;
+  border: baseUnit(0.125) solid $secondary-color;
+  box-shadow: 0 baseUnit(0.125) baseUnit(0.25) 0 $black;
+  width: fit-content;
+  display: block;
+}

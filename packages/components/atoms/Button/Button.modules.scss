@@ -1,45 +1,89 @@
+@import '../../../stylesheets/base/variables';
+
+@mixin button-styles {
+  position: relative;
+  display: inline-block;
+  padding: baseUnit(1.25) baseUnit(2);
+  border-radius: baseUnit(0.75);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+}
+
+@mixin button-hover {
+  &::after {
+    content: '';
+    background-color: $primary-foreground-color;
+    border-radius: baseUnit(0.75);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+}
+
 :host {
-  .custom-button {
-    display: inline-block;
-    background-color: #ffffff;
-    color: #007aff;
-    padding: 10px 20px;
-    border: 1px solid #007aff;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .custom-button.primary {
-    background-color: #ffffff;
-    color: #007aff;
-    border: 1px solid #007aff;
-    &:hover {
-      background-color: #007aff;
-      color: #ffffff;
-      border: 1px solid #007aff;
+  .primary,
+  button:disabled {
+    @include button-styles;
+    @include button-hover;
+    background-color: $primary-color;
+    --color: #{$primary-foreground-color};
+    &:hover::after {
+      opacity: 0.1;
     }
   }
 
-  .custom-button.secondary {
-    background-color: #007aff;
-    color: #ffffff;
-    border: 1px solid #007aff;
-    &:hover {
-      background-color: #ffffff;
-      color: #007aff;
-      border: 1px solid #007aff;
+  .secondary {
+    @include button-styles;
+    @include button-hover;
+    background-color: $secondary-color;
+    --color: #{$primary-color};
+    &:hover::after {
+      opacity: 0.2;
     }
   }
 
-  @media (max-width: 768px) {
-    .custom-button {
-      padding: 8px 16px;
-      font-size: 14px;
+  .destructive {
+    @include button-styles;
+    @include button-hover;
+    background-color: $destructive-color;
+    --color: #{$destructive-foreground-color};
+    &:hover::after {
+      opacity: 0.1;
+    }
+  }
+
+  .outline {
+    @include button-styles;
+    border: 1px solid $secondary-color;
+    background-color: $background-color;
+    --color: #{$primary-color};
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+
+  .ghost {
+    @include button-styles;
+    background-color: $background-color;
+    --color: #{$primary-color};
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+
+  button:disabled {
+    cursor: default;
+    pointer-events: none;
+    &::after,
+    &:hover::after {
+      opacity: 0.5;
     }
   }
 }
