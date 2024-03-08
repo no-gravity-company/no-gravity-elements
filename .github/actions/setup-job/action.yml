@@ -16,9 +16,8 @@ runs:
         node-version: '16.20.0'
         cache: 'yarn'
 
-    - name: Cache Storybook
-      id: cache-storybook
-      uses: actions/cache@v2
+    - name: Recover .storybook cache
+      uses: actions/cache@v3
       with:
         path: '.storybook'
-        key: storybook-${{ github.sha }}
+        key: ${{ runner.os }}-storybook-${{ hashFiles('yarn.lock') }}
