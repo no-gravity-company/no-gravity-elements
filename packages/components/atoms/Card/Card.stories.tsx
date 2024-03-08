@@ -1,7 +1,7 @@
 import { Story } from '@storybook/preact';
 import { html } from 'lit-html';
 
-import '@atoms/Card/lib/index';
+import '@no-gravity-elements/card';
 
 export default {
   title: 'Card',
