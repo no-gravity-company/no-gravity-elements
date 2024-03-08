@@ -16,16 +16,9 @@ runs:
         node-version: '16.20.0'
         cache: 'yarn'
 
-    - name: Cache Cypress Binary
-      id: cache-cypress-binary
-      uses: actions/cache@v2
-      with:
-        path: ~/.cache/Cypress
-        key: binary-${{ hashFiles('package-lock.json') }}
-
     - name: Cache Storybook
       id: cache-storybook
       uses: actions/cache@v2
       with:
-        path: './.storybook/custom-elements.json'
+        path: '**/custom-elements.json'
         key: storybook-${{ hashFiles('package-lock.json') }}
