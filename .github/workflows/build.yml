@@ -10,6 +10,9 @@ jobs:
       - name: Setup job
         uses: ./.github/actions/setup-job
 
+      - name: Install Dependencies
+        run: yarn
+
       - name: Build packages
         run: yarn build
 
