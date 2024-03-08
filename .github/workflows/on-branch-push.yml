@@ -20,7 +20,3 @@ jobs:
   integration-test:
     needs: build
     uses: ./.github/workflows/integration-test.yml
-
-  publish:
-    needs: [unit-test, integration-test]
-    uses: ./.github/workflows/publish.yml
