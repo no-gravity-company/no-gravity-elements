@@ -1,11 +1,10 @@
 import { h } from 'preact';
-import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/preact';
 import { html } from 'lit-html';
 
 import { InfoBoxProps } from '@molecules/InfoBox/types';
 
-import '@atoms/InfoBox/lib/index';
+import '@no-gravity-elements/info-box';
 
 export default {
   title: 'InfoBox',
