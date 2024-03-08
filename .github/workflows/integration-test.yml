@@ -22,8 +22,28 @@ jobs:
           path: 'packages/components/**/lib'
           key: build-${{ github.sha }}
 
+      - name: Recover Storybook cache
+        uses: actions/cache@v3
+        with:
+          path: '.storybook'
+          key: storybook-${{ github.sha }}
+      
+      - name: Check files
+        run: |
+          ls
+          cd .storybook
+          ls
+          cd ..
+
       - name: Build Storybook
         run: yarn build-storybook
+
+      - name: Check files again
+        run: |
+          ls
+          cd .storybook
+          ls
+          cd ..
 
       - name: Serve Storybook and run tests
         run: |

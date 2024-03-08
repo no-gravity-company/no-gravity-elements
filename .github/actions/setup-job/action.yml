@@ -20,5 +20,5 @@ runs:
       id: cache-storybook
       uses: actions/cache@v2
       with:
-        path: '.storybook/custom-elements.json'
+        path: '.storybook'
         key: storybook-${{ github.sha }}
