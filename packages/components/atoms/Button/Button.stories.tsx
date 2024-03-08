@@ -25,10 +25,8 @@ export default {
     },
     type: {
       description: 'Button type',
-      control: { type: 'text' },
-      table: {
-        defaultValue: { summary: 'primary' },
-      },
+      control: 'select',
+      options: ['primary', 'secondary', 'destructive', 'outline', 'ghost', 'disabled'],
     },
   },
 };
