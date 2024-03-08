@@ -21,4 +21,4 @@ runs:
       uses: actions/cache@v2
       with:
         path: '.storybook/custom-elements.json'
-        key: storybook-${{ hashFiles('package-lock.json') }}
+        key: storybook-${{ github.sha }}
