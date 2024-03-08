@@ -26,7 +26,7 @@ jobs:
         run: yarn storybook --ci &
 
       - name: Wait for Storybook to start
-        run: npx wait-on http://localhost:6006 -t 120000 && echo 'Storybook server has started' && yarn e2e --spec "packages/components/${{ matrix.folder }}/**/*.integration.spec.ts" || echo 'No tests found'
+        run: npx wait-on tcp:6006 -t 120000 && echo 'Storybook server has started' && yarn e2e --spec "packages/components/${{ matrix.folder }}/**/*.integration.spec.ts" || echo 'No tests found'
 
       # - name: Run integration tests for ${{ matrix.folder }}
       #   run: yarn e2e --spec "packages/components/${{ matrix.folder }}/**/*.integration.spec.ts" || echo 'No tests found'
