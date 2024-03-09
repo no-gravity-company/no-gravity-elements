@@ -16,13 +16,7 @@ jobs:
       - name: Install Cypress
         run: yarn add cypress -W -D
 
-      - name: Recover build cache
-        uses: actions/cache@v3
-        with:
-          path: 'packages/components/**/lib'
-          key: build-${{ github.sha }}
-
-      - name: Recover Storybook cache
+      - name: Use Storybook cache
         uses: actions/cache@v3
         with:
           path: .storybook

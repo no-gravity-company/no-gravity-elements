@@ -13,11 +13,5 @@ jobs:
       - name: Setup job
         uses: ./.github/actions/setup-job
 
-      - name: Recover build cache
-        uses: actions/cache@v3
-        with:
-          path: 'packages/components/**/lib'
-          key: build-${{ github.sha }}
-
       - name: Run unit tests for ${{ matrix.folder }}
         run: yarn test packages/components/${{ matrix.folder }} --passWithNoTests
