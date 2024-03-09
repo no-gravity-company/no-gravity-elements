@@ -1,11 +1,13 @@
-import { Story } from '@storybook/preact';
+import { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit-html';
 
 import { ButtonProps, ButtonTypes } from '@atoms/Button/types';
 
 import '@no-gravity-elements/button';
 
-export default {
+type CustomArgs = ButtonProps & { text: string };
+
+const meta: Meta<CustomArgs> = {
   title: 'Button',
   component: 'nge-button',
   parameters: {
@@ -15,28 +17,26 @@ export default {
   },
   argTypes: {
     text: {
-      description: 'Button text',
+      description: 'Custom text',
       control: { type: 'text' },
-      table: {
-        defaultValue: { summary: 'string' },
-      },
     },
     type: {
       description: 'Button type',
-      control: 'select',
-      options: ['primary', 'secondary', 'destructive', 'outline', 'ghost', 'disabled'],
+      options: Object.values(ButtonTypes),
+      table: {
+        defaultValue: { summary: ButtonTypes.primary },
+      },
     },
   },
-};
-type StoryButtonProps = ButtonProps & { text: string };
-
-export const Default: Story<StoryButtonProps> = (args): any => {
-  const { text, type } = args;
-
-  return html` <nge-button type=${type}>${text}</nge-button> `;
+  render: ({ type, text }) => html` <nge-button type=${type}>${text}</nge-button> `,
 };
 
-Default.args = {
-  type: ButtonTypes.primary,
-  text: 'Button',
+export default meta;
+type Story = StoryObj<CustomArgs>;
+
+export const Default: Story = {
+  args: {
+    type: ButtonTypes.primary,
+    text: 'Button',
+  },
 };

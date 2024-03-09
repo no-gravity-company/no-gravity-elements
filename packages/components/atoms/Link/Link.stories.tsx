@@ -1,12 +1,15 @@
-import { Story } from '@storybook/preact';
+import { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { TypographySizes } from 'packages/types';
 
 import { LinkProps } from '@atoms/Link/types';
 
+import { TypographySizes } from '@types';
+
 import '@no-gravity-elements/link';
 
-export default {
+type CustomArgs = LinkProps & { text: string };
+
+const meta: Meta<CustomArgs> = {
   title: 'Link',
   component: 'nge-link',
   parameters: {
@@ -16,36 +19,32 @@ export default {
   },
   argTypes: {
     text: {
-      description: 'Link text',
+      description: 'Custom text',
       control: { type: 'text' },
-      table: {
-        defaultValue: { summary: 'string' },
-      },
     },
     size: {
-      description: 'Text size',
-      control: 'select',
-      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'sp', 'p', 'lp', 'legal', 'button'],
+      description: 'Typography size used for the link',
+      options: Object.values(TypographySizes),
+      table: {
+        defaultValue: { summary: TypographySizes.p },
+      },
     },
     href: {
       description: 'Link url',
       control: { type: 'text' },
-      table: {
-        defaultValue: { summary: '/' },
-      },
     },
   },
-};
-type StoryLinkProps = LinkProps & { text: string };
-
-export const Default: Story<StoryLinkProps> = (args): any => {
-  const { text, href, size } = args;
-
-  return html` <nge-link size="${size}" href="${href}">${text}</nge-link> `;
+  render: ({ size, text, href }) =>
+    html` <nge-link size="${size}" href="${href}">${text}</nge-link> `,
 };
 
-Default.args = {
-  href: '/',
-  text: 'Link',
-  size: TypographySizes.h6,
+export default meta;
+type Story = StoryObj<CustomArgs>;
+
+export const Default: Story = {
+  args: {
+    href: '/',
+    text: 'Link',
+    size: TypographySizes.h6,
+  },
 };
