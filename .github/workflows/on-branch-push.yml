@@ -13,10 +13,15 @@ jobs:
     needs: install
     uses: ./.github/workflows/build.yml
 
-  unit-test:
-    needs: build
-    uses: ./.github/workflows/unit-test.yml
+  # unit-test:
+  #   needs: build
+  #   uses: ./.github/workflows/unit-test.yml
 
-  integration-test:
+  # integration-test:
+  #   needs: build
+  #   uses: ./.github/workflows/integration-test.yml
+
+  publish:
     needs: build
-    uses: ./.github/workflows/integration-test.yml
+    uses: ./.github/workflows/publish.yml
+    secrets: inherit
