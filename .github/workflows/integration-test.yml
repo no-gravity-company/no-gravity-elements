@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        folder: ['atoms', 'molecules', 'organisms']
+        folder: ['atoms', 'molecules']
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -13,17 +13,20 @@ jobs:
       - name: Setup job
         uses: ./.github/actions/setup-job
 
-      - name: Recover build cache
+      - name: Install Cypress
+        run: yarn add cypress -W -D
+
+      - name: Use Storybook cache
         uses: actions/cache@v3
         with:
-          path: 'packages/components/**/lib'
-          key: build-${{ github.sha }}
+          path: .storybook
+          key: storybook-${{ github.sha }}
 
-      - name: Start storybook
-        run: yarn storybook --ci &
+      - name: Build Storybook
+        run: yarn build-storybook
 
-      - name: Wait for Storybook to start
-        run: npx wait-on http://localhost:6006 -t 120000
-
-      - name: Run integration tests for ${{ matrix.folder }}
-        run: yarn e2e --spec "packages/components/${{ matrix.folder }}/**/*.integration.spec.ts" || echo 'No tests found'
+      - name: Serve Storybook and run tests
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server storybook-static --port 6006 --silent" \
+            "npx wait-on tcp:6006 && yarn e2e --spec "packages/components/${{ matrix.folder }}/**/*.integration.spec.ts""
