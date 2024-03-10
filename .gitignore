@@ -5,3 +5,4 @@ coverage
 .storybook/custom-elements.json
 .DS_Store
 storybook-static
+build-storybook.log

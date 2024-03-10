@@ -1,0 +1,62 @@
+name: Deploy storybook
+on: workflow_call
+jobs:
+  deploy-storybook:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    env:
+      GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT }}
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.ACTIONS_PAT }}
+          fetch-depth: 0
+
+      - name: Setup job
+        uses: ./.github/actions/setup-job
+
+      - name: Set git config
+        uses: ./.github/actions/set-git-config
+
+      - name: Deploy Storybook with Chromatic
+        id: deploy_sb
+        # uses: chromaui/action@v1
+        # with:
+        #   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        #   token: ${{ secrets.ACTIONS_PAT }}
+        run: |
+          npx chromatic --project-token=chpt_897e9515a245d84
+
+      - name: Save storybook URL as txt file
+        run: |
+          echo "${{ steps.deploy_sb.outputs.storybookUrl }}" >> storybook-url.txt
+
+      - name: Upload URL artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: storybook-url
+          path: storybook-url.txt
+
+      - name: Get PR number
+        id: get_pr_number
+        run: |
+          branch_name=$(echo "${{ github.ref }}" | sed 's|.*/||')
+          prs=$(gh pr list --state open --head "$branch_name")
+          if [ -n "$prs" ]; then
+            pr_number=$(echo "$prs" | head -n 1 | awk '{print $1}')
+            echo "has_pr=true" >> $GITHUB_OUTPUT
+            echo "pr_number=$pr_number" >> $GITHUB_OUTPUT
+          else
+            echo "has_pr=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Comment PR
+        if: ${{ steps.get_pr_number.outputs.has_pr == 'true' }}
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          pr_number: ${{ steps.get_pr_number.outputs.pr_number }}
+          message: |
+            Storybook URL:
+            ${{ steps.read-url.outputs.storybook_url }}

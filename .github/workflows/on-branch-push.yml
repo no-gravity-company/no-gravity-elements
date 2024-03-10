@@ -13,6 +13,11 @@ jobs:
     needs: install
     uses: ./.github/workflows/build.yml
 
+  deploy-storybook:
+    needs: build
+    uses: ./.github/workflows/deploy-storybook.yml
+    secrets: inherit
+
   unit-test:
     needs: build
     uses: ./.github/workflows/unit-test.yml
