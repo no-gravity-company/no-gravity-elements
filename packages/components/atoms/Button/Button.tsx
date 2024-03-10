@@ -1,8 +1,8 @@
-import { Fragment, h } from 'preact';
+import { Fragment, FunctionComponent, h } from 'preact';
 
 import { ButtonProps, ButtonTypes } from '@atoms/Button/types';
 
-import { CustomFunctionComponent, TypographySizes } from '@types';
+import { TypographySizes } from '@types';
 
 import '@no-gravity-elements/typography';
 /**
@@ -18,7 +18,7 @@ import '@no-gravity-elements/typography';
  * <nge-button type="primary">Button</nge-button>
  */
 
-const Button: CustomFunctionComponent<ButtonProps> = ({ type }: ButtonProps) => {
+const Button: FunctionComponent<ButtonProps> = ({ type }: ButtonProps) => {
   const buttonClass = (type && ButtonTypes[type]) || ButtonTypes.primary;
   return (
     <Fragment>
