@@ -32,7 +32,7 @@
     "@babel/preset-env": "^7.20.2",
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@limegrass/eslint-plugin-import-alias": "^1.0.6",
-    "@no-gravity-tools/component-generator": "1.0.12",
+    "@no-gravity-tools/component-generator": "1.0.17",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
