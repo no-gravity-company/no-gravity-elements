@@ -37,7 +37,7 @@ jobs:
       - name: Bump package versions
         run: |
           if lerna changed --json --loglevel=error | grep -qF "packages/"; then
-            yarn lerna version --yes --conventional-commits --no-changelog --include-merged-tags --message "${{ steps.get_branch_code.outputs.branch_code }}: Publish [skip ci]"
+            yarn lerna version --yes --conventional-commits --changelog-preset conventionalcommits --include-merged-tags --message "${{ steps.get_branch_code.outputs.branch_code }}: Publish [skip ci]"
           else
             echo "No changes in packages"
             exit 0

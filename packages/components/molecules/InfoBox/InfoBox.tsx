@@ -44,8 +44,8 @@ const InfoBox: FunctionComponent<InfoBoxProps> = ({ label }: InfoBoxProps) => {
 
   return (
     <Fragment>
-      <span className='main'>HEY</span>
       <span>{label}</span>
+      <span className='main'>HEY</span>
       <input type='text' value={inputValue} onInput={handleInputChange} />
       <span>{inputValue}</span>
       <button onClick={handleDivClick} />
