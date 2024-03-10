@@ -26,7 +26,7 @@ const InfoBox: FunctionComponent<InfoBoxProps> = ({ label }: InfoBoxProps) => {
     const inputElement = event.target as HTMLInputElement;
     inputValue.value = inputElement.value;
   };
-  // TODO delete this comment when you see it
+  // TODO delete this comment
 
   const handleDivClick = (event: Event) => {
     // TODO extract to function in tools repo -> publish(eventName, payload, element)
