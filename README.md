@@ -5,11 +5,11 @@ This repo leverages Lerna to handle automatic versioning and changelog generatio
 
 It is configured to work with [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). Following this specification tells Lerna which [semver](https://semver.org/) version it should bump and what it should write in the changelog.
 
-| Changelog prefix | Semver version
-| ---------------- | ---------------
-| [any prefix]:    | Patch
-| feat:            | Minor
-| [any prefix]!:   | Major
+| Semver version       | Commit instructions
+| -------------------- | -----------------------------
+| Patch                | [any prefix other than feat]:
+| Minor                | feat:
+| Major                | (in commit footer) BREAKING CHANGE:
 
 ## Node version
 The node version is fixed in this repo, if you are experiencing issues you need to run `nvm use`. If you do not have the correct node version installed, you will need to run `nvm install` before that.
