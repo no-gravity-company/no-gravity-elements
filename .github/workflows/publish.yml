@@ -25,7 +25,7 @@ jobs:
       - name: Bump package versions
         run: |
           if lerna changed --json --loglevel=error | grep -qF "packages/"; then
-            yarn lerna version --yes --conventional-commits --no-changelog
+            yarn lerna version --yes --conventional-commits --no-changelog --force-git-tag
           else
             echo "No changes in packages"
             exit 0
