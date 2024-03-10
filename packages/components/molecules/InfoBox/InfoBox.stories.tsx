@@ -7,7 +7,7 @@ import { InfoBoxProps } from '@molecules/InfoBox/types';
 import '@no-gravity-elements/info-box';
 
 export default {
-  title: 'InfoBox',
+  title: 'molecules/InfoBox',
   // decorators: [withCustomEventListeners],
   component: 'nge-info-box',
   parameters: {

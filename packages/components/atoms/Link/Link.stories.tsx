@@ -10,7 +10,7 @@ import '@no-gravity-elements/link';
 type CustomArgs = LinkProps & { text: string };
 
 const meta: Meta<CustomArgs> = {
-  title: 'Link',
+  title: 'atoms/Link',
   component: 'nge-link',
   parameters: {
     webComponents: {

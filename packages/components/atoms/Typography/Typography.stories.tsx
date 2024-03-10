@@ -10,7 +10,7 @@ import '@no-gravity-elements/typography';
 type CustomArgs = TypographyProps & { text: string };
 
 const meta: Meta<CustomArgs> = {
-  title: 'Typography',
+  title: 'atoms/Typography',
   component: 'nge-typography',
   parameters: {
     webComponents: {
