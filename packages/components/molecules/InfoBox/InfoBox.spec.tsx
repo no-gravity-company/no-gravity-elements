@@ -16,6 +16,6 @@ describe('InfoBox', () => {
   it('should render correctly with the provided label', () => {
     const label = 'Test Label';
     const wrapper = shallow(<InfoBox label={label} />);
-    expect(wrapper.find('span').at(1).text()).toEqual(label);
+    expect(wrapper.find('span').at(0).text()).toEqual(label);
   });
 });
