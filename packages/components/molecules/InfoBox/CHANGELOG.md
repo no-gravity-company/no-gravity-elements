@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.0.1 (2024-03-10)
+
+**Note:** Version bump only for package @no-gravity-elements/info-box
+
 # [4.0.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/info-box@3.0.0...@no-gravity-elements/info-box@4.0.0) (2024-03-10)
 
 ### Features
