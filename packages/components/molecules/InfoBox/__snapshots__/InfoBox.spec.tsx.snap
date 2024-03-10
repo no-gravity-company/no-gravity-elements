@@ -8,7 +8,7 @@ exports[`InfoBox should match the snapshot 1`] = `
   <span
     className="main"
   >
-    HEYO
+    HEYOO
   </span>,
   <input
     onInput={[Function]}
@@ -90,7 +90,7 @@ exports[`InfoBox should match the snapshot 2`] = `
   <span
     className="main"
   >
-    HEYO
+    HEYOO
   </span>,
   <input
     onInput={[Function]}
