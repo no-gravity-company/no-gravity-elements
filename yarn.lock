@@ -2052,7 +2052,7 @@
   dependencies:
     eslint-scope "5.1.1"
 
-"@no-gravity-tools/component-generator@^1.0.17":
+"@no-gravity-tools/component-generator@1.0.17":
   version "1.0.17"
   resolved "https://registry.npmjs.org/@no-gravity-tools/component-generator/-/component-generator-1.0.17.tgz#a85d16e151865d6dc27dcf9da93cd213b15f862d"
   integrity sha512-JFkG+DLeSxPc0XQDBroLaf10006TkM1KNShjzsYbWfFnBrrsA9+ylN3rPY+c4DF9irm7ospgss2gnaBW3hfwwg==
@@ -6159,6 +6159,13 @@ conventional-changelog-angular@5.0.12:
   dependencies:
     compare-func "^2.0.0"
     q "^1.5.1"
+
+conventional-changelog-conventionalcommits@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.npmjs.org/conventional-changelog-conventionalcommits/-/conventional-changelog-conventionalcommits-7.0.2.tgz#aa5da0f1b2543094889e8cf7616ebe1a8f5c70d5"
+  integrity sha512-NKXYmMR/Hr1DevQegFB4MwfM5Vv0m4UIxKZTTYuD98lpTknaZlSRrDOG4X7wIXpGkfsYxZTghUN+Qq+T0YQI7w==
+  dependencies:
+    compare-func "^2.0.0"
 
 conventional-changelog-core@4.2.4:
   version "4.2.4"
