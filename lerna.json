@@ -3,5 +3,12 @@
   "useWorkspaces": true,
   "version": "independent",
   "packages": ["packages/components/**/*"],
-  "npmCLient": "yarn"
+  "npmCLient": "yarn",
+  "ignoreChanges": [
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/*.stories.tsx",
+    ".gitignore",
+    "**/__snapshots__/*"
+  ]
 }
