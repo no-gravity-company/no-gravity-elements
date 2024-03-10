@@ -24,10 +24,19 @@ jobs:
       - name: Install Lerna
         run: yarn global add lerna@^6.5.1
 
+      - name: Get published branch code
+        id: get_branch_code
+        run: |
+          LAST_CLOSED_PR=$(curl -s -H "Authorization: Bearer ${{ secrets.ACTIONS_PAT }}" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls?state=closed&per_page=1")
+          BRANCH_NAME=$(echo $LAST_CLOSED_PR | jq -r '.[0].head.ref')
+          BRANCH_CODE=$(echo $BRANCH_NAME | sed -E 's/^([^_]+)_.*$/\1/')
+          echo "::set-output name=branch_code::$BRANCH_CODE"
+
       - name: Bump package versions
         run: |
           if lerna changed --json --loglevel=error | grep -qF "packages/"; then
-            yarn lerna version --yes --conventional-commits --no-changelog --force-git-tag
+            yarn lerna version --yes --conventional-commits --no-changelog --message "${{ steps.get_branch_code.outputs.branch_code }}: Publish [skip ci]"
           else
             echo "No changes in packages"
             exit 0
