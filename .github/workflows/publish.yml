@@ -6,10 +6,12 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT }}
     steps:
       - name: Check out code
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.ACTIONS_PAT }}
 
       - name: Setup job
         uses: ./.github/actions/setup-job
