@@ -1,9 +1,6 @@
 {
   "name": "@no-gravity-elements/info-box",
-  "version": "1.0.9",
-  "publishConfig": {
-    "access": "public"
-  },
+  "version": "1.1.1",
   "description": "No Gravity Element",
   "author": "No Gravity Team",
   "private": false,

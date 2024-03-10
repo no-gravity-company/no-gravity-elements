@@ -1,6 +1,6 @@
 {
   "name": "@no-gravity-elements/typography",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "description": "No Gravity Element",
   "author": "No Gravity Team",
   "private": false,
@@ -11,6 +11,11 @@
   "directories": {
     "lib": "lib"
   },
+  "files": [
+    "lib/index.js",
+    "lib/index.js.map",
+    "types/index.d.ts"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/no-gravity-company/no-gravity-elements.git"
@@ -21,5 +26,6 @@
   },
   "bugs": {
     "url": "https://github.com/no-gravity-company/no-gravity-elements/issues"
-  }
+  },
+  "gitHead": "2bca302d24e66729aa0b3f42b064554df1a3122f"
 }
