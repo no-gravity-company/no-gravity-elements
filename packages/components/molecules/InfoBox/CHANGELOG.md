@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/info-box@3.0.0...@no-gravity-elements/info-box@4.0.0) (2024-03-10)
+
+### Features
+
+- Test a different breaking change commit syntax ([022cae3](https://github.com/no-gravity-company/no-gravity-elements/commit/022cae359a0d22cec25ba544b30813cdc63cf873))
+
+### BREAKING CHANGES
+
+- Final breaking change test
+
 # [3.0.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/info-box@1.2.0...@no-gravity-elements/info-box@3.0.0) (2024-03-10)
 
 ### Bug Fixes
