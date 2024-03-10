@@ -9,6 +9,7 @@
     "**/*.spec.tsx",
     "**/*.stories.tsx",
     ".gitignore",
-    "**/__snapshots__/*"
+    "**/__snapshots__/*",
+    "**/*.md"
   ]
 }
