@@ -1,8 +1,6 @@
-import { Fragment, h } from 'preact';
+import { Fragment, FunctionComponent, h } from 'preact';
 
 import { LinkProps } from '@atoms/Link/types';
-
-import { CustomFunctionComponent } from '@types';
 
 import '@no-gravity-elements/typography';
 /**
@@ -19,7 +17,7 @@ import '@no-gravity-elements/typography';
  * <nge-link href="/">Link</nge-link>
  */
 
-const Link: CustomFunctionComponent<LinkProps> = ({ href, size }: LinkProps) => {
+const Link: FunctionComponent<LinkProps> = ({ href, size }: LinkProps) => {
   return (
     <Fragment>
       <a href={href}>

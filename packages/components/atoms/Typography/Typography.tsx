@@ -1,8 +1,8 @@
-import { Fragment, h, VNode } from 'preact';
+import { Fragment, FunctionComponent, h, VNode } from 'preact';
 
 import { TypographyProps } from '@atoms/Typography/types';
 
-import { CustomFunctionComponent, TypographySizes } from '@types';
+import { TypographySizes } from '@types';
 
 /**
  * <nge-typography>
@@ -18,7 +18,7 @@ import { CustomFunctionComponent, TypographySizes } from '@types';
  * <nge-typography tag="h4">Typography</nge-typography>
  */
 
-const Typography: CustomFunctionComponent<TypographyProps> = ({ size, tag }: TypographyProps) => {
+const Typography: FunctionComponent<TypographyProps> = ({ size, tag }: TypographyProps) => {
   const typographyTag = tag || 'span';
 
   const getTypographyNode = (): VNode => {

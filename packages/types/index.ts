@@ -1,9 +1,3 @@
-import { FunctionComponent } from 'preact';
-
-export type CustomFunctionComponent<Props> = FunctionComponent<Props> & {
-  observedAttributes?: string[];
-};
-
 export enum TypographySizes {
   h1 = 'h1',
   h2 = 'h2',
