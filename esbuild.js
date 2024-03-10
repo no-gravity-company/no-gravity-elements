@@ -4,6 +4,7 @@ const { sassPlugin } = require('esbuild-sass-plugin');
 const glob = require('tiny-glob');
 const webComponentsPlugin = require('./plugins/web-components-plugin');
 const { execSync } = require('child_process');
+const { minify } = require('csso');
 
 function findCommonPath(componentPaths) {
   const separator = '/';
@@ -37,6 +38,9 @@ const getCommonOps = (componentPaths) => {
     plugins: [
       sassPlugin({
         type: 'css-text',
+        async transform(source) {
+          return minify(source).css;
+        },
       }),
       webComponentsPlugin(),
     ],
