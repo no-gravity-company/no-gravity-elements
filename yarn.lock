@@ -2052,10 +2052,10 @@
   dependencies:
     eslint-scope "5.1.1"
 
-"@no-gravity-tools/component-generator@1.0.12":
-  version "1.0.12"
-  resolved "https://registry.npmjs.org/@no-gravity-tools/component-generator/-/component-generator-1.0.12.tgz#fcd5dee58d40911fa4bfa9dd5ca143dcfd7f7b6f"
-  integrity sha512-AN/gdqHEga2p63nqHZDGkhJxu4rBxH7+E3owPVhdJ/NBe3OogWK9tP0a36uxOB4XxGn9aHb9UPK6h7TWFjFNNw==
+"@no-gravity-tools/component-generator@^1.0.17":
+  version "1.0.17"
+  resolved "https://registry.npmjs.org/@no-gravity-tools/component-generator/-/component-generator-1.0.17.tgz#a85d16e151865d6dc27dcf9da93cd213b15f862d"
+  integrity sha512-JFkG+DLeSxPc0XQDBroLaf10006TkM1KNShjzsYbWfFnBrrsA9+ylN3rPY+c4DF9irm7ospgss2gnaBW3hfwwg==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
