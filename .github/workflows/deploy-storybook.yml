@@ -7,6 +7,7 @@ jobs:
       pull-requests: write
     env:
       GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT }}
+      APP_ID: 65edfeddcbe58bb4d259538f
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -43,34 +44,10 @@ jobs:
             yarn chromatic --exit-zero-on-changes -d storybook-static/ --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }} --branch-name=${{ steps.get_branch_code.outputs.branch_code }}
           fi
 
-      - name: Get PR number
-        id: get_pr_number
-        run: |
-          branch_name=$(echo "${{ github.ref }}" | sed 's|.*/||')
-          prs=$(gh pr list --state open --head "$branch_name")
-          if [ -n "$prs" ]; then
-            pr_number=$(echo "$prs" | head -n 1 | awk '{print $1}')
-            echo "has_pr=true" >> $GITHUB_OUTPUT
-            echo "pr_number=$pr_number" >> $GITHUB_OUTPUT
-          else
-            echo "has_pr=false" >> $GITHUB_OUTPUT
-          fi
-
       - name: Update step summary
-        env:
-          APP_ID: ${{ secrets.CHROMATIC_APP_ID }}
         run: |
           if [ "${{ github.ref }}" = "refs/heads/main" ]; then
             echo "Storybook URL - https://${{ steps.get_branch_code.outputs.branch_code }}--$APP_ID.chromatic.com/" >> $GITHUB_STEP_SUMMARY
           else
             echo "Storybook URL - https://${{ steps.get_branch_code.outputs.branch_code }}--$APP_ID.chromatic.com/" >> $GITHUB_STEP_SUMMARY
           fi
-
-      # - name: Comment PR
-      #   if: ${{ steps.get_pr_number.outputs.has_pr == 'true' }}
-      #   uses: thollander/actions-comment-pull-request@v2
-      #   with:
-      #     pr_number: ${{ steps.get_pr_number.outputs.pr_number }}
-      #     message: |
-      #       Storybook URL:
-      #       https://${{ steps.get_branch_code.outputs.branch_code }}--${{ secrets.CHROMATIC_APP_ID }}.chromatic.com/
