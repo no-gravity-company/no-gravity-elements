@@ -22,7 +22,8 @@ jobs:
 
       - name: Deploy Storybook with Chromatic
         run: |
-          yarn chromatic --project-token=chpt_897e9515a245d84
+          yarn build-storybook
+          yarn chromatic --exit-zero-on-changes -d storybook-static/ --project-token=chpt_897e9515a245d84
 
       - name: Save storybook URL as txt file
         run: |
