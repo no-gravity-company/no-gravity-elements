@@ -2,7 +2,7 @@
 
 context('InfoBox', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?args=&id=infobox--default&viewMode=story');
+    cy.visit('/iframe.html?args=&id=molecules-infobox--default&viewMode=story');
   });
 
   it('should check if <nge-info-box> is present in the dom', () => {

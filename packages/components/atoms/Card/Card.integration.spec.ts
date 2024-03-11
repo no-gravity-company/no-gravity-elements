@@ -2,7 +2,7 @@
 
 context('Card', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?args=&id=card--default&viewMode=story');
+    cy.visit('/iframe.html?args=&id=atoms-card--default&viewMode=story');
   });
 
   it('should check if <nge-card> is present in the dom', () => {

@@ -4,7 +4,7 @@ import { html } from 'lit-html';
 import '@no-gravity-elements/card';
 
 const meta: Meta = {
-  title: 'Card',
+  title: 'atoms/Card',
   component: 'nge-card',
   parameters: {
     webComponents: {

@@ -8,7 +8,7 @@ import '@no-gravity-elements/button';
 type CustomArgs = ButtonProps & { text: string };
 
 const meta: Meta<CustomArgs> = {
-  title: 'Button',
+  title: 'atoms/Button',
   component: 'nge-button',
   parameters: {
     webComponents: {

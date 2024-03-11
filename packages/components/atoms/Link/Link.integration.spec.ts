@@ -2,7 +2,7 @@
 
 context('Link', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?args=&id=link--default&viewMode=story');
+    cy.visit('/iframe.html?args=&id=atoms-link--default&viewMode=story');
   });
 
   it('should check if <nge-link> is present in the dom', () => {
