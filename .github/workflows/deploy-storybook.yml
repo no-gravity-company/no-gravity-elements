@@ -7,6 +7,7 @@ jobs:
       pull-requests: write
     env:
       GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT }}
+      APP_ID: 65edfeddcbe58bb4d259538f
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -57,8 +58,6 @@ jobs:
           fi
 
       - name: Update step summary
-        env:
-          APP_ID: ${{ secrets.CHROMATIC_APP_ID }}
         run: |
           if [ "${{ github.ref }}" = "refs/heads/main" ]; then
             echo "Storybook URL - https://${{ steps.get_branch_code.outputs.branch_code }}--$APP_ID.chromatic.com/" >> $GITHUB_STEP_SUMMARY
@@ -66,11 +65,19 @@ jobs:
             echo "Storybook URL - https://${{ steps.get_branch_code.outputs.branch_code }}--$APP_ID.chromatic.com/" >> $GITHUB_STEP_SUMMARY
           fi
 
-      # - name: Comment PR
-      #   if: ${{ steps.get_pr_number.outputs.has_pr == 'true' }}
-      #   uses: thollander/actions-comment-pull-request@v2
-      #   with:
-      #     pr_number: ${{ steps.get_pr_number.outputs.pr_number }}
-      #     message: |
-      #       Storybook URL:
-      #       https://${{ steps.get_branch_code.outputs.branch_code }}--${{ secrets.CHROMATIC_APP_ID }}.chromatic.com/
+      - name: Get PR description
+        id: pr_description
+        run: |
+          description=$(curl -s -H "Authorization: token ${{ secrets.ACTIONS_PAT }}" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls/${{ steps.get_pr_number.outputs.pr_number }}" | \
+            jq -c -r '.body | @json')
+          echo "description=$description" >> $GITHUB_OUTPUT
+
+      - name: Update PR description
+        uses: bcgov-nr/action-pr-description-add@main
+        with:
+          github_token: "${{ secrets.ACTIONS_PAT }}"
+          add_markdown: |
+            ---
+
+            [Branch storybook!](https://${{ steps.get_branch_code.outputs.branch_code }}--$APP_ID.chromatic.com)
