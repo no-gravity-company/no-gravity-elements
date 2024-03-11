@@ -12,12 +12,6 @@ function camelToKebab(camelCase) {
   return camelCase.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
 }
 
-function getComponentType(filePath) {
-  const splitPath = filePath.split('/');
-  const indexOfComponents = splitPath.indexOf('components');
-  return splitPath[indexOfComponents + 1];
-}
-
 function replaceFunctionWithClass(str, componentName) {
   const regex = new RegExp(
     `const\\s+${componentName}:\\s*.+|function\\s+${componentName}\\s*\\(`,
@@ -40,9 +34,6 @@ function webComponentsPlugin() {
         const componentName = match[1];
         const importCss = `import classes from './${componentName}.modules.scss'`;
         let newContent = `${importCss}\nimport register from 'preact-custom-element';\n${contents}`;
-        // TODO It can be improved to handle the location of the style tag better, instead of searching for a Fragment. Right now it forces us to use Fragment
-        // Aqui lo que hay que hacer es acceder al shadowdom e inyectar el estilo (attachstyle)
-        // si uso el hook de useCssStyle, no necesito esto
         newContent = newContent.replace(
           /<\/Fragment>(?!.*<\/Fragment>)/,
           '    <style type="text/css">{classes}</style>\n\t</Fragment>',
@@ -66,7 +57,6 @@ function webComponentsPlugin() {
         const { results, program } = analyzeText(analyzeContent);
         const format = 'json';
         let output = transformAnalyzerResult(format, results, program);
-        // const componentType = getComponentType(args.path);
         const componentAnalysis = JSON.parse(output, (key, value) => {
           if (Array.isArray(value)) {
             return value.map((v) => {
@@ -83,7 +73,7 @@ function webComponentsPlugin() {
         } else {
           webComponentsAnalysis.tags = webComponentsAnalysis.tags.concat(componentAnalysis.tags);
         }
-        // TODO css needs to be minified
+
         return {
           contents: newContent,
           loader: 'tsx',
