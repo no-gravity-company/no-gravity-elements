@@ -26,21 +26,18 @@ jobs:
           path: .storybook
           key: storybook-${{ github.sha }}
 
+      - name: Get branch code
+        id: get_branch_code
+        run: |
+          branch_name=$(echo "${{ github.ref }}" | sed 's|.*/||')
+          branch_code=$(echo $branch_name | sed -E 's/^([^_]+)_.*$/\1/')
+          echo "branch_code=$branch_code" >> $GITHUB_OUTPUT
+
       - name: Deploy Storybook with Chromatic
         id: deploy_sb
         run: |
           yarn build-storybook
-          yarn chromatic --exit-zero-on-changes -d storybook-static/ --project-token=chpt_897e9515a245d84
-
-      - name: Save storybook URL as txt file
-        run: |
-          echo "${{ steps.deploy_sb.outputs.storybookUrl }}" >> storybook-url.txt
-
-      - name: Upload URL artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: storybook-url
-          path: storybook-url.txt
+          yarn chromatic --exit-zero-on-changes -d storybook-static/ --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }} --branch-name=${{ steps.get_branch_code.outputs.branch_code }}
 
       - name: Get PR number
         id: get_pr_number
@@ -55,6 +52,10 @@ jobs:
             echo "has_pr=false" >> $GITHUB_OUTPUT
           fi
 
+      - name: Update step summary
+        run: |
+          echo "Storybook URL - ${{steps.chromatic.outputs.componentCount}}" >> $GITHUB_STEP_SUMMARY
+
       - name: Comment PR
         if: ${{ steps.get_pr_number.outputs.has_pr == 'true' }}
         uses: thollander/actions-comment-pull-request@v2
@@ -62,4 +63,4 @@ jobs:
           pr_number: ${{ steps.get_pr_number.outputs.pr_number }}
           message: |
             Storybook URL:
-            ${{ steps.deploy_sb.outputs.storybook_url }}
+            https://${{ steps.get_branch_code.outputs.branch_code }}--${{ secrets.CHROMATIC_APP_ID }}.chromatic.com/
