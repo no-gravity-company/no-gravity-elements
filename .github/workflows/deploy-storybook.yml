@@ -27,6 +27,7 @@ jobs:
           key: storybook-${{ github.sha }}
 
       - name: Deploy Storybook with Chromatic
+        id: deploy_sb
         run: |
           yarn build-storybook
           yarn chromatic --exit-zero-on-changes -d storybook-static/ --project-token=chpt_897e9515a245d84
@@ -61,4 +62,4 @@ jobs:
           pr_number: ${{ steps.get_pr_number.outputs.pr_number }}
           message: |
             Storybook URL:
-            ${{ steps.read-url.outputs.storybook_url }}
+            ${{ steps.deploy_sb.outputs.storybook_url }}
