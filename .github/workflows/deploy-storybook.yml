@@ -20,6 +20,12 @@ jobs:
       - name: Set git config
         uses: ./.github/actions/set-git-config
 
+      - name: Use Storybook cache
+        uses: actions/cache@v3
+        with:
+          path: .storybook
+          key: storybook-${{ github.sha }}
+
       - name: Deploy Storybook with Chromatic
         run: |
           yarn build-storybook
