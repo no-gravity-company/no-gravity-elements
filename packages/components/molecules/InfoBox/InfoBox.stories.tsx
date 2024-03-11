@@ -16,11 +16,14 @@ export default {
       // Set the tag name of the Web Component
       tagName: 'nge-info-box',
     },
+    actions: {
+      handles: ['ButtonClick'],
+    },
   },
   controls: {},
 };
 export const Default: Story<InfoBoxProps> = (args): any => {
-  return html` <nge-info-box {...props} onButtonClick={() => action('onButtonClick')()} /> `;
+  return html` <nge-info-box /> `;
 };
 
 Default.args = {
