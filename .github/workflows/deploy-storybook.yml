@@ -8,8 +8,8 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT }}
     steps:
-      - name: Check out code
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.ACTIONS_PAT }}
           fetch-depth: 0
@@ -20,14 +20,14 @@ jobs:
       - name: Set git config
         uses: ./.github/actions/set-git-config
 
-      - name: Deploy Storybook with Chromatic
-        id: deploy_sb
-        # uses: chromaui/action@v1
-        # with:
-        #   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-        #   token: ${{ secrets.ACTIONS_PAT }}
-        run: |
-          npx chromatic --project-token=chpt_897e9515a245d84
+      - name: Install dependencies
+        run: yarn install --immutable --immutable-cache --check-cache
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: chpt_897e9515a245d84
+          token: ${{ secrets.ACTIONS_PAT }}
 
       - name: Save storybook URL as txt file
         run: |
