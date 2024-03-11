@@ -30,14 +30,18 @@ jobs:
         id: get_branch_code
         run: |
           branch_name=$(echo "${{ github.ref }}" | sed 's|.*/||')
-          branch_code=$(echo $branch_name | sed -E 's/^([^_]+)_.*$/\1/')
+          branch_code=$(echo $branch_name | sed -E 's/^([^_]+)_.*$/\1/' | tr '[:upper:]' '[:lower:]')
           echo "branch_code=$branch_code" >> $GITHUB_OUTPUT
 
       - name: Deploy Storybook with Chromatic
         id: deploy_sb
         run: |
           yarn build-storybook
-          yarn chromatic --exit-zero-on-changes -d storybook-static/ --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }} --branch-name=${{ steps.get_branch_code.outputs.branch_code }}
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            yarn chromatic --exit-zero-on-changes -d storybook-static/ --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          else
+            yarn chromatic --exit-zero-on-changes -d storybook-static/ --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }} --branch-name=${{ steps.get_branch_code.outputs.branch_code }}
+          fi
 
       - name: Get PR number
         id: get_pr_number
@@ -53,14 +57,20 @@ jobs:
           fi
 
       - name: Update step summary
+        env:
+          APP_ID: ${{ secrets.CHROMATIC_APP_ID }}
         run: |
-          echo "Storybook URL - ${{steps.chromatic.outputs.componentCount}}" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            echo "Storybook URL - https://${{ steps.get_branch_code.outputs.branch_code }}--$APP_ID.chromatic.com/" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "Storybook URL - https://${{ steps.get_branch_code.outputs.branch_code }}--$APP_ID.chromatic.com/" >> $GITHUB_STEP_SUMMARY
+          fi
 
-      - name: Comment PR
-        if: ${{ steps.get_pr_number.outputs.has_pr == 'true' }}
-        uses: thollander/actions-comment-pull-request@v2
-        with:
-          pr_number: ${{ steps.get_pr_number.outputs.pr_number }}
-          message: |
-            Storybook URL:
-            https://${{ steps.get_branch_code.outputs.branch_code }}--${{ secrets.CHROMATIC_APP_ID }}.chromatic.com/
+      # - name: Comment PR
+      #   if: ${{ steps.get_pr_number.outputs.has_pr == 'true' }}
+      #   uses: thollander/actions-comment-pull-request@v2
+      #   with:
+      #     pr_number: ${{ steps.get_pr_number.outputs.pr_number }}
+      #     message: |
+      #       Storybook URL:
+      #       https://${{ steps.get_branch_code.outputs.branch_code }}--${{ secrets.CHROMATIC_APP_ID }}.chromatic.com/

@@ -25,8 +25,7 @@
     "test": "jest",
     "coverage": "http-server -o coverage/lcov-report",
     "test:coverage": "yarn test && yarn coverage",
-    "postinstall": "npx husky install",
-    "chromatic": "npx chromatic --project-token=chpt_897e9515a245d84"
+    "postinstall": "npx husky install"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
