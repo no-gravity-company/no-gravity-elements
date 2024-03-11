@@ -1,0 +1,53 @@
+name: Deploy storybook
+on: workflow_call
+jobs:
+  deploy-storybook:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    env:
+      GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT }}
+      APP_ID: 65edfeddcbe58bb4d259538f
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.ACTIONS_PAT }}
+          fetch-depth: 0
+
+      - name: Setup job
+        uses: ./.github/actions/setup-job
+
+      - name: Set git config
+        uses: ./.github/actions/set-git-config
+
+      - name: Use Storybook cache
+        uses: actions/cache@v3
+        with:
+          path: .storybook
+          key: storybook-${{ github.sha }}
+
+      - name: Get branch code
+        id: get_branch_code
+        run: |
+          branch_name=$(echo "${{ github.ref }}" | sed 's|.*/||')
+          branch_code=$(echo $branch_name | sed -E 's/^([^_]+)_.*$/\1/' | tr '[:upper:]' '[:lower:]')
+          echo "branch_code=$branch_code" >> $GITHUB_OUTPUT
+
+      - name: Deploy Storybook with Chromatic
+        id: deploy_sb
+        run: |
+          yarn build-storybook
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            yarn chromatic --exit-zero-on-changes -d storybook-static/ --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          else
+            yarn chromatic --exit-zero-on-changes -d storybook-static/ --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }} --branch-name=${{ steps.get_branch_code.outputs.branch_code }}
+          fi
+
+      - name: Update step summary
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            echo "Storybook URL - https://${{ steps.get_branch_code.outputs.branch_code }}--$APP_ID.chromatic.com/" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "Storybook URL - https://${{ steps.get_branch_code.outputs.branch_code }}--$APP_ID.chromatic.com/" >> $GITHUB_STEP_SUMMARY
+          fi

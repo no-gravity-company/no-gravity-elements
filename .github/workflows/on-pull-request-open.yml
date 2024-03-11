@@ -1,0 +1,30 @@
+name: Branch push workflow
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  add-storybook-url:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    env:
+      GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT }}
+    steps:
+      - name: Get branch code
+        id: get_branch_code
+        run: |
+          branch_name=$(echo "${{ github.head_ref }}" | sed 's|.*/||')
+          branch_code=$(echo $branch_name | sed -E 's/^([^_]+)_.*$/\1/' | tr '[:upper:]' '[:lower:]')
+          echo "branch_code=$branch_code" >> $GITHUB_OUTPUT
+
+      - name: Update PR description
+        uses: bcgov-nr/action-pr-description-add@main
+        with:
+          limit_to_pr_opened: "true"
+          github_token: "${{ secrets.ACTIONS_PAT }}"
+          add_markdown: |
+            ---
+
+            [Branch Storybook](https://${{ steps.get_branch_code.outputs.branch_code }}--65edfeddcbe58bb4d259538f.chromatic.com)

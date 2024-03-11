@@ -1,4 +1,5 @@
 # no-gravity-elements
+[![Storybook](https://img.shields.io/badge/Storybook-visit-ff69b4)](https://main--65edfeddcbe58bb4d259538f.chromatic.com)
 
 ## Automatic versioning and changelog
 This repo leverages Lerna to handle automatic versioning and changelog generation. Upon merging a feature branch into main, Lerna will automatically bump the packages and update the changelog, and then publish the modified packages.
