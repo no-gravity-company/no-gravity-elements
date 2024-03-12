@@ -4,3 +4,7 @@ README.md
 yarn.lock
 LICENSE
 *.yml
+.vscode
+coverage
+source-map-results
+storybook-static
