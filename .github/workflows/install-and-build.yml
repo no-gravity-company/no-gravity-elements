@@ -1,7 +1,7 @@
-name: Build
+name: Install and build
 on: workflow_call
 jobs:
-  build:
+  install-and-build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
@@ -9,6 +9,9 @@ jobs:
 
       - name: Setup job
         uses: ./.github/actions/setup-job
+
+      - name: Install Dependencies
+        run: yarn
 
       - name: Build packages
         run: yarn build
