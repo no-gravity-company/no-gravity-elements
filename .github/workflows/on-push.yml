@@ -1,23 +1,24 @@
-name: Branch push workflow
-
-on:
-  push:
-    branches-ignore:
-      - main
-
+name: On push workflow
+on: push
 jobs:
   install-and-build:
     uses: ./.github/workflows/install-and-build.yml
 
   deploy-storybook:
-    needs: build
+    needs: install-and-build
     uses: ./.github/workflows/deploy-storybook.yml
     secrets: inherit
 
   unit-test:
-    needs: build
+    needs: install-and-build
     uses: ./.github/workflows/unit-test.yml
 
   integration-test:
-    needs: build
+    needs: install-and-build
     uses: ./.github/workflows/integration-test.yml
+
+  publish:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs: [unit-test, integration-test]
+    uses: ./.github/workflows/publish.yml
+    secrets: inherit
