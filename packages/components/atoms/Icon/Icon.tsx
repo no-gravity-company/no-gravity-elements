@@ -36,19 +36,19 @@ const Icon: FunctionComponent<IconProps> = ({ name, size }: IconProps) => {
 
   useEffect(() => {
     const fetchSVG = async () => {
-      try {
-        const response = await fetch(
+      //try {
+      /*const response = await fetch(
           `https://firebasestorage.googleapis.com/v0/b/no-gravity-76bb2.appspot.com/o/icons%2F${name}.svg?alt=media`,
         );
-        const svgText = await response.text();
-        //const domParser = new DOMParser();
-        //const svgDoc = domParser.parseFromString(svgText, 'image/svg+xml');
-        const svgElem = convertDocToSVGElem((<svg />) as any);
-        setSVGComponent(svgElem);
-      } catch (error) {
-        // eslint-disable-next-line
-        console.error('Error fetching SVG:', error);
-      }
+        const svgText = await response.text();*/
+      //const domParser = new DOMParser();
+      //const svgDoc = domParser.parseFromString(svgText, 'image/svg+xml');
+      const svgElem = convertDocToSVGElem((<svg />) as any);
+      setSVGComponent(svgElem);
+      //} catch (error) {
+      // eslint-disable-next-line
+      // console.error('Error fetching SVG:', error);
+      //}
     };
 
     if (name) fetchSVG();
