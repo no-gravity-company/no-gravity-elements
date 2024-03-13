@@ -4,12 +4,6 @@ description: "Sets up node environment for a job"
 runs:
   using: "composite"
   steps:
-    - name: Use modules cache
-      uses: actions/cache@v3
-      with:
-        path: '**/node_modules'
-        key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
-
     - name: Set up node
       uses: actions/setup-node@v3
       with:
