@@ -2,7 +2,7 @@ import { Fragment, FunctionComponent, h } from 'preact';
 
 import { IconProps } from '@atoms/Icon/types';
 
-import { useFetchSVG } from '@hooks/useFetchSVG';
+import useFetchSVG from '@hooks/useFetchSVG';
 
 import { IconSizes } from '@types';
 

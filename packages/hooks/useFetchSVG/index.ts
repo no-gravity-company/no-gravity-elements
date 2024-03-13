@@ -1,1 +1,3 @@
-export { useFetchSVG } from '@hooks/useFetchSVG/useFetchSVG';
+import { useFetchSVG } from '@hooks/useFetchSVG/useFetchSVG';
+
+export default useFetchSVG;
