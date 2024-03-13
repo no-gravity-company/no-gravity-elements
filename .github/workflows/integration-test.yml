@@ -22,8 +22,6 @@ jobs:
           path: .storybook
           key: storybook-${{ github.sha }}
       
-      - run: yarn install
-
       - name: Build Storybook
         run: yarn build-storybook
 
