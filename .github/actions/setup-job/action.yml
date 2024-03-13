@@ -12,6 +12,7 @@ runs:
 
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
+      shell: bash
       run: echo "::set-output name=dir::$(yarn cache dir)"
 
     - name: Cache node modules
@@ -21,8 +22,7 @@ runs:
         cache-name: cache-node-modules
       with:
         path: $ {{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-build-${{ env.cache-name }}\
-        -${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
         restore-keys:
           ${{ runner.os }}-build-${{ env.cache-name }}-
           ${{ runner.os }}-build-
@@ -31,9 +31,11 @@ runs:
     - if: ${{ steps.cache-yarn.outputs.cache-hit != 'true' }}
       name: List the state of node modules
       continue-on-error: true
+      shell: bash
       run: yarn list
 
     - name: Install dependencies
+      shell: bash
       run: yarn install
 
     - name: Use build cache
