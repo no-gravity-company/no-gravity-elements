@@ -7,8 +7,8 @@ runs:
     - name: Use modules cache
       uses: actions/cache@v3
       with:
-        path: '**/node_modules'
-        key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
+        path: 'packages/node_modules'
+        key: modules-${{ github.sha }}
 
     - name: Set up node
       uses: actions/setup-node@v3
