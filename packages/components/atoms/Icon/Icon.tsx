@@ -1,7 +1,8 @@
-import { Fragment, FunctionComponent, h, VNode } from 'preact';
-import { useEffect, useState } from 'preact/hooks';
+import { Fragment, FunctionComponent, h } from 'preact';
 
 import { IconProps } from '@atoms/Icon/types';
+
+import useFetchSVG from '@hooks/useFetchSVG';
 
 import { IconSizes } from '@types';
 
@@ -19,40 +20,8 @@ import { IconSizes } from '@types';
  * <nge-icon name="cross"></nge-icon>
  */
 
-const convertDocToSVGElem = (node: HTMLElement): VNode | string | null | undefined => {
-  if (node.nodeType === 3) return node.nodeValue;
-  if (node.nodeType === 1) {
-    const children = (Array.from(node.childNodes) as HTMLElement[]).map(convertDocToSVGElem);
-    const props = Object.fromEntries(
-      Array.from(node.attributes).map((attr) => [attr.nodeName, attr.nodeValue]),
-    );
-    return h(node.nodeName, props, children);
-  }
-  return null;
-};
-
 const Icon: FunctionComponent<IconProps> = ({ name, size }: IconProps) => {
-  const [svgComponent, setSVGComponent] = useState<string | VNode | null | undefined>(null);
-
-  useEffect(() => {
-    const fetchSVG = async () => {
-      //try {
-      /*const response = await fetch(
-          `https://firebasestorage.googleapis.com/v0/b/no-gravity-76bb2.appspot.com/o/icons%2F${name}.svg?alt=media`,
-        );
-        const svgText = await response.text();*/
-      //const domParser = new DOMParser();
-      //const svgDoc = domParser.parseFromString(svgText, 'image/svg+xml');
-      const svgElem = convertDocToSVGElem((<svg />) as any);
-      setSVGComponent(svgElem);
-      //} catch (error) {
-      // eslint-disable-next-line
-      // console.error('Error fetching SVG:', error);
-      //}
-    };
-
-    if (name) fetchSVG();
-  }, [name]);
+  const svgComponent = useFetchSVG(name);
 
   return (
     <Fragment>
