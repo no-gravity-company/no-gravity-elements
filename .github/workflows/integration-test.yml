@@ -13,8 +13,8 @@ jobs:
       - name: Setup job
         uses: ./.github/actions/setup-job
 
-      - name: Install deps
-        run: yarn install
+      - name: Install Cypress
+        run: yarn add cypress -W -D
 
       - name: Use Storybook cache
         uses: actions/cache@v3
