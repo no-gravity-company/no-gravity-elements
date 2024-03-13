@@ -65,16 +65,11 @@ describe('useFetchSVG Hook', () => {
   });
 
   it('should not fetch SVG if name is empty', async () => {
-    let wrapper;
-
     function TestComponent() {
       const svgComponent = useFetchSVG('');
       return <div>{svgComponent}</div>;
     }
-
-    await act(async () => {
-      wrapper = mount(<TestComponent />);
-    });
+    mount(<TestComponent />);
 
     expect(global.fetch).not.toHaveBeenCalled();
   });

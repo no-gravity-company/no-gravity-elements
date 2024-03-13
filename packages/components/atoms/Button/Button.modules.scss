@@ -2,7 +2,11 @@
 
 @mixin button-styles {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  height: baseUnit(5);
+  column-gap: baseUnit(1);
   padding: baseUnit(1.25) baseUnit(2);
   border-radius: baseUnit(0.75);
   cursor: pointer;
