@@ -12,3 +12,21 @@ export enum TypographySizes {
   legal = 'legal',
   button = 'button',
 }
+
+export enum IconSizes {
+  extraSmall = 'extra-small',
+  small = 'small',
+  medium = 'medium',
+  regular = 'regular',
+  large = 'large',
+  extraLarge = 'extra-large',
+}
+
+export enum IconNames {
+  angleLeft = 'angle-left',
+  angleRight = 'angle-right',
+  cross = 'cross',
+  eye = 'eye',
+  menuBurger = 'menu-burger',
+  search = 'search',
+}
