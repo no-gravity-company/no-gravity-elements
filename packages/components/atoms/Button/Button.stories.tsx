@@ -6,6 +6,7 @@ import { ButtonProps, ButtonTypes } from '@atoms/Button/types';
 import { IconNames } from '@types';
 
 import '@no-gravity-elements/button';
+import '@no-gravity-elements/icon';
 
 type CustomArgs = ButtonProps & { text: string };
 
