@@ -13,8 +13,5 @@ jobs:
       - name: Setup job
         uses: ./.github/actions/setup-job
 
-      - name: Install deps
-        run: yarn install
-
       - name: Run unit tests for ${{ matrix.folder }}
         run: yarn test packages/components/${{ matrix.folder }} --passWithNoTests

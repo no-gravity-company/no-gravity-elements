@@ -4,8 +4,8 @@ import { ButtonProps, ButtonTypes } from '@atoms/Button/types';
 
 import { IconSizes, TypographySizes } from '@types';
 
-import '@no-gravity-elements/icon';
 import '@no-gravity-elements/typography';
+import '@no-gravity-elements/icon';
 /**
  * <nge-button>
  *
