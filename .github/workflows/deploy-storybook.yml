@@ -27,6 +27,9 @@ jobs:
           path: .storybook
           key: storybook-${{ github.sha }}
 
+      - name: Install
+        run: yarn install 
+
       - name: Get branch code
         id: get_branch_code
         run: |
