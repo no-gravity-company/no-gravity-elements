@@ -29,6 +29,11 @@ module.exports = {
       },
     });
 
+    config.esbuildLoaderOptions = {
+      loader: 'tsx',
+      exclude: /@no-gravity-elements\/*/,
+    };
+
     config.resolve.alias = {
       ...config.resolve.alias,
       '@atoms': path.resolve(__dirname, '../packages/components/atoms'),
