@@ -4,8 +4,7 @@ import { html } from 'lit-html';
 import { LinkProps } from '@atoms/Link/types';
 
 import { TypographySizes } from '@types';
-
-import '@no-gravity-elements/link';
+import '@atoms/Icon/lib';
 
 type CustomArgs = LinkProps & { text: string };
 
