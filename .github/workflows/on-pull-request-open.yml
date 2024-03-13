@@ -1,4 +1,4 @@
-name: Branch push workflow
+name: Pull request opened workflow
 
 on:
   pull_request:
