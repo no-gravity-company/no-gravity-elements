@@ -3,7 +3,10 @@ import { html } from 'lit-html';
 
 import { ButtonProps, ButtonTypes } from '@atoms/Button/types';
 
+import { IconNames } from '@types';
+
 import '@no-gravity-elements/button';
+import '@no-gravity-elements/icon';
 
 type CustomArgs = ButtonProps & { text: string };
 
@@ -27,8 +30,16 @@ const meta: Meta<CustomArgs> = {
         defaultValue: { summary: ButtonTypes.primary },
       },
     },
+    icon: {
+      description: 'Button Icon name',
+      options: [undefined, ...Object.values(IconNames)],
+      table: {
+        defaultValue: { summary: 'undefined' },
+      },
+    },
   },
-  render: ({ type, text }) => html` <nge-button type=${type}>${text}</nge-button> `,
+  render: ({ type, text, icon }) =>
+    html` <nge-button type=${type} icon=${icon}>${text}</nge-button> `,
 };
 
 export default meta;
@@ -38,5 +49,6 @@ export const Default: Story = {
   args: {
     type: ButtonTypes.primary,
     text: 'Button',
+    icon: undefined,
   },
 };

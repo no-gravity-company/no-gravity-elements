@@ -20,12 +20,10 @@ const meta: Meta<CustomArgs> = {
   argTypes: {
     name: {
       description: 'Icon name',
-      control: 'select',
       options: Object.values(IconNames),
     },
     size: {
       description: 'Icon size',
-      control: 'select',
       options: Object.values(IconSizes),
       table: {
         defaultValue: { summary: IconSizes.regular },

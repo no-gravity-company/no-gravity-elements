@@ -17,7 +17,7 @@ describe('Button', () => {
     ${undefined}
   `('should render correctly with the provided size and tag', ({ type }) => {
     const wrapper = shallow(<Button type={type}>Button</Button>);
-    const element = wrapper.find(type || 'primary');
-    expect(element).not.toBe(null);
+    const element = wrapper.find(`button.${type || 'primary'}`);
+    expect(element.exists()).toBe(true);
   });
 });

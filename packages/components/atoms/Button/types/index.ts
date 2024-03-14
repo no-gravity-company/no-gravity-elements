@@ -1,3 +1,5 @@
+import { IconNames } from '@types';
+
 export enum ButtonTypes {
   primary = 'primary',
   secondary = 'secondary',
@@ -9,4 +11,5 @@ export enum ButtonTypes {
 
 export interface ButtonProps {
   type?: ButtonTypes;
+  icon?: IconNames;
 }
