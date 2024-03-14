@@ -40,6 +40,7 @@ module.exports = {
       '@hooks': 'packages/hooks',
       '@utils': 'packages/utils',
       '@types': 'packages/types',
+      '@hooks': 'packages/hooks',
       '@context': 'packages/context',
       '@const': 'packages/const',
     };

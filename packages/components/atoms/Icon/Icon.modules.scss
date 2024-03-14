@@ -1,0 +1,47 @@
+@import '../../../stylesheets/base/variables';
+
+:host {
+  display: contents;
+  span {
+    display: block;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    svg:not([fill='none']),
+    svg [fill]:not([fill='none']) {
+      fill: var(--color, #{$primary-color}) !important;
+    }
+
+    svg path[stroke] {
+      stroke: var(--color, #{$primary-color}) !important;
+    }
+
+    &.extra-small {
+      width: baseUnit(1.5);
+    }
+
+    &.small {
+      width: baseUnit(2);
+    }
+
+    &.medium {
+      width: baseUnit(2.5);
+    }
+
+    &.regular {
+      width: baseUnit(3);
+    }
+
+    &.large {
+      width: baseUnit(4);
+    }
+
+    &.extra-large {
+      width: baseUnit(6);
+    }
+  }
+}

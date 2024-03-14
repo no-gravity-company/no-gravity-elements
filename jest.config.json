@@ -25,7 +25,8 @@
     "^@templates/(.*)$": "<rootDir>/packages/components/templates/$1",
     "^@pages/(.*)$": "<rootDir>/packages/components/pages/$1",
     "^@components/(.*)$": "<rootDir>/packages/components/$1",
-    "^@types": "<rootDir>/packages/types"
+    "^@types": "<rootDir>/packages/types",
+    "^@hooks/(.*)$": "<rootDir>/packages/hooks/$1"
   },
   "testMatch": ["**/?(*.)(spec).ts?(x)"],
   "moduleDirectories": ["node_modules"],
@@ -33,7 +34,7 @@
   "setupFilesAfterEnv": ["./jest.setup.ts"],
   "snapshotSerializers": ["enzyme-to-json/serializer"],
   "collectCoverage": true,
-  "collectCoverageFrom": ["./packages/components/**/*.tsx"],
+  "collectCoverageFrom": ["./packages/components/**/*.tsx", "./packages/hooks/**/*.tsx"],
   "coverageThreshold": {
     "global": {
       "lines": 0,

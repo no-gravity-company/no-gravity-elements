@@ -21,7 +21,7 @@ jobs:
         with:
           path: .storybook
           key: storybook-${{ github.sha }}
-
+      
       - name: Build Storybook
         run: yarn build-storybook
 

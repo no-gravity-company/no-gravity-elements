@@ -20,7 +20,7 @@
       "@templates/*": ["packages/components/templates/*"],
       "@pages/*": ["packages/components/pages/*"],
       "@components/*": ["packages/components/*"],
-      "@hooks/*": ["packages/hooks"],
+      "@hooks/*": ["packages/hooks/*"],
       "@utils/*": ["packages/utils"],
       "@types": ["packages/types/"],
       "@context/*": ["packages/context"],
