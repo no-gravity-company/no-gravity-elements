@@ -7,7 +7,16 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "ignorePatterns": ["**/*.js", "cypress.config.ts", "**/*.integration.spec.ts", "**/*.d.ts"],
+  "ignorePatterns": [
+    "**/*.js",
+    "cypress.config.ts",
+    "**/*.integration.spec.ts",
+    "**/*.d.ts",
+    ".vscode/*",
+    "coverage/*",
+    "source-map-results/*",
+    "storybook-static/*"
+  ],
   "rules": {
     "no-unused-vars": "warn",
     "no-unused-expressions": "warn",
