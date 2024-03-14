@@ -41,12 +41,6 @@ We use yarn as package manager. Just run
 yarn
 ```
 
-### Install husky
-We use husky to run a precommit hook that checks typings, lints and formats code.
-```
-yarn husky install
-```
-
 ### Branch names
 Branches must be prefixed with the code `NGE-XXX_` where the Xs are the issue code.
 
@@ -82,6 +76,8 @@ Upon opening a PR, another workflow will add the branch storybook link to the de
 ### Node version
 The node version is fixed in this repo, if you are experiencing issues you need to run `nvm use`. If you do not have the correct node version installed, you will need to run `nvm install` before that.
 
+### Husky
+We use husky to run a precommit hook that checks typings, lints and formats code. It is installed after running `yarn`.
 
 ### Automatic versioning and changelog
 We leverage Lerna to handle automatic versioning and changelog generation. Upon merging a feature branch into main, Lerna will automatically bump the packages and update the changelogs, and then publish the modified packages.
