@@ -20,6 +20,8 @@ jobs:
 
       - name: Set git config
         uses: ./.github/actions/set-git-config
+        with:
+          email: ${{ secrets.BOT_EMAIL }}
 
       - name: Use Storybook cache
         uses: actions/cache@v3
@@ -28,7 +30,7 @@ jobs:
           key: storybook-${{ github.sha }}
 
       - name: Install
-        run: yarn install 
+        run: yarn install
 
       - name: Get branch code
         id: get_branch_code
@@ -37,7 +39,7 @@ jobs:
           branch_code=$(echo $branch_name | sed -E 's/^([^_]+)_.*$/\1/' | tr '[:upper:]' '[:lower:]')
           echo "branch_code=$branch_code" >> $GITHUB_OUTPUT
 
-      - name: Deploy Storybook with Chromatic
+      - name: Build and deploy Storybook
         id: deploy_sb
         run: |
           yarn build-storybook
