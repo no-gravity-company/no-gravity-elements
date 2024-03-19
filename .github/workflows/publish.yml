@@ -50,5 +50,5 @@ jobs:
 
       - name: Publish packages
         run: |
-          npx lerna publish from-package --yes --no-git-tag-version
+          npx lerna publish from-package --yes --no-verify-access --no-git-tag-version
 
