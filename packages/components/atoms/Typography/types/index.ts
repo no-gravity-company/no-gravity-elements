@@ -1,4 +1,4 @@
-import { TypographySizes } from 'packages/types';
+import { TypographySizes } from '@no-gravity-elements/types';
 
 export interface TypographyProps {
   tag: string;

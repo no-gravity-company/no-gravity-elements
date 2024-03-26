@@ -1,11 +1,10 @@
 import { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit-html';
 
-import { IconProps } from '@atoms/Icon/types';
-
-import { IconNames, IconSizes } from '@types';
-
 import '@no-gravity-elements/icon';
+import { IconNames, IconSizes } from '@no-gravity-elements/types';
+
+import { IconProps } from './types';
 
 type CustomArgs = IconProps & { text: string };
 

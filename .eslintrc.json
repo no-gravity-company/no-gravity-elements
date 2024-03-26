@@ -34,6 +34,7 @@
     "max-params": ["warn", 4],
     "max-depth": ["error", 5],
     "@limegrass/import-alias/import-alias": "warn",
+    "@typescript-eslint/no-namespace": "off",
     "simple-import-sort/imports": [
       "warn",
       {
@@ -60,9 +61,9 @@
             "(/context/)(?:(?!.styles|.scss|.const|/types/).)*$"
           ],
           // Constants, types and other non-matched imports
-          ["@const", ".const", "@types", "/types/", "^\\u0000"],
+          ["@const", ".const", "/types/", "^\\u0000"],
           // NGE web components
-          ["@no-gravity-elements", "/lib/"],
+          ["@no-gravity-elements", "@no-gravity-elements/types", "/lib/"],
           // Styles
           [".styles", ".scss"]
         ]
@@ -81,6 +82,15 @@
       "rules": {
         "no-console": "off",
         "no-magic-numbers": "off"
+      }
+    },
+    {
+      "files": ["./packages/types/index.ts"],
+      "rules": {
+        "no-unused-vars": "off",
+        "no-shadow": "off",
+        "no-undef": "off",
+        "@typescript-eslint/ban-ts-comment": "off"
       }
     }
   ]

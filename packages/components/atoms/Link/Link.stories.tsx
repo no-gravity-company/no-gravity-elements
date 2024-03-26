@@ -1,11 +1,10 @@
 import { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit-html';
 
-import { LinkProps } from '@atoms/Link/types';
-
-import { TypographySizes } from '@types';
-
 import '@no-gravity-elements/link';
+import { TypographySizes } from '@no-gravity-elements/types';
+
+import { LinkProps } from './types';
 
 type CustomArgs = LinkProps & { text: string };
 
