@@ -1,9 +1,9 @@
 import { h } from 'preact';
 import { shallow } from 'enzyme';
 
-import Link from '@atoms/Link/Link';
+import { TypographySizes } from '@no-gravity-elements/types';
 
-import { TypographySizes } from '@types';
+import Link from './Link';
 
 describe('Link', () => {
   it('should match the snapshot', () => {

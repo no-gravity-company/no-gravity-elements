@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { shallow } from 'enzyme';
 
-import Card from '@atoms/Card/Card';
+import Card from './Card';
 
 describe('Card', () => {
   it('should match the snapshot', () => {

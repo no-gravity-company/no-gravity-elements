@@ -14,19 +14,26 @@
     "noEmit": true,
     "skipLibCheck": true,
     "paths": {
-      "@atoms/*": ["packages/components/atoms/*"],
-      "@molecules/*": ["packages/components/molecules/*"],
-      "@organisms/*": ["packages/components/organisms/*"],
-      "@templates/*": ["packages/components/templates/*"],
-      "@pages/*": ["packages/components/pages/*"],
-      "@components/*": ["packages/components/*"],
+      // "@atoms/*": ["packages/components/atoms/*"],
+      // "@molecules/*": ["packages/components/molecules/*"],
+      // "@organisms/*": ["packages/components/organisms/*"],
+      // "@templates/*": ["packages/components/templates/*"],
+      // "@pages/*": ["packages/components/pages/*"],
+      // "@components/*": ["packages/components/*"],
       "@hooks/*": ["packages/hooks/*"],
       "@utils/*": ["packages/utils"],
-      "@types": ["packages/types/index"],
       "@context/*": ["packages/context"],
       "@const/*": ["packages/const"],
       "react": ["./node_modules/preact/compat/"],
-      "react-dom": ["./node_modules/preact/compat/"]
+      "react-dom": ["./node_modules/preact/compat/"],
+      "@no-gravity-elements/types": ["packages/types/index"]
+      // "@no-gravity-elements/*": [
+      //   "packages/components/atoms/*",
+      //   "packages/components/molecules/*",
+      //   "packages/components/organisms/*",
+      //   "packages/components/templates/*",
+      //   "packages/components/pages/*"
+      // ]
     },
     "jsxFragmentFactory": "Fragment",
     "baseUrl": "./",

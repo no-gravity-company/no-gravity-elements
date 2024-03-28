@@ -1,10 +1,8 @@
 import { Fragment, FunctionComponent, h } from 'preact';
 
-import { IconProps } from '@atoms/Icon/types';
-
 import useFetchSVG from '@hooks/useFetchSVG';
 
-import { IconSizes } from '@types';
+import { IconProps } from './types';
 
 /**
  * <nge-icon>
@@ -24,9 +22,7 @@ const Icon: FunctionComponent<IconProps> = ({ name, size }: IconProps) => {
   const svgComponent = useFetchSVG(name);
 
   return (
-    <Fragment>
-      {svgComponent && <span className={size || IconSizes.regular}>{svgComponent}</span>}
-    </Fragment>
+    <Fragment>{svgComponent && <span className={size || 'regular'}>{svgComponent}</span>}</Fragment>
   );
 };
 

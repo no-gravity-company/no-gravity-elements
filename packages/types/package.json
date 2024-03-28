@@ -1,20 +1,14 @@
 {
-  "name": "@no-gravity-elements/link",
-  "version": "1.0.11",
-  "description": "No Gravity Element",
+  "name": "@no-gravity-elements/types",
+  "version": "1.0.6",
+  "description": "No Gravity Elements typings",
   "author": "No Gravity Company",
   "private": false,
   "homepage": "https://github.com/no-gravity-company/no-gravity-elements#readme",
   "license": "ISC",
-  "main": "lib/index.js",
-  "typings": "types/index.ts",
-  "directories": {
-    "lib": "lib"
-  },
+  "typings": "index.ts",
   "files": [
-    "lib/index.js",
-    "lib/index.js.map",
-    "types/index.ts"
+    "index.ts"
   ],
   "repository": {
     "type": "git",

@@ -21,7 +21,7 @@
     "e2e": "cypress run",
     "format": "yarn prettier --write .",
     "link-tools": "lerna exec -- yarn link",
-    "unlink-tools": "lerna exec -- yarn link",
+    "unlink-tools": "lerna exec -- yarn unlink",
     "test": "jest",
     "coverage": "http-server -o coverage/lcov-report",
     "test:coverage": "yarn test && yarn coverage",

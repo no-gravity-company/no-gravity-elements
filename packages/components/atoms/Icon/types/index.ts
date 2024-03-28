@@ -1,4 +1,4 @@
-import { IconNames, IconSizes } from '@types';
+import { IconNames, IconSizes } from '@no-gravity-elements/types';
 
 export interface IconProps {
   name: IconNames;

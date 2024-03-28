@@ -1,11 +1,8 @@
 import { Fragment, FunctionComponent, h } from 'preact';
 
-import { ButtonProps, ButtonTypes } from '@atoms/Button/types';
+import { ButtonTypes, IconSizes, TypographySizes } from '@no-gravity-elements/types';
 
-import { IconSizes, TypographySizes } from '@types';
-
-import '@no-gravity-elements/typography';
-import '@no-gravity-elements/icon';
+import { ButtonProps } from './types';
 /**
  * <nge-button>
  *

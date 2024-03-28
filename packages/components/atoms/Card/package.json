@@ -1,27 +1,26 @@
 {
   "name": "@no-gravity-elements/card",
-  "version": "1.0.8",
+  "version": "1.0.11",
   "description": "No Gravity Element",
-  "author": "No Gravity Team",
+  "author": "No Gravity Company",
   "private": false,
   "homepage": "https://github.com/no-gravity-company/no-gravity-elements#readme",
   "license": "ISC",
   "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
+  "typings": "types/index.ts",
   "directories": {
     "lib": "lib"
   },
   "files": [
     "lib/index.js",
     "lib/index.js.map",
-    "types/index.d.ts"
+    "types/index.ts"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/no-gravity-company/no-gravity-elements.git"
   },
   "scripts": {
-    "build": "tsc --jsx react --emitDeclarationOnly --esModuleInterop --module ESNext --target ESNext --moduleResolution node --declaration --declarationDir ./lib/types src/*.ts && esbuild src/index.ts --bundle --outfile=lib/index.js --platform=node --target=es2018 --minify --sourcemap --external:react --external:react-dom",
     "publish-component": "yarn publish --access=public"
   },
   "bugs": {

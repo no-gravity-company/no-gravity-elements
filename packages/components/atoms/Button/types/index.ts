@@ -1,13 +1,4 @@
-import { IconNames } from '@types';
-
-export enum ButtonTypes {
-  primary = 'primary',
-  secondary = 'secondary',
-  destructive = 'destructive',
-  outline = 'outline',
-  ghost = 'ghost',
-  disabled = 'disabled',
-}
+import { ButtonTypes, IconNames } from '@no-gravity-elements/types';
 
 export interface ButtonProps {
   type?: ButtonTypes;

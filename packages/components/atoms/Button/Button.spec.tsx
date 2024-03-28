@@ -1,8 +1,9 @@
 import { h } from 'preact';
 import { shallow } from 'enzyme';
 
-import Button from '@atoms/Button/Button';
-import { ButtonTypes } from '@atoms/Button/types';
+import { ButtonTypes } from '@no-gravity-elements/types';
+
+import Button from './Button';
 
 describe('Button', () => {
   it('should match the snapshot', () => {

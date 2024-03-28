@@ -1,10 +1,9 @@
-import { h } from 'preact';
 import { Story } from '@storybook/preact';
 import { html } from 'lit-html';
 
-import { InfoBoxProps } from '@molecules/InfoBox/types';
-
 import '@no-gravity-elements/info-box';
+
+import { InfoBoxProps } from './types';
 
 export default {
   title: 'molecules/InfoBox',
@@ -22,7 +21,7 @@ export default {
   },
   controls: {},
 };
-export const Default: Story<InfoBoxProps> = (args): any => {
+export const Default: Story<InfoBoxProps> = (): any => {
   return html` <nge-info-box /> `;
 };
 

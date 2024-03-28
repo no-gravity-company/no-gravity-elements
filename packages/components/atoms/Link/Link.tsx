@@ -1,8 +1,7 @@
 import { Fragment, FunctionComponent, h } from 'preact';
 
-import { LinkProps } from '@atoms/Link/types';
+import { LinkProps } from './types';
 
-import '@no-gravity-elements/typography';
 /**
  * <nge-link>
  *

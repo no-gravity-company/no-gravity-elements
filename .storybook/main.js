@@ -39,10 +39,10 @@ module.exports = {
       '@components': 'packages/components',
       '@hooks': 'packages/hooks',
       '@utils': 'packages/utils',
-      '@types': 'packages/types',
       '@hooks': 'packages/hooks',
       '@context': 'packages/context',
       '@const': 'packages/const',
+      '@no-gravity-elements/types': 'packages/types',
     };
 
     return config;
