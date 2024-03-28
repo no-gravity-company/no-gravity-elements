@@ -23,7 +23,7 @@ declare global {
   }
 }
 
-export enum TypographySizes {
+export const enum TypographySizes {
   h1 = 'h1',
   h2 = 'h2',
   h3 = 'h3',
@@ -38,7 +38,7 @@ export enum TypographySizes {
   button = 'button',
 }
 
-export enum IconSizes {
+export const enum IconSizes {
   extraSmall = 'extra-small',
   small = 'small',
   medium = 'medium',
@@ -47,7 +47,7 @@ export enum IconSizes {
   extraLarge = 'extra-large',
 }
 
-export enum IconNames {
+export const enum IconNames {
   angleLeft = 'angle-left',
   angleRight = 'angle-right',
   cross = 'cross',
@@ -56,7 +56,7 @@ export enum IconNames {
   search = 'search',
 }
 
-export enum ButtonTypes {
+export const enum ButtonTypes {
   primary = 'primary',
   secondary = 'secondary',
   destructive = 'destructive',
