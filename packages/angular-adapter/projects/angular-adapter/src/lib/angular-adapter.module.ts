@@ -1,20 +1,14 @@
+
 import { NgModule } from '@angular/core';
 
-import { IconDirective, TypographyDirective } from './angular-adapter.directive';
-
-
-
+import { ButtonDirective, IconDirective, LinkDirective, TypographyDirective, InfoBoxDirective } from './angular-adapter.directive';
 
 @NgModule({
-  declarations: [
-    TypographyDirective,
-    IconDirective
-  ],
+  declarations: [ ButtonDirective, IconDirective, LinkDirective, TypographyDirective, InfoBoxDirective ],
   imports: [
   ],
-  exports: [
-    TypographyDirective,
-    IconDirective
-  ]
+  exports: [ ButtonDirective, IconDirective, LinkDirective, TypographyDirective, InfoBoxDirective ]
 })
 export class AngularAdapterModule { }
+
+  

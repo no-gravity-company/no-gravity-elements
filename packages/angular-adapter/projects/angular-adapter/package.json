@@ -1,11 +1,3 @@
 {
-  "name": "@no-gravity-elements/angular-adapter",
-  "version": "1.0.8",
-  "peerDependencies": {
-    "@angular/common": "^12.2.0",
-    "@angular/core": "^12.2.0"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  }
+  "name": "angular-adapter"
 }

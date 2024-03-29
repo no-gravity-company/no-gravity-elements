@@ -4,9 +4,12 @@
   "engines": {
     "node": "16.20.0"
   },
-  "workspaces": [
-    "packages/components/**/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/components/**"
+    ]
+  },
   "scripts": {
     "clean": "yarn cache clean --force",
     "hard-clean": "rm -rf node_modules && yarn cache clean --force",

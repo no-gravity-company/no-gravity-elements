@@ -1,14 +1,29 @@
 {
-  "name": "angular-adapter",
-  "version": "0.0.0",
+  "name": "@no-gravity-elements/angular-adapter",
+  "version": "1.0.13",
+  "description": "No Gravity Element library adapter for Angular",
+  "author": "No Gravity Company",
+  "homepage": "https://github.com/no-gravity-company/no-gravity-elements#readme",
+  "license": "ISC",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "main": "dist/angular-adapter/bundles/no-gravity-elements-angular-adapter.umd.js",
+  "typings": "dist/angular-adapter/no-gravity-elements-angular-adapter.d.ts",
+  "module": "dist/angular-adapter/fesm2015/no-gravity-elements-angular-adapter.js",
+  "es2015": "dist/angular-adapter/fesm2015/no-gravity-elements-angular-adapter.js",
+  "esm2015": "dist/angular-adapter/esm2015/no-gravity-elements-angular-adapter.js",
+  "fesm2015": "dist/angular-adapter/fesm2015/no-gravity-elements-angular-adapter.js",
+  "sideEffects": false,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "generate-adapter": "./node"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~12.2.0",
     "@angular/common": "~12.2.0",

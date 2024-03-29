@@ -1,22 +1,53 @@
+
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 
 import { Directive, HostBinding, Input } from '@angular/core';
 
-import * as Types from '@no-gravity-elements/types';
+import { TypographySizes, IconSizes, IconNames, ButtonTypes } from '@no-gravity-elements/types';
 
+  
 @Directive({
-    selector: 'nge-typography',
+  selector: 'nge-button',
 })
-export class TypographyDirective {
-    @HostBinding('attr.size') @Input() size?: Types.TypographySizes;
-    @HostBinding('attr.tag') @Input() tag?: string;
+export class ButtonDirective {
+  @HostBinding('attr.type') @Input() type?: ButtonTypes;
+  @HostBinding('attr.icon') @Input() icon?: IconNames;
 }
 
+    
 @Directive({
-    selector: 'nge-icon',
+  selector: 'nge-icon',
 })
 export class IconDirective {
-    @HostBinding('attr.name') @Input() name: Types.IconNames;
-    @HostBinding('attr.size') @Input() size?: Types.IconSizes;
+  @HostBinding('attr.name') @Input() name: IconNames;
+  @HostBinding('attr.size') @Input() size?: IconSizes;
 }
+
+    
+@Directive({
+  selector: 'nge-link',
+})
+export class LinkDirective {
+  @HostBinding('attr.href') @Input() href?: string;
+  @HostBinding('attr.size') @Input() size?: TypographySizes;
+}
+
+    
+@Directive({
+  selector: 'nge-typography',
+})
+export class TypographyDirective {
+  @HostBinding('attr.tag') @Input() tag: string;
+  @HostBinding('attr.size') @Input() size: TypographySizes;
+}
+
+    
+@Directive({
+  selector: 'nge-info-box',
+})
+export class InfoBoxDirective {
+  @HostBinding('attr.label') @Input() label: string;
+}
+
+    
