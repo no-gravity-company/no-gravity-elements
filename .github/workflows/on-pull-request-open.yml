@@ -11,6 +11,7 @@ jobs:
       pull-requests: write
     env:
       GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT }}
+      APP_ID: 65edfeddcbe58bb4d259538f
     steps:
       - name: Get branch code
         id: get_branch_code
@@ -27,4 +28,4 @@ jobs:
           add_markdown: |
             ---
 
-            [Branch Storybook](https://${{ steps.get_branch_code.outputs.branch_code }}--65edfeddcbe58bb4d259538f.chromatic.com)
+            [Branch Storybook](https://${{ steps.get_branch_code.outputs.branch_code }}--$APP_ID.chromatic.com)

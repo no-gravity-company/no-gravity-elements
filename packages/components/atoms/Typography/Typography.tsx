@@ -1,8 +1,8 @@
 import { Fragment, FunctionComponent, h, VNode } from 'preact';
 
-import { TypographyProps } from '@atoms/Typography/types';
+import { TypographySizes } from '@no-gravity-elements/types';
 
-import { TypographySizes } from '@types';
+import { TypographyProps } from './types';
 
 /**
  * <nge-typography>

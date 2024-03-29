@@ -1,12 +1,11 @@
 import { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit-html';
 
-import { ButtonProps, ButtonTypes } from '@atoms/Button/types';
-
-import { IconNames } from '@types';
-
 import '@no-gravity-elements/button';
 import '@no-gravity-elements/icon';
+import { ButtonTypes, IconNames } from '@no-gravity-elements/types';
+
+import { ButtonProps } from './types';
 
 type CustomArgs = ButtonProps & { text: string };
 

@@ -10,12 +10,24 @@ echo "\n--Pre-commit check--\n"
 # Exit if any of the processes fail
 set -e
 
-# Pre-commit commands
+# Pop stash if any of the processes fail
+cleanup() {
+  git stash pop || true
+
+  exit $?
+}
+trap cleanup EXIT ERR
+
+# Stash uncommited files
+git stash push -m "pre-commit-stash" --keep-index --include-untracked
+
+# Validate and format code
 npx tsc
 npx yarn lint-fix
 npx yarn format
 
-# Stage files that have been formatted
+
+# Stage and commit files that have been formatted
 git add .
 
 echo "\n--Pre-commit check has passed--\n"

@@ -1,11 +1,11 @@
 import { h } from 'preact';
 import { shallow } from 'enzyme';
 
-import Icon from '@atoms/Icon/Icon';
-
 import * as useFetchSVGImport from '@hooks/useFetchSVG';
 
-import { IconNames, IconSizes } from '@types';
+import { IconNames, IconSizes } from '@no-gravity-elements/types';
+
+import Icon from './Icon';
 
 describe('Icon', () => {
   beforeEach(() => {
