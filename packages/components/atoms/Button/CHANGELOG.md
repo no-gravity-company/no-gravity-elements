@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.19](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@1.1.0...@no-gravity-elements/button@1.1.19) (2024-03-29)
+
+**Note:** Version bump only for package @no-gravity-elements/button
+
 # [1.1.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@1.0.8...@no-gravity-elements/button@1.1.0) (2024-03-14)
 
 ### Bug Fixes
