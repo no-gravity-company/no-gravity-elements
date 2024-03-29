@@ -1,29 +1,29 @@
-import type { ButtonProps } from '@no-gravity-elements/button/types';
-import type { IconProps } from '@no-gravity-elements/icon/types';
-import type { InfoBoxProps } from '@no-gravity-elements/info-box/types';
-import type { LinkProps } from '@no-gravity-elements/link/types';
-import type { TypographyProps } from '@no-gravity-elements/typography/types';
+// import type { ButtonProps } from '@no-gravity-elements/button/types';
+// import type { IconProps } from '@no-gravity-elements/icon/types';
+// import type { InfoBoxProps } from '@no-gravity-elements/info-box/types';
+// import type { LinkProps } from '@no-gravity-elements/link/types';
+// import type { TypographyProps } from '@no-gravity-elements/typography/types';
 
-type ReactWebComponent =
-  | (Partial<HTMLElement> &
-      Partial<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>>)
-  // @ts-ignore
-  | { children?: React.ReactNode };
+// type ReactWebComponent =
+//   | (Partial<HTMLElement> &
+//       Partial<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>>)
+//   // @ts-ignore
+//   | { children?: React.ReactNode };
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'nge-button': ButtonProps & ReactWebComponent;
-      'nge-card': ReactWebComponent;
-      'nge-icon': IconProps & ReactWebComponent;
-      'nge-link': LinkProps & ReactWebComponent;
-      'nge-typography': TypographyProps & ReactWebComponent;
-      'nge-info-box': InfoBoxProps & ReactWebComponent;
-    }
-  }
-}
+// declare global {
+//   namespace JSX {
+//     interface IntrinsicElements {
+//       'nge-button': ButtonProps & ReactWebComponent;
+//       'nge-card': ReactWebComponent;
+//       'nge-icon': IconProps & ReactWebComponent;
+//       'nge-link': LinkProps & ReactWebComponent;
+//       'nge-typography': TypographyProps & ReactWebComponent;
+//       'nge-info-box': InfoBoxProps & ReactWebComponent;
+//     }
+//   }
+// }
 
-export const enum TypographySizes {
+export enum TypographySizes {
   h1 = 'h1',
   h2 = 'h2',
   h3 = 'h3',
@@ -38,7 +38,7 @@ export const enum TypographySizes {
   button = 'button',
 }
 
-export const enum IconSizes {
+export enum IconSizes {
   extraSmall = 'extra-small',
   small = 'small',
   medium = 'medium',
@@ -47,7 +47,7 @@ export const enum IconSizes {
   extraLarge = 'extra-large',
 }
 
-export const enum IconNames {
+export enum IconNames {
   angleLeft = 'angle-left',
   angleRight = 'angle-right',
   cross = 'cross',
@@ -56,7 +56,7 @@ export const enum IconNames {
   search = 'search',
 }
 
-export const enum ButtonTypes {
+export enum ButtonTypes {
   primary = 'primary',
   secondary = 'secondary',
   destructive = 'destructive',
@@ -64,3 +64,5 @@ export const enum ButtonTypes {
   ghost = 'ghost',
   disabled = 'disabled',
 }
+
+export default {};

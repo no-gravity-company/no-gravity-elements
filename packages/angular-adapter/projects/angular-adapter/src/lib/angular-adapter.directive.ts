@@ -1,7 +1,3 @@
-
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
-
 import { Directive, HostBinding, Input } from '@angular/core';
 
 import { TypographySizes, IconSizes, IconNames, ButtonTypes } from '@no-gravity-elements/types';

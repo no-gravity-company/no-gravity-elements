@@ -12,7 +12,7 @@ set -e
 
 # Pop stash if any of the processes fail
 cleanup() {
-  git stash pop || true
+  git stash pop pre-commit-stash || true
 
   exit $?
 }

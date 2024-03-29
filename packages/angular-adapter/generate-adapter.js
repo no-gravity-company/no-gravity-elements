@@ -77,11 +77,7 @@ const getDirectiveProps = (propDeclarations) => {
 };
 
 const generateDirective = async (componentsData) => {
-  const header = `
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
-
-import { Directive, HostBinding, Input } from '@angular/core';
+  const header = `import { Directive, HostBinding, Input } from '@angular/core';
 
 import { ${getTypeExportNames()} } from '@no-gravity-elements/types';
 

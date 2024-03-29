@@ -1,4 +1,4 @@
-import { Fragment, FunctionComponent, h, VNode } from 'preact';
+import { Fragment, FunctionComponent, h } from 'preact';
 
 import { TypographySizes } from '@no-gravity-elements/types';
 
@@ -21,7 +21,7 @@ import { TypographyProps } from './types';
 const Typography: FunctionComponent<TypographyProps> = ({ size, tag }: TypographyProps) => {
   const typographyTag = tag || 'span';
 
-  const getTypographyNode = (): VNode => {
+  const getTypographyNode = () => {
     return h(
       typographyTag,
       { class: (size && TypographySizes[size]) || TypographySizes.p },
