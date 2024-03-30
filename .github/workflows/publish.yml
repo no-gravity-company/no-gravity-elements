@@ -40,7 +40,9 @@ jobs:
         run: |
           yarn build-angular-adapter
           git add .
-          git commit -m "${{ steps.get_branch_code.outputs.branch_code }}: Generate adapters [skip ci]"
+          if [[ $(git diff --cached --exit-code) ]]; then
+            git commit -m "${{ steps.get_branch_code.outputs.branch_code }}: Generate adapters [skip ci]"
+          fi
 
       - name: Bump package versions
         run: |
