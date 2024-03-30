@@ -45,6 +45,8 @@ export class TypographyDirective {
 export class InfoBoxDirective {
   @HostBinding('attr.label') @Input() label: string;
   @HostBinding('attr.testProp') @Input() testProp?: string;
+  @HostBinding('attr.coolProp') @Input() coolProp?: number;
+  @HostBinding('attr.isInformative') @Input() isInformative?: boolean;
 }
 
     
