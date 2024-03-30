@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/angular-adapter@1.1.0...@no-gravity-elements/angular-adapter@1.1.3) (2024-03-30)
+
+### Bug Fixes
+
+- fix cicd publish ([10b9043](https://github.com/no-gravity-company/no-gravity-elements/commit/10b9043521df21266dda1d07c7c7cb60606997d4))
+
 ## [1.1.2](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/angular-adapter@1.1.0...@no-gravity-elements/angular-adapter@1.1.2) (2024-03-30)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.10](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/info-box@5.0.7...@no-gravity-elements/info-box@5.0.10) (2024-03-30)
+
+### Bug Fixes
+
+- fix cicd publish ([10b9043](https://github.com/no-gravity-company/no-gravity-elements/commit/10b9043521df21266dda1d07c7c7cb60606997d4))
+
 ## [5.0.9](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/info-box@5.0.7...@no-gravity-elements/info-box@5.0.9) (2024-03-30)
 
 ### Bug Fixes
