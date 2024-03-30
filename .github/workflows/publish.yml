@@ -30,6 +30,7 @@ jobs:
       - name: Update Angular adapter
         run: |
           yarn build-angular-adapter
+          git add .
 
       - name: Get published branch code
         id: get_branch_code
@@ -43,8 +44,7 @@ jobs:
       - name: Bump package versions
         run: |
           if lerna changed --json --loglevel=error | grep -qF "packages/"; then
-            git add .
-            yarn lerna version --yes --force-publish --conventional-commits --include-merged-tags --message "${{ steps.get_branch_code.outputs.branch_code }}: Publish [skip ci]"
+            yarn lerna version --yes --amend --conventional-commits --include-merged-tags
           else
             echo "No changes in packages"
             exit 0
