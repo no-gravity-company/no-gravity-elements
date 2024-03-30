@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-
-echo "\n--Post-commit hook--\n"
-
-git stash pop pre-commit-stash

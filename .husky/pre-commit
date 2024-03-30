@@ -12,22 +12,25 @@ set -e
 
 # Pop stash if any of the processes fail
 cleanup() {
-  git stash pop pre-commit-stash || true
+  echo Exiting
+  git stash pop || true
 
   exit $?
 }
 trap cleanup EXIT ERR
 
 # Stash uncommited files
-git stash push -m "pre-commit-stash" --keep-index --include-untracked
+git stash --keep-index --include-untracked || true
 
 # Validate and format code
 npx tsc
 npx yarn lint-fix
 npx yarn format
 
-
 # Stage and commit files that have been formatted
 git add .
+
+# Pop stash with uncommited files
+git stash pop
 
 echo "\n--Pre-commit check has passed--\n"
