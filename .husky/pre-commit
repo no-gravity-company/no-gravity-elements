@@ -12,9 +12,7 @@ set -e
 
 # Pop stash if any of the processes fail
 cleanup() {
-  echo Exiting
   git stash pop || true
-
   exit $?
 }
 trap cleanup EXIT ERR
@@ -29,8 +27,5 @@ npx yarn format
 
 # Stage and commit files that have been formatted
 git add .
-
-# Pop stash with uncommited files
-git stash pop
 
 echo "\n--Pre-commit check has passed--\n"
