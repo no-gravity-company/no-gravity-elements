@@ -38,7 +38,7 @@ Example usage:
 
 ```typescript
 import { Component } from '@angular/core';
-import { AngularAdapterModule } from '@no-gravity-elements/angular-adapter/dist/angular-adapter';
+import { AngularAdapterModule } from '@no-gravity-elements/angular-adapter';
 import { TypographySizes } from '@no-gravity-elements/types';
 
 import '@no-gravity-elements/typography';
@@ -48,16 +48,15 @@ import '@no-gravity-elements/typography';
   standalone: true,
   imports: [AngularAdapterModule],
   template: `
-    <nge-typography [size]="size">
+    <nge-typography [size]="sizes.h1">
       TEST
     </nge-typography>
   `,
   styles: [],
 })
 export class AppComponent {
-  size = TypographySizes.h1;
+  sizes = TypographySizes;
 }
-
 ```
 
 ## Development
