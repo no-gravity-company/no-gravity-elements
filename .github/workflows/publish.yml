@@ -16,6 +16,8 @@ jobs:
 
       - name: Setup job
         uses: ./.github/actions/setup-job
+        with:
+          node-version: '20.10.0'
 
       - name: Set git config
         uses: ./.github/actions/set-git-config
@@ -33,6 +35,12 @@ jobs:
           branch_name=$(echo $last_closed_pr | jq -r '.[0].head.ref')
           branch_code=$(echo $branch_name | sed -E 's/^([^_]+)_.*$/\1/')
           echo "branch_code=$branch_code" >> $GITHUB_OUTPUT
+
+      - name: Update Angular adapter
+        run: |
+          yarn build-angular-adapter
+          git add .
+          git commit -m "${{ steps.get_branch_code.outputs.branch_code }}: Generate adapters [skip ci]"
 
       - name: Bump package versions
         run: |

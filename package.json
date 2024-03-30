@@ -2,15 +2,25 @@
   "name": "root",
   "private": true,
   "engines": {
-    "node": "16.20.0"
+    "node": ">=16.20.0"
   },
-  "workspaces": [
-    "packages/components/**/*"
-  ],
+  "engineStrict": true,
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/components/**"
+    ],
+    "nohoist": [
+      "packages/angular-adapter",
+      "packages/angular-adapter/*",
+      "@no-gravity-elements/angular-adapter"
+    ]
+  },
   "scripts": {
     "clean": "yarn cache clean --force",
     "hard-clean": "rm -rf node_modules && yarn cache clean --force",
     "build": "tsc && node ./esbuild.js",
+    "build-angular-adapter": "yarn workspace @no-gravity-elements/angular-adapter build",
     "watch": "node ./esbuild.js --watch",
     "component-generator": "node node_modules/@no-gravity-tools/component-generator/lib/index.js",
     "lint": "yarn eslint .",
@@ -80,6 +90,7 @@
     "jest-resolve": "^29.5.0",
     "lerna": "^6.5.1",
     "lit-html": "^2.7.0",
+    "nvm": "^0.0.4",
     "postcss": "^8.4.21",
     "postcss-modules": "^6.0.0",
     "prettier": "^2.8.4",

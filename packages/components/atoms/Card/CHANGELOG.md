@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.13](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/card@1.0.12...@no-gravity-elements/card@1.0.13) (2024-03-30)
+
+**Note:** Version bump only for package @no-gravity-elements/card
+
 ## [1.0.12](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/card@1.0.8...@no-gravity-elements/card@1.0.12) (2024-03-29)
 
 ### Bug Fixes

@@ -1,5 +1,10 @@
 name: "Setup job"
 description: "Sets up node environment for a job"
+inputs:
+   node-version:
+     required: false
+     description: "The node version to use for this job"
+     default: '16.20.0'
 
 runs:
   using: "composite"
@@ -13,7 +18,7 @@ runs:
     - name: Set up node
       uses: actions/setup-node@v3
       with:
-        node-version: '16.20.0'
+        node-version: ${{ inputs.node-version }}
         cache: 'yarn'
 
     - name: Use build cache
