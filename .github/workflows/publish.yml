@@ -36,9 +36,9 @@ jobs:
           branch_code=$(echo $branch_name | sed -E 's/^([^_]+)_.*$/\1/')
           echo "branch_code=$branch_code" >> $GITHUB_OUTPUT
 
-      - name: Update Angular adapter
+      - name: Update adapters
         run: |
-          yarn build-angular-adapter
+          yarn build-adapters
           git add .
           if [[ $(git diff --cached --exit-code) ]]; then
             git commit -m "${{ steps.get_branch_code.outputs.branch_code }}: Generate adapters [skip ci]"
