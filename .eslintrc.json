@@ -83,15 +83,6 @@
         "no-console": "off",
         "no-magic-numbers": "off"
       }
-    },
-    {
-      "files": ["./packages/types/index.ts"],
-      "rules": {
-        "no-unused-vars": "off",
-        "no-shadow": "off",
-        "no-undef": "off",
-        "@typescript-eslint/ban-ts-comment": "off"
-      }
     }
   ]
 }

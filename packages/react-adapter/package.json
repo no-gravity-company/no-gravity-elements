@@ -1,7 +1,7 @@
 {
-  "name": "@no-gravity-elements/types",
-  "version": "1.1.0",
-  "description": "No Gravity Elements typings",
+  "name": "@no-gravity-elements/react-adapter",
+  "version": "1.0.0",
+  "description": "No Gravity Elements adapter for React",
   "author": "No Gravity Company",
   "private": false,
   "homepage": "https://github.com/no-gravity-company/no-gravity-elements#readme",
