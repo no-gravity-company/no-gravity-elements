@@ -16,6 +16,7 @@
     "url": "git+https://github.com/no-gravity-company/no-gravity-elements.git"
   },
   "scripts": {
+    "build": "node ./generate-adapter.js",
     "publish-package": "yarn publish --access=public"
   },
   "bugs": {

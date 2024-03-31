@@ -21,6 +21,8 @@
     "hard-clean": "rm -rf node_modules && yarn cache clean --force",
     "build": "tsc && node ./esbuild.js",
     "build-angular-adapter": "yarn workspace @no-gravity-elements/angular-adapter build",
+    "build-react-adapter": "yarn workspace @no-gravity-elements/react-adapter build",
+    "build-adapters": "yarn build-react-adapter && yarn build-angular-adapter",
     "watch": "node ./esbuild.js --watch",
     "component-generator": "node node_modules/@no-gravity-tools/component-generator/lib/index.js",
     "lint": "yarn eslint .",
