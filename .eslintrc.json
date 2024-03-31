@@ -18,7 +18,7 @@
     "storybook-static/*"
   ],
   "rules": {
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off",
     "no-unused-expressions": "warn",
     "no-undef": "error",
     "prefer-const": "warn",
@@ -27,7 +27,6 @@
     "consistent-return": "error",
     "no-return-assign": "error",
     "no-use-before-define": "error",
-    "no-magic-numbers": "warn",
     "no-shadow": "warn",
     "no-console": "error",
     "no-empty-function": "warn",

@@ -4,6 +4,7 @@ exports[`Button should match the snapshot 1`] = `
 <button
   className="primary"
   disabled={false}
+  onClick={[Function]}
 >
   <nge-typography
     size="button"

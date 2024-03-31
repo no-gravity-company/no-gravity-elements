@@ -16,6 +16,9 @@ const meta: Meta<CustomArgs> = {
     webComponents: {
       tagName: 'nge-button',
     },
+    actions: {
+      handles: ['onClick'],
+    },
   },
   argTypes: {
     text: {

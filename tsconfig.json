@@ -16,7 +16,7 @@
     "strictPropertyInitialization": false,
     "paths": {
       "@hooks/*": ["packages/hooks/*"],
-      "@utils/*": ["packages/utils"],
+      "@utils/*": ["packages/utils/*"],
       "@context/*": ["packages/context"],
       "@const/*": ["packages/const"],
       "react": ["./node_modules/preact/compat/"],
