@@ -4,8 +4,7 @@
 <br/>
 
 [![Storybook](https://img.shields.io/badge/Storybook-visit-ff69b4)](https://main--65edfeddcbe58bb4d259538f.chromatic.com)
-[![Build Status](https://github.com/no-gravity-company/no-gravity-elements/workflows/CI/badge.svg)](https://github.com/no-gravity-company/no-gravity-elements/actions)
-
+[![Build Status](https://github.com/no-gravity-company/no-gravity-elements/actions/workflows/on-push.yml/badge.svg)](https://github.com/no-gravity-company/no-gravity-elements/actions)
 
 Our web components can be consumed from any frontend project. They are extremely lightweight and built for speed.
 
@@ -18,6 +17,16 @@ Component packages are prefixed with `@no-gravity-elements/`, for example:
 ```
 yarn @no-gravity-elements/button
 ```
+
+## Usage
+**TODO**
+
+## Adapters
+No Gravity Elements provides adapters for Angular and React frameworks.
+
+[Angular adapter](subdirectory/README.md)
+
+[React adapter](subdirectory/README.md)
 
 ## Component list
 
