@@ -16,12 +16,29 @@ import '@no-gravity-elements/react-adapter';
 Now you can consume no-gravity-elements in your React project.
 
 ## Consuming no-gravity-elements
-Example usage:
+We provide a hook for handling custom events easily. Each component exposes the names of its events through the Events type.
 
 ```jsx
-const SomeComponent = () => {
-  return <nge-card>HEY</nge-card>
-}
+import '@no-gravity-elements/button';
+import { ButtonTypes } from '@no-gravity-elements/types';
+import { ButtonEvents } from '@no-gravity-elements/button';
+import { useNgeEvents } from '@no-gravity-elements/react-adapter';
+
+const App = () => {
+  const handleButtonClick = () => {
+    console.log('HEY');
+  };
+
+  const { ref } = useNgeEvents<ButtonEvents>({
+    ButtonClick: handleButtonClick,
+  });
+
+  return (
+    <nge-button ref={ref} type={ButtonTypes.destructive}>
+      CLICK ME
+    </nge-button>
+  );
+};
 ```
 
 ## Development

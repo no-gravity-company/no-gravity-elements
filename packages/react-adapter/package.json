@@ -1,6 +1,6 @@
 {
   "name": "@no-gravity-elements/react-adapter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "No Gravity Elements adapter for React",
   "author": "No Gravity Company",
   "private": false,
@@ -9,7 +9,8 @@
   "typings": "index.ts",
   "main": "index.ts",
   "files": [
-    "index.ts"
+    "index.ts",
+    "hooks.tsx"
   ],
   "repository": {
     "type": "git",

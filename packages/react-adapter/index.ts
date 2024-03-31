@@ -1,14 +1,17 @@
 // @ts-nocheck
 import type { ButtonProps } from '@no-gravity-elements/button/types';
 import type { IconProps } from '@no-gravity-elements/icon/types';
-import type { InfoBoxProps } from '@no-gravity-elements/info-box/types';
 import type { LinkProps } from '@no-gravity-elements/link/types';
 import type { TypographyProps } from '@no-gravity-elements/typography/types';
+import type { InfoBoxProps } from '@no-gravity-elements/info-box/types';
 
-type ReactWebComponent =
-  | (Partial<HTMLElement> &
-      Partial<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>>)
-  | { children?: React.ReactNode };
+export * from './hooks';
+
+interface ReactWebComponent {
+  children?: React.ReactNode;
+  ref?: React.LegacyRef<HTMLElement>;
+  key?: React.Key | null;
+}
 
 declare global {
   namespace JSX {

@@ -75,6 +75,8 @@ const generateAdapter = async () => {
 
   const content = `// @ts-nocheck
 ${imports}
+export * from './hooks';
+
 interface ReactWebComponent {
   children?: React.ReactNode;
   ref?: React.LegacyRef<HTMLElement>;
