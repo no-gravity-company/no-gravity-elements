@@ -1,27 +1,5 @@
-// import type { ButtonProps } from '@no-gravity-elements/button/types';
-// import type { IconProps } from '@no-gravity-elements/icon/types';
-// import type { InfoBoxProps } from '@no-gravity-elements/info-box/types';
-// import type { LinkProps } from '@no-gravity-elements/link/types';
-// import type { TypographyProps } from '@no-gravity-elements/typography/types';
-
-// type ReactWebComponent =
-//   | (Partial<HTMLElement> &
-//       Partial<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>>)
-//   // @ts-ignore
-//   | { children?: React.ReactNode };
-
-// declare global {
-//   namespace JSX {
-//     interface IntrinsicElements {
-//       'nge-button': ButtonProps & ReactWebComponent;
-//       'nge-card': ReactWebComponent;
-//       'nge-icon': IconProps & ReactWebComponent;
-//       'nge-link': LinkProps & ReactWebComponent;
-//       'nge-typography': TypographyProps & ReactWebComponent;
-//       'nge-info-box': InfoBoxProps & ReactWebComponent;
-//     }
-//   }
-// }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type ComponentEvents<T> = Record<keyof T, (...args: any[]) => void>;
 
 export enum TypographySizes {
   h1 = 'h1',

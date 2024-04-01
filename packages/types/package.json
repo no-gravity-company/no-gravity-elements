@@ -16,7 +16,7 @@
     "url": "git+https://github.com/no-gravity-company/no-gravity-elements.git"
   },
   "scripts": {
-    "publish-component": "yarn publish --access=public"
+    "publish-package": "yarn publish --access=public"
   },
   "bugs": {
     "url": "https://github.com/no-gravity-company/no-gravity-elements/issues"

@@ -39,7 +39,6 @@ module.exports = {
       '@components': 'packages/components',
       '@hooks': 'packages/hooks',
       '@utils': 'packages/utils',
-      '@hooks': 'packages/hooks',
       '@context': 'packages/context',
       '@const': 'packages/const',
       '@no-gravity-elements/types': 'packages/types',

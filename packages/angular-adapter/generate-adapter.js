@@ -14,13 +14,21 @@ const readFile = (filePath) => {
     const contents = fs.readFileSync(filePath, 'utf8');
     return contents;
   } catch (err) {
-    console.error(`Error reading file: ${err}`);
     return null;
   }
 };
 
+const writeFile = (file, content) => {
+  const filePath = path.join(__dirname, file);
+  const pathDir = path.dirname(filePath);
+  if (!fs.existsSync(pathDir)) {
+    fs.mkdirSync(pathDir, { recursive: true });
+  }
+  fs.writeFileSync(filePath, content);
+};
+
 const getComponentName = (fileContent) => {
-  const componentNameRegex = /export\s+interface\s+(\w+)Props?\s*\{/;
+  const componentNameRegex = /\/([^\/]+)\/package.json$/;
   const match = componentNameRegex.exec(fileContent);
   return match ? match[1] : null;
 };
@@ -37,16 +45,19 @@ const getPropDeclarations = (fileContent) => {
 };
 
 const getComponentsData = async () => {
-  let componentPaths = await glob('../components/**/*/types/index.ts');
+  let componentPaths = await glob('../components/**/*/package.json');
 
-  return componentPaths.reduce((acc, componentPath) => {
-    const typesFileContent = readFile(componentPath);
-    const name = getComponentName(typesFileContent);
+  return componentPaths.map((componentPath) => {
+    const name = getComponentName(componentPath);
+    const typesFilePath = componentPath.replace('package.json', 'types/index.ts');
+    const typesFileContent = readFile(typesFilePath);
     const propDeclarations = getPropDeclarations(typesFileContent);
 
-    acc.push({ name, propDeclarations });
-    return acc;
-  }, []);
+    return {
+      name,
+      propDeclarations,
+    };
+  });
 };
 
 const getTypeExportNames = () => {

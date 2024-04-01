@@ -1,0 +1,9 @@
+{
+  "extends": "../../.eslintrc.json",
+  "rules": {
+    "no-undef": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "simple-import-sort/imports": "off",
+    "no-unused-vars": "off"
+  }
+}
