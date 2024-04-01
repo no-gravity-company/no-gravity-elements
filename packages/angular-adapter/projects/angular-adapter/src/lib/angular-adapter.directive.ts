@@ -13,6 +13,13 @@ export class ButtonDirective {
 
     
 @Directive({
+  selector: 'nge-card',
+})
+export class CardDirective {
+}
+
+    
+@Directive({
   selector: 'nge-icon',
 })
 export class IconDirective {
