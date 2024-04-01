@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@1.1.20...@no-gravity-elements/button@1.2.0) (2024-04-01)
+
+### Features
+
+- Add onClick event to nge-button ([8f99196](https://github.com/no-gravity-company/no-gravity-elements/commit/8f991961d28cd97ccf0c95d10fcdef6d47432142))
+
 ## [1.1.20](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@1.1.19...@no-gravity-elements/button@1.1.20) (2024-03-30)
 
 **Note:** Version bump only for package @no-gravity-elements/button

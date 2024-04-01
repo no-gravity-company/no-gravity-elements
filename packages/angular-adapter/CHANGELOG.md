@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.5](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/angular-adapter@1.1.3...@no-gravity-elements/angular-adapter@1.1.5) (2024-04-01)
+
+### Bug Fixes
+
+- Fix angular adapter generator not declaring components without types ([617d045](https://github.com/no-gravity-company/no-gravity-elements/commit/617d045b9466b275d74c9bce862271448be94adc))
+
 ## [1.1.3](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/angular-adapter@1.1.0...@no-gravity-elements/angular-adapter@1.1.3) (2024-03-30)
 
 ### Bug Fixes
