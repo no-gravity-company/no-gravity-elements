@@ -1,7 +1,9 @@
 import { Fragment, FunctionComponent, h } from 'preact';
 import { signal } from '@preact/signals';
 
-import { InfoBoxProps } from './types';
+import { emitEvent } from '@utils/emitEvent/emitCustomEvent';
+
+import { InfoBoxEvents, InfoBoxProps } from './types';
 
 const inputValue = signal('');
 
@@ -27,19 +29,12 @@ const InfoBox: FunctionComponent<InfoBoxProps> = ({ label }: InfoBoxProps) => {
     inputValue.value = inputElement.value;
   };
 
-  const handleDivClick = (event: Event) => {
-    // TODO extract to function in tools repo -> publish(eventName, payload, element)
-    if (event && event.target) {
-      const customEvent = new CustomEvent('ButtonClick', {
-        detail: {
-          'nge-event': true,
-        },
-        // TODO try to consume it without those attrs (maybe they are only needed if we want to cacth them with a listener)
-        bubbles: true,
-        composed: true,
-      });
-      event.target.dispatchEvent(customEvent);
-    }
+  const handleButtonClick = (event: Event) => {
+    emitEvent<InfoBoxEvents>({
+      event,
+      name: 'nge-info-box-button-click',
+      value: { inputValue: inputValue.value, isCool: true },
+    });
   };
 
   return (
@@ -48,7 +43,7 @@ const InfoBox: FunctionComponent<InfoBoxProps> = ({ label }: InfoBoxProps) => {
       <span className='main'>HEYOO</span>
       <input type='text' value={inputValue} onInput={handleInputChange} />
       <span>{inputValue}</span>
-      <button onClick={handleDivClick} />
+      <button onClick={handleButtonClick}>CUSTOM EVENT</button>
     </Fragment>
   );
 };
