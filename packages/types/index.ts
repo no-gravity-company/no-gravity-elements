@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type ComponentEvents<T> = Record<keyof T, (...args: any[]) => void>;
+export type ComponentEvents<T> = Record<keyof T, (event: CustomEvent<any>) => void>;
 
 export enum TypographySizes {
   h1 = 'h1',

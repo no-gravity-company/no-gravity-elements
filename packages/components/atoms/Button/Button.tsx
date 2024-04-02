@@ -1,6 +1,6 @@
 import { Fragment, FunctionComponent, h } from 'preact';
 
-import { emitEvent } from '@utils/emitEvent/emitCustomEvent';
+import { emitEvent } from '@utils/emitEvent/emitEvent';
 
 import { ButtonTypes, IconSizes, TypographySizes } from '@no-gravity-elements/types';
 

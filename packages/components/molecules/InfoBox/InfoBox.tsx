@@ -1,7 +1,7 @@
 import { Fragment, FunctionComponent, h } from 'preact';
 import { signal } from '@preact/signals';
 
-import { emitEvent } from '@utils/emitEvent/emitCustomEvent';
+import { emitEvent } from '@utils/emitEvent/emitEvent';
 
 import { InfoBoxEvents, InfoBoxProps } from './types';
 
