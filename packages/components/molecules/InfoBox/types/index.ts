@@ -4,3 +4,12 @@ export interface InfoBoxProps {
   coolProp?: number;
   isInformative?: boolean;
 }
+
+export type InfoBoxData = {
+  inputValue: string;
+  isCool: true;
+};
+
+export interface InfoBoxEvents {
+  'nge-info-box-button-click': (event: CustomEvent<InfoBoxData>) => void;
+}

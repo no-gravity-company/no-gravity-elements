@@ -13,7 +13,6 @@ set -e
 # Pop stash if any of the processes fail
 cleanup() {
   git stash pop || true
-  exit $?
 }
 trap cleanup EXIT ERR
 
@@ -21,9 +20,9 @@ trap cleanup EXIT ERR
 git stash --keep-index --include-untracked || true
 
 # Validate and format code
-npx tsc
-npx yarn lint-fix
-npx yarn format
+npx yarn build || { echo "Error: build failed"; exit 1; }
+npx yarn lint-fix || { echo "Error: lint failed"; exit 1; }
+npx yarn format || { echo "Error: format failed"; exit 1; }
 
 # Stage and commit files that have been formatted
 git add .

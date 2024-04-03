@@ -16,7 +16,7 @@ export default {
       tagName: 'nge-info-box',
     },
     actions: {
-      handles: ['ButtonClick'],
+      handles: ['nge-info-box-button-click'],
     },
   },
   controls: {},

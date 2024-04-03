@@ -22,7 +22,9 @@ exports[`InfoBox should match the snapshot 1`] = `
   </span>,
   <button
     onClick={[Function]}
-  />,
+  >
+    CUSTOM EVENT
+  </button>,
 ]
 `;
 
@@ -48,6 +50,8 @@ exports[`InfoBox should match the snapshot 2`] = `
   </span>,
   <button
     onClick={[Function]}
-  />,
+  >
+    CUSTOM EVENT
+  </button>,
 ]
 `;
