@@ -26,8 +26,7 @@
     "^@pages/(.*)$": "<rootDir>/packages/components/pages/$1",
     "^@components/(.*)$": "<rootDir>/packages/components/$1",
     "^@hooks/(.*)$": "<rootDir>/packages/hooks/$1",
-    "^@utils/(.*)$": "<rootDir>/packages/utils/$1",
-    "^@no-gravity-elements/types": "<rootDir>/packages/types"
+    "^@utils/(.*)$": "<rootDir>/packages/utils/$1"
   },
   "testMatch": ["**/?(*.)(spec).ts?(x)"],
   "moduleDirectories": ["node_modules"],
