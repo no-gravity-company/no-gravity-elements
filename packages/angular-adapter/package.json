@@ -21,7 +21,7 @@
   "fesm2015": "dist/angular-adapter/fesm2015/no-gravity-elements-angular-adapter.js",
   "sideEffects": false,
   "scripts": {
-    "build": "./build-adapter.sh",
+    "build": "node generate-adapter.js && ng build",
     "publish-package": "yarn publish --access=public"
   },
   "dependencies": {
