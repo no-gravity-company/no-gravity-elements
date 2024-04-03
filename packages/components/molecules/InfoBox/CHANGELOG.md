@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.11](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/info-box@5.0.10...@no-gravity-elements/info-box@5.0.11) (2024-04-03)
+
+### Bug Fixes
+
+- Strengthen event api typing ([2863217](https://github.com/no-gravity-company/no-gravity-elements/commit/286321767818f31a4002325d4bc5573e8996b080))
+
 ## [5.0.10](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/info-box@5.0.7...@no-gravity-elements/info-box@5.0.10) (2024-03-30)
 
 ### Bug Fixes

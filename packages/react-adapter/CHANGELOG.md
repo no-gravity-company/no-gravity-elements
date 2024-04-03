@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/react-adapter@2.0.0...@no-gravity-elements/react-adapter@3.0.0) (2024-04-03)
+
+- feat(react-adapter)!: Modify useNgeEvents to return full event not just value ([7c13b22](https://github.com/no-gravity-company/no-gravity-elements/commit/7c13b22b86182498bd539ea72b37e21d5985dd49))
+
+### BREAKING CHANGES
+
+- useNgeEvents now returns full event instead of only value
+
 # 2.0.0 (2024-04-01)
 
 ### Features

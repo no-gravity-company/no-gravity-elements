@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/types@2.0.0...@no-gravity-elements/types@2.0.1) (2024-04-03)
+
+### Bug Fixes
+
+- Strengthen event api typing ([2863217](https://github.com/no-gravity-company/no-gravity-elements/commit/286321767818f31a4002325d4bc5573e8996b080))
+
 # [2.0.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/types@1.1.0...@no-gravity-elements/types@2.0.0) (2024-04-01)
 
 ### Features

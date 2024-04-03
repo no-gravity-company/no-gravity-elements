@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/angular-adapter@1.1.5...@no-gravity-elements/angular-adapter@2.0.0) (2024-04-03)
+
+### Bug Fixes
+
+- remove build adapter script to fix nvm error in cicd ([f7b579b](https://github.com/no-gravity-company/no-gravity-elements/commit/f7b579b9c0625b74b87cba4486600972aad9de49))
+
+- feat(button)!: remove click event from button ([495c748](https://github.com/no-gravity-company/no-gravity-elements/commit/495c74885f1da2154281d64c7de0b19cc9758148))
+
+### Features
+
+- Update angular adapter to handle custom events ([eed0809](https://github.com/no-gravity-company/no-gravity-elements/commit/eed08095ebf1def2d45e08b6f095fe6a3dbf2a08))
+
+### BREAKING CHANGES
+
+- Remove click event from button
+
 ## [1.1.5](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/angular-adapter@1.1.3...@no-gravity-elements/angular-adapter@1.1.5) (2024-04-01)
 
 ### Bug Fixes

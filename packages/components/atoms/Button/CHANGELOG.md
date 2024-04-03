@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@1.2.0...@no-gravity-elements/button@2.0.0) (2024-04-03)
+
+### Bug Fixes
+
+- Strengthen event api typing ([2863217](https://github.com/no-gravity-company/no-gravity-elements/commit/286321767818f31a4002325d4bc5573e8996b080))
+
+- feat(button)!: remove click event from button ([495c748](https://github.com/no-gravity-company/no-gravity-elements/commit/495c74885f1da2154281d64c7de0b19cc9758148))
+
+### BREAKING CHANGES
+
+- Remove click event from button
+
 # [1.2.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@1.1.20...@no-gravity-elements/button@1.2.0) (2024-04-01)
 
 ### Features
