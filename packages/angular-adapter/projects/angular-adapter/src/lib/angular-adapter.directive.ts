@@ -1,7 +1,9 @@
-import { Directive, HostBinding, Input } from '@angular/core';
+import { Directive, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 
 import { TypographySizes, IconSizes, IconNames, ButtonTypes } from '@no-gravity-elements/types';
 
+import { InfoBoxData } from '@no-gravity-elements/info-box'
+  
 @Directive({
   selector: 'nge-button',
 })
@@ -10,14 +12,14 @@ export class ButtonDirective {
   @HostBinding('attr.icon') @Input() icon?: IconNames;
 }
 
-
+    
 @Directive({
   selector: 'nge-card',
 })
 export class CardDirective {
 }
 
-
+    
 @Directive({
   selector: 'nge-icon',
 })
@@ -26,7 +28,7 @@ export class IconDirective {
   @HostBinding('attr.size') @Input() size?: IconSizes;
 }
 
-
+    
 @Directive({
   selector: 'nge-link',
 })
@@ -35,7 +37,7 @@ export class LinkDirective {
   @HostBinding('attr.size') @Input() size?: TypographySizes;
 }
 
-
+    
 @Directive({
   selector: 'nge-typography',
 })
@@ -44,7 +46,7 @@ export class TypographyDirective {
   @HostBinding('attr.size') @Input() size: TypographySizes;
 }
 
-
+    
 @Directive({
   selector: 'nge-info-box',
 })
@@ -53,5 +55,7 @@ export class InfoBoxDirective {
   @HostBinding('attr.testProp') @Input() testProp?: string;
   @HostBinding('attr.coolProp') @Input() coolProp?: number;
   @HostBinding('attr.isInformative') @Input() isInformative?: boolean;
+  @Output() 'nge-info-box-button-click' = new EventEmitter<CustomEvent<InfoBoxData>>();
 }
 
+    
