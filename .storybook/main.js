@@ -41,7 +41,6 @@ module.exports = {
       '@utils': 'packages/utils',
       '@context': 'packages/context',
       '@const': 'packages/const',
-      '@no-gravity-elements/types': 'packages/types',
     };
 
     return config;

@@ -20,8 +20,7 @@
       "@context/*": ["packages/context"],
       "@const/*": ["packages/const"],
       "react": ["./node_modules/preact/compat/"],
-      "react-dom": ["./node_modules/preact/compat/"],
-      "@no-gravity-elements/types": ["packages/types/index"]
+      "react-dom": ["./node_modules/preact/compat/"]
     },
     "jsxFragmentFactory": "Fragment",
     "baseUrl": "./",
