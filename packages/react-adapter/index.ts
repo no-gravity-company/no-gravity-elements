@@ -7,7 +7,8 @@ import type { InfoBoxProps } from '@no-gravity-elements/info-box/types';
 
 export * from './hooks';
 
-interface ReactWebComponent {
+interface ReactWebComponent
+  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
   children?: React.ReactNode;
   ref?: React.LegacyRef<HTMLElement>;
   key?: React.Key | null;
