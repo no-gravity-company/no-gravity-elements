@@ -37,8 +37,12 @@ const meta: Meta<CustomArgs> = {
       },
     },
   },
-  render: ({ type, text, icon, disabled }) =>{
-    return html` <nge-button type=${type} icon=${icon} .disabled=${disabled}>${text}</nge-button> `
+  render: ({ type, text, disabled }) =>{
+    return html` <nge-button type=${type} .disabled=${disabled}>
+      <button>
+          ${text}
+      </button>
+    </nge-button> `
 }};
 
 export default meta;

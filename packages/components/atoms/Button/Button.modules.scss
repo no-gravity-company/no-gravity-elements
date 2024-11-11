@@ -23,15 +23,45 @@ $button-border-radius: var(--button-border-radius, baseUnit(0.75));
     background-color: $bg;
   }
 }
-@mixin button-active($bg: red) {
+@mixin button-active($bg: red, $textColor: #{$background}) {
   &:active {
     background-color: $bg;
+    --text-color: #{$textColor};
   }
 }
 
+::slotted(button) {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  height: baseUnit(5);
+  column-gap: baseUnit(1);
+  padding: baseUnit(1.25) baseUnit(2);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  border: unset;
+  font-weight: $font-weight-button;
+  font-size: 16px;
+  color: var(--text-color);
+  background: unset;
+}
+
 :host {
-  .primary {
-    @include button-styles;
+  .nge-button {
+    width: min-content;
+    border-radius: $button-border-radius;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border: var(--button-border, none);
+    &.disabled {
+      cursor: default;
+      pointer-events: none;
+      opacity: .5;
+    }
+  }
+
+  .primary { 
     @include button-hover($primary-hover);
     @include button-active($primary-active);
     background-color: $primary;
@@ -39,7 +69,6 @@ $button-border-radius: var(--button-border-radius, baseUnit(0.75));
   }
 
   .disruptive {
-    @include button-styles;
     @include button-hover($disruptive-hover);
     @include button-active($disruptive-active);
     background-color: $disruptive;
@@ -47,7 +76,6 @@ $button-border-radius: var(--button-border-radius, baseUnit(0.75));
   }
 
   .destructive {
-    @include button-styles;
     @include button-hover($destructive-hover);
     @include button-active($destructive-active);
     background-color: $destructive;
@@ -55,25 +83,19 @@ $button-border-radius: var(--button-border-radius, baseUnit(0.75));
   }
 
   .outline {
-    @include button-styles;
     @include button-hover($primary-light);
-    @include button-active($primary-light-active);
+    @include button-active($primary-light-active, $primary-hover);
     --text-color: #{$primary};
     --button-border: 1px solid #{$primary};
     background-color: $background;
   }
 
   .ghost {
-    @include button-styles;
     @include button-hover($primary-light);
-    @include button-active($primary-light-active);
+    @include button-active($primary-light-active, $primary-hover);
     --text-color: #{$primary};
     background-color: $background;
   }
-
-  button:disabled {
-    cursor: default;
-    pointer-events: none;
-    opacity: 0.5;
-  }
 }
+
+

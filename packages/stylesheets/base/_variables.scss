@@ -6,3 +6,5 @@
   }
   @return calc(var(--base-unit, 8px) * #{$value});
 }
+
+$font-weight-button: var(--font-weight-button, 500);
