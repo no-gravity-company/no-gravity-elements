@@ -2,7 +2,7 @@
 @import '../../../stylesheets/base/colors';
 
 :host {
-  color: var(--color, #{$primary-color});
+  color: var(--color, #{$primary});
   font-family: 'Noto Sans', sans-serif;
   font-optical-sizing: auto;
   font-style: normal;

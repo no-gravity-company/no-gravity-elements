@@ -1,11 +1,13 @@
-$primary-color: var(--nge-primary-color, #fafafa);
-$primary-foreground-color: var(--nge-primary-foreground-color, #18181b);
+$primary: var(--primary, #6cbaac);
+$primary-dark: var(--primary-dark, #2a5753);
+$primary-light: var(--primary-dark, #d8efe9);
 
-$secondary-color: var(--nge-secondary-color, #27272a);
+$disruptive: var(--disruptive, #f25647);
+$disruptive-light: var(--disruptive-light, #fdaca4);
+$disruptive-dark: var(--disruptive-dark, #bb281a);
 
-$destructive-color: var(--nge-destructive-color, #7f1d1d);
-$destructive-foreground-color: var(--nge-destructive-foreground-color, #fef2f2);
+$destructive: var(--destructive, #f25647);
+$destructive-light: var(--destructive-light, #fdaca4);
+$destructive-dark: var(--destructive-dark, #bb281a);
 
-$background-color: var(--nge-background-color, #09090b);
-
-$black: #000000;
+$background: var(--background, #ffffff);

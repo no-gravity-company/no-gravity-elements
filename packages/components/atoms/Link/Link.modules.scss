@@ -8,7 +8,7 @@ a {
     display: block;
     width: 100%;
     height: baseUnit(0.125);
-    background-color: var(--color, #{$primary-color});
+    background-color: var(--color, #{$primary});
     position: absolute;
     bottom: baseUnit(-0.125);
     left: 0;
