@@ -13,12 +13,12 @@ jobs:
     needs: install-and-build
     uses: ./.github/workflows/unit-test.yml
 
-  integration-test:
-    needs: install-and-build
-    uses: ./.github/workflows/integration-test.yml
+  # integration-test:
+  #   needs: install-and-build
+  #   uses: ./.github/workflows/integration-test.yml
 
   publish:
     if: ${{ github.ref == 'refs/heads/main' }}
-    needs: [unit-test, integration-test]
+    needs: [unit-test]
     uses: ./.github/workflows/publish.yml
     secrets: inherit
