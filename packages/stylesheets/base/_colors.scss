@@ -1,13 +1,22 @@
 $primary: var(--primary, #6cbaac);
+$primary-hover: var(--primary-hover, #59a89c);
+$primary-active: var(--primary-active, #408c82);
 $primary-dark: var(--primary-dark, #2a5753);
-$primary-light: var(--primary-dark, #d8efe9);
+$primary-light: var(--primary-light, #d8efe9);
+$primary-light-active: var(--primary-light-active, #b2ddd4);
 
 $disruptive: var(--disruptive, #f25647);
+$disruptive-hover: var(--disruptive-hover, #df3323);
+$disruptive-active: var(--disruptive-active, #bb281a);
 $disruptive-light: var(--disruptive-light, #fdaca4);
+$disruptive-light-active: var(--disruptive-light-active, #fa7b6f);
 $disruptive-dark: var(--disruptive-dark, #bb281a);
 
 $destructive: var(--destructive, #f25647);
+$destructive-hover: var(--destructive-hover, #df3323);
+$destructive-active: var(--destructive-active, #bb281a);
 $destructive-light: var(--destructive-light, #fdaca4);
+$destructive-light-active: var(--destructive-light-active, #fa7b6f);
 $destructive-dark: var(--destructive-dark, #bb281a);
 
 $background: var(--background, #ffffff);

@@ -36,11 +36,10 @@ export enum IconNames {
 
 export enum ButtonTypes {
   primary = 'primary',
-  secondary = 'secondary',
+  disruptive = 'disruptive',
   destructive = 'destructive',
   outline = 'outline',
   ghost = 'ghost',
-  disabled = 'disabled',
 }
 
 export default {};

@@ -10,19 +10,19 @@ import { ButtonProps } from './types';
  *
  * @element nge-button
  *
- * @prop {'primary'|'secondary'|'destructive'|'outline'|'ghost'|'disabled'} [type] - Button type
- * @prop {'string'} [icon] - Button Icon name
+ * @prop {'primary'|'disruptive'|'destructive'|'outline'|'ghost'} [type] - Button type
+ * @prop {string} [icon] - Button Icon name
+ * @prop {boolean} [disabled] - Toggles disabled state
  *
  * @example
  * <nge-button type="primary">Button</nge-button>
  */
 
-const Button: FunctionComponent<ButtonProps> = ({ type, icon }: ButtonProps) => {
+const Button: FunctionComponent<ButtonProps> = ({ type, icon, disabled = false }: ButtonProps) => {
   const buttonClass = (type && ButtonTypes[type]) || ButtonTypes.primary;
-
   return (
     <Fragment>
-      <button className={buttonClass} disabled={type === ButtonTypes.disabled}>
+      <button className={buttonClass} disabled={disabled}>
         {icon && <nge-icon name={icon} size={IconSizes.small} />}
         <nge-typography size={TypographySizes.button}>
           <slot />
@@ -32,6 +32,6 @@ const Button: FunctionComponent<ButtonProps> = ({ type, icon }: ButtonProps) => 
   );
 };
 
-Button.observedAttributes = ['type', 'icon'];
+Button.observedAttributes = ['type', 'icon', 'disabled'];
 
 export default Button;

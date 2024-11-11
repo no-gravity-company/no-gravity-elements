@@ -13,11 +13,11 @@
 
     svg:not([fill='none']),
     svg [fill]:not([fill='none']) {
-      fill: var(--color, #{$primary}) !important;
+      fill: var(--text-color, #{$primary}) !important;
     }
 
     svg path[stroke] {
-      stroke: var(--color, #{$primary}) !important;
+      stroke: var(--text-color, #{$primary}) !important;
     }
 
     &.extra-small {

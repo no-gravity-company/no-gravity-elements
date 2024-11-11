@@ -13,7 +13,7 @@ describe('Button', () => {
 
   it.each`
     type
-    ${ButtonTypes.secondary}
+    ${ButtonTypes.disruptive}
     ${ButtonTypes.destructive}
     ${undefined}
   `('should render correctly with the provided size and tag', ({ type }) => {

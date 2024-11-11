@@ -4,5 +4,5 @@
   @if ($value == 0) {
     @return 0;
   }
-  @return calc(var(--nge-base-unit, 8px) * #{$value});
+  @return calc(var(--base-unit, 8px) * #{$value});
 }
