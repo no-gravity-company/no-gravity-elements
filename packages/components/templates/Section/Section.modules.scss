@@ -1,0 +1,9 @@
+    .nge-section {
+        display: flex;
+        padding: var(--nge-section-padding, 16px);
+        gap: var(--nge-section-space, 16px);
+        flex-direction: var(--section-flex-direction, column);
+        justify-content: var(--section-justify-content, center);
+        align-items: var(--section-align-items, center);
+    }
+

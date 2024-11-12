@@ -42,4 +42,9 @@ export enum ButtonTypes {
   ghost = 'ghost',
 }
 
+export enum StringBoolean {
+  TRUE = 'true',
+  FALSE = 'false'
+}
+
 export default {};

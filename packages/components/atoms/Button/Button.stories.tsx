@@ -3,7 +3,7 @@ import { html } from 'lit-html';
 
 import '@no-gravity-elements/button';
 import '@no-gravity-elements/icon';
-import { ButtonTypes, IconNames } from '@no-gravity-elements/types';
+import { ButtonTypes, IconNames, StringBoolean } from '@no-gravity-elements/types';
 
 import { ButtonProps } from './types';
 
@@ -37,13 +37,10 @@ const meta: Meta<CustomArgs> = {
       },
     },
   },
-  render: ({ type, text, disabled }) =>{
-    return html` <nge-button type=${type} .disabled=${disabled}>
-      <button>
-          ${text}
-      </button>
-    </nge-button> `
-}};
+  render: ({ type, text, disabled }) => {
+    return html` <nge-button type=${type} .disabled=${disabled} value=${text}> </nge-button> `;
+  },
+};
 
 export default meta;
 type Story = StoryObj<CustomArgs>;
@@ -53,6 +50,6 @@ export const Default: Story = {
     type: ButtonTypes.primary,
     text: 'Button',
     icon: undefined,
-    disabled: false,
+    disabled: StringBoolean.FALSE,
   },
 };

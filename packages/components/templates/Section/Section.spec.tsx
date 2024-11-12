@@ -5,7 +5,7 @@ import Section from './Section';
 
 describe('Section', () => {
   it('should match the snapshot', () => {
-    const wrapper = shallow(<Section x='test'>Test</Section>);
+    const wrapper = shallow(<Section>Test</Section>);
     expect(wrapper).toMatchSnapshot();
   });
 });

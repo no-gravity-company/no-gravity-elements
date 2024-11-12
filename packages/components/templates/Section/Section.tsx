@@ -1,10 +1,33 @@
+import useMoveLightDomChildren from '@hooks/useMoveLightDomChildren';
 import { Fragment, FunctionComponent, h } from 'preact';
-import { SectionProps } from './types'
+import React, { Children, useEffect, useRef } from 'preact/compat';
+import { MutableRef, Ref } from 'preact/hooks';
 
-const Section: FunctionComponent<SectionProps> = ({ x }: SectionProps) => {
+/**
+ * <nge-section>
+ *
+ *  Section component
+ *
+ * @element nge-section
+ *
+ * @example
+ * <nge-section>
+ *  <h1>Title</h1>
+ *  <p>Description</p>
+ * </nge-section>
+ */
+const Section: FunctionComponent<h.JSX.IntrinsicElements['section']> = () => {
+    const sectionRef = useRef<HTMLElement>(null);
+
+    useMoveLightDomChildren(sectionRef);
+
     return (
-        <Fragment>YI</Fragment>
+        <Fragment>
+            <section ref={sectionRef} className="nge-section"></section>
+        </Fragment>
     );
 };
+
+Section.useShadowDom = false;
 
 export default Section;

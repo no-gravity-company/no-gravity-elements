@@ -2,13 +2,12 @@
 
 exports[`Button should match the snapshot 1`] = `
 <button
-  className="primary"
+  aria-disabled={false}
+  className="primary nge-button"
   disabled={false}
 >
-  <nge-typography
-    size="button"
-  >
-    <slot />
-  </nge-typography>
+  <span>
+    test
+  </span>
 </button>
 `;

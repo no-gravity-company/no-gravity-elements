@@ -16,6 +16,7 @@ declare module 'preact' {
     (props: RenderableProps<P>, context?: any): VNode<any> | null;
     displayName?: string;
     observedAttributes?: string[];
+    useShadowDom?: boolean;
     defaultProps?: Partial<P>;
   }
 }

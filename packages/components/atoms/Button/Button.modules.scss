@@ -29,60 +29,43 @@ $button-border-radius: var(--button-border-radius, baseUnit(0.75));
     --text-color: #{$textColor};
   }
 }
-
-::slotted(button) {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  height: baseUnit(5);
-  column-gap: baseUnit(1);
-  padding: baseUnit(1.25) baseUnit(2);
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  border: unset;
-  font-weight: $font-weight-button;
-  font-size: 16px;
-  color: var(--text-color);
-  background: unset;
-}
-
-:host {
   .nge-button {
     width: min-content;
-    border-radius: $button-border-radius;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    border: var(--button-border, none);
+    font-weight: $font-weight-button;
+    font-size: 16px;
+    color: var(--text-color);
+    background: unset;
+    @include button-styles();
+
     &.disabled {
       cursor: default;
       pointer-events: none;
       opacity: .5;
     }
-  }
 
-  .primary { 
+
+  &.primary { 
     @include button-hover($primary-hover);
     @include button-active($primary-active);
     background-color: $primary;
     --text-color: white;
   }
 
-  .disruptive {
+  &.disruptive {
     @include button-hover($disruptive-hover);
     @include button-active($disruptive-active);
     background-color: $disruptive;
     --text-color: white;
   }
 
-  .destructive {
+  &.destructive {
     @include button-hover($destructive-hover);
     @include button-active($destructive-active);
     background-color: $destructive;
     --text-color: white;
   }
 
-  .outline {
+  &.outline {
     @include button-hover($primary-light);
     @include button-active($primary-light-active, $primary-hover);
     --text-color: #{$primary};
@@ -90,7 +73,7 @@ $button-border-radius: var(--button-border-radius, baseUnit(0.75));
     background-color: $background;
   }
 
-  .ghost {
+  &.ghost {
     @include button-hover($primary-light);
     @include button-active($primary-light-active, $primary-hover);
     --text-color: #{$primary};
