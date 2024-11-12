@@ -7,8 +7,7 @@ import type { InfoBoxProps } from '@no-gravity-elements/info-box/types';
 
 export * from './hooks';
 
-interface ReactWebComponent
-  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
+interface ReactWebComponent {
   children?: React.ReactNode;
   ref?: React.LegacyRef<HTMLElement>;
   key?: React.Key | null;
@@ -23,6 +22,7 @@ declare global {
       'nge-link': LinkProps & ReactWebComponent;
       'nge-typography': TypographyProps & ReactWebComponent;
       'nge-info-box': InfoBoxProps & ReactWebComponent;
+      'nge-section': ReactWebComponent;
     }
   }
 }

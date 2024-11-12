@@ -1,6 +1,6 @@
 import { Directive, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 
-import { TypographySizes, IconSizes, IconNames, ButtonTypes } from '@no-gravity-elements/types';
+import { TypographySizes, IconSizes, IconNames, ButtonTypes, StringBoolean } from '@no-gravity-elements/types';
 
 import { InfoBoxData } from '@no-gravity-elements/info-box'
   
@@ -8,8 +8,10 @@ import { InfoBoxData } from '@no-gravity-elements/info-box'
   selector: 'nge-button',
 })
 export class ButtonDirective {
+  @HostBinding('attr.value') @Input() value: string;
   @HostBinding('attr.type') @Input() type?: ButtonTypes;
   @HostBinding('attr.icon') @Input() icon?: IconNames;
+  @HostBinding('attr.disabled') @Input() disabled?: StringBoolean;
 }
 
     
@@ -56,6 +58,13 @@ export class InfoBoxDirective {
   @HostBinding('attr.coolProp') @Input() coolProp?: number;
   @HostBinding('attr.isInformative') @Input() isInformative?: boolean;
   @Output() 'nge-info-box-button-click' = new EventEmitter<CustomEvent<InfoBoxData>>();
+}
+
+    
+@Directive({
+  selector: 'nge-section',
+})
+export class SectionDirective {
 }
 
     
