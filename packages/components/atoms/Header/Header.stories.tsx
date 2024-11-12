@@ -4,7 +4,7 @@ import { html } from 'lit-html';
 import '@no-gravity-elements/header';
 
 const meta: Meta = {
-  title: 'Header',
+  title: 'atoms/Header',
   component: 'nge-header',
   parameters: {
     webComponents: {
