@@ -33,12 +33,12 @@ const meta: Meta<CustomArgs> = {
       description: 'Button Icon name',
       options: [undefined, ...Object.values(IconNames)],
       table: {
-        defaultValue: { summary: 'undefined' },
+        defaultValue: { summary: undefined },
       },
     },
   },
-  render: ({ type, text, disabled }) => {
-    return html` <nge-button type=${type} .disabled=${disabled} value=${text}> </nge-button> `;
+  render: ({ type, text, disabled, icon }) => {
+    return html` <nge-button type=${type} .disabled=${disabled} value=${text} icon=${icon}> </nge-button> `;
   },
 };
 
@@ -49,7 +49,7 @@ export const Default: Story = {
   args: {
     type: ButtonTypes.primary,
     text: 'Button',
-    icon: undefined,
+    icon: IconNames.cross,
     disabled: StringBoolean.FALSE,
   },
 };

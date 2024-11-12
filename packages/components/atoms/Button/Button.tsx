@@ -1,6 +1,6 @@
 import { Fragment, FunctionComponent, h } from 'preact';
 
-import { ButtonTypes, IconSizes, StringBoolean } from '@no-gravity-elements/types';
+import { ButtonTypes, IconNames, IconSizes, StringBoolean } from '@no-gravity-elements/types';
 
 import { ButtonProps } from './types';
 import classNames from 'classnames';
@@ -13,8 +13,8 @@ import './Button.modules.scss';
  *
  * @element nge-button
  *
- * @prop {'primary'|'disruptive'|'destructive'|'outline'|'ghost'} [type] - Button type
- * @prop {string} [icon] - Button Icon name
+ * @prop {ButtonTypes} [type] - Button type
+ * @prop {IconNames} [icon] - Button Icon name
  * @prop {boolean} [disabled] - Toggles disabled state
  *
  * @example
@@ -26,7 +26,7 @@ const Button: FunctionComponent<ButtonProps> = ({ value, type, icon, disabled = 
   const buttonClass = classNames((type && ButtonTypes[type]) || ButtonTypes.primary, 'nge-button', {
     disabled: isDisabled,
   });
-
+  console.log(icon)
   return (
     <Fragment>
       <button className={buttonClass} disabled={isDisabled} aria-disabled={isDisabled}>
