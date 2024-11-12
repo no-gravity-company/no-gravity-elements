@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/icon@1.1.6...@no-gravity-elements/icon@1.2.0) (2024-11-12)
+
+### Features
+
+- new button styles ([c850785](https://github.com/no-gravity-company/no-gravity-elements/commit/c850785418de3a4f9ca393c75260ed407061314a))
+
 ## [1.1.6](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/icon@1.1.5...@no-gravity-elements/icon@1.1.6) (2024-03-30)
 
 **Note:** Version bump only for package @no-gravity-elements/icon

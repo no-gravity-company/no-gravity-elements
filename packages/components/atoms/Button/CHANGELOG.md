@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.0.0...@no-gravity-elements/button@2.1.0) (2024-11-12)
+
+### Features
+
+- add lightDom web components ([7dff35f](https://github.com/no-gravity-company/no-gravity-elements/commit/7dff35f80579ff03893829a5a4f0cab415d6daf8))
+- button with slot for html button ([86963a3](https://github.com/no-gravity-company/no-gravity-elements/commit/86963a3c0b1623b50e02fd05007c8c57cca7e975))
+- new button styles ([c850785](https://github.com/no-gravity-company/no-gravity-elements/commit/c850785418de3a4f9ca393c75260ed407061314a))
+
 # [2.0.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@1.2.0...@no-gravity-elements/button@2.0.0) (2024-04-03)
 
 ### Bug Fixes

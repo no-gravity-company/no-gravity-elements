@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/react-adapter@3.0.0...@no-gravity-elements/react-adapter@3.1.0) (2024-11-12)
+
+### Features
+
+- Add react html props to react adapter types ([0b035d7](https://github.com/no-gravity-company/no-gravity-elements/commit/0b035d7de516be97293d23145f8c327e295c0df4))
+
 # [3.0.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/react-adapter@2.0.0...@no-gravity-elements/react-adapter@3.0.0) (2024-04-03)
 
 - feat(react-adapter)!: Modify useNgeEvents to return full event not just value ([7c13b22](https://github.com/no-gravity-company/no-gravity-elements/commit/7c13b22b86182498bd539ea72b37e21d5985dd49))
