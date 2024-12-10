@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.1.1...@no-gravity-elements/header@1.1.2) (2024-12-10)
+
+### Bug Fixes
+
+- header shows options on mobile ([5ff75eb](https://github.com/no-gravity-company/no-gravity-elements/commit/5ff75ebdbe34ff189916ecf65d35321a116491c8))
+
 ## [1.1.1](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.1.0...@no-gravity-elements/header@1.1.1) (2024-12-10)
 
 ### Bug Fixes
