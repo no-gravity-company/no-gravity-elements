@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.3.0...@no-gravity-elements/button@2.3.1) (2024-12-10)
+
+### Bug Fixes
+
+- add more css variables for nge-button ([dc0b96b](https://github.com/no-gravity-company/no-gravity-elements/commit/dc0b96b0301207c1f420c92adde64cccc953521a))
+
 # [2.3.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.2.0...@no-gravity-elements/button@2.3.0) (2024-12-10)
 
 ### Features
