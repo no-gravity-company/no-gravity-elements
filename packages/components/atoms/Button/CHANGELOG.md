@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.2](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.3.1...@no-gravity-elements/button@2.3.2) (2024-12-10)
+
+### Bug Fixes
+
+- use color when button is active ([f412ae9](https://github.com/no-gravity-company/no-gravity-elements/commit/f412ae9c0482129b568f2cda10965bf638dab8af))
+
 ## [2.3.1](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.3.0...@no-gravity-elements/button@2.3.1) (2024-12-10)
 
 ### Bug Fixes
