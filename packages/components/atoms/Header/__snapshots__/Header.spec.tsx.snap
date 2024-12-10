@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match the snapshot 1`] = `
+<div
+  className="nge-header"
+>
+  <div
+    className="logo"
+  >
+    <slot
+      name="logo"
+    />
+  </div>
+  <nav
+    className="navigation"
+  >
+    <slot
+      name="navigation"
+    />
+  </nav>
+  <div
+    className="options"
+  >
+    <slot
+      name="options"
+    />
+  </div>
+</div>
+`;

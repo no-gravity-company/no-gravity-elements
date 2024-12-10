@@ -36,7 +36,7 @@ const Button: FunctionComponent<ButtonProps> = ({ value, type, icon, disabled = 
   );
 };
 
-Button.observedAttributes = ['type', 'icon', 'disabled'];
+Button.observedAttributes = ['type', 'icon', 'disabled', 'value'];
 Button.useShadowDom = false;
 
 export default Button;
