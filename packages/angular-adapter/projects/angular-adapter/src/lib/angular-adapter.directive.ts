@@ -9,9 +9,10 @@ import { InfoBoxData } from '@no-gravity-elements/info-box'
 })
 export class ButtonDirective {
   @HostBinding('attr.value') @Input() value: string;
-  @HostBinding('attr.type') @Input() type?: ButtonTypes;
+  @HostBinding('attr.variant') @Input() variant?: ButtonTypes;
   @HostBinding('attr.icon') @Input() icon?: IconNames;
   @HostBinding('attr.disabled') @Input() disabled?: StringBoolean;
+  @HostBinding('attr.type') @Input() type?: string;
 }
 
     
