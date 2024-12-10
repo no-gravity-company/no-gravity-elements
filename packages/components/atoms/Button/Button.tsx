@@ -13,22 +13,22 @@ import './Button.modules.scss';
  *
  * @element nge-button
  *
- * @prop {ButtonTypes} [type] - Button type
+ * @prop {ButtonTypes} [variant] - Button type
  * @prop {IconNames} [icon] - Button Icon name
  * @prop {boolean} [disabled] - Toggles disabled state
  *
  * @example
- * <nge-button type="primary" value="Button"></nge-button>
+ * <nge-button variant="primary" value="Button"></nge-button>
  */
 
-const Button: FunctionComponent<ButtonProps> = ({ value, type, icon, disabled = StringBoolean.FALSE }: ButtonProps) => {
+const Button: FunctionComponent<ButtonProps> = ({ value, variant, icon, disabled = StringBoolean.FALSE, type = 'submit' }: ButtonProps) => {
   const isDisabled = disabled === StringBoolean.TRUE;
-  const buttonClass = classNames((type && ButtonTypes[type]) || ButtonTypes.primary, 'nge-button', {
+  const buttonClass = classNames((variant && ButtonTypes[variant]) || ButtonTypes.primary, 'nge-button', {
     disabled: isDisabled,
   });
   return (
     <Fragment>
-      <button className={buttonClass} disabled={isDisabled} aria-disabled={isDisabled}>
+      <button type={type} aria-label={value} className={buttonClass} disabled={isDisabled} aria-disabled={isDisabled}>
         {icon && <nge-icon name={icon} size={IconSizes.small} />}
         <span>{value}</span>
       </button>

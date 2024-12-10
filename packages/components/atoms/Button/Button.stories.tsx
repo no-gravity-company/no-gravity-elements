@@ -22,8 +22,8 @@ const meta: Meta<CustomArgs> = {
       description: 'Custom text',
       control: { type: 'text' },
     },
-    type: {
-      description: 'Button type',
+    variant: {
+      description: 'Button variant',
       options: Object.values(ButtonTypes),
       table: {
         defaultValue: { summary: ButtonTypes.primary },
@@ -37,8 +37,8 @@ const meta: Meta<CustomArgs> = {
       },
     },
   },
-  render: ({ type, text, disabled, icon }) => {
-    return html` <nge-button type=${type} .disabled=${disabled} value=${text} icon=${icon}> </nge-button> `;
+  render: ({ variant, text, disabled, icon }) => {
+    return html` <nge-button variant=${variant} .disabled=${disabled} value=${text} icon=${icon}> </nge-button> `;
   },
 };
 

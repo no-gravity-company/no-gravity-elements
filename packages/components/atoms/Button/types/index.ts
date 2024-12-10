@@ -2,7 +2,8 @@ import { ButtonTypes, IconNames, StringBoolean } from '@no-gravity-elements/type
 
 export interface ButtonProps {
   value: string;
-  type?: ButtonTypes;
+  variant?: ButtonTypes;
   icon?: IconNames;
   disabled?: StringBoolean;
+  type?: string;
 }
