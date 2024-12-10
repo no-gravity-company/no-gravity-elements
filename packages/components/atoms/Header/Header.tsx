@@ -39,12 +39,31 @@ const Header: FunctionComponent = () => {
     <Fragment>
       <div className='nge-header'>
         <div className='logo'>
-          <slot name='logo'></slot>
+          <slot name='logo' />
         </div>
 
-        {isMobile ? (
-          <button className={classNames('burger-menu', { active: isMenuOpen })} onClick={toggleMenu} aria-label='Toggle menu'>
-            <svg xmlns='http://www.w3.org/2000/svg' width={isMenuOpen ? '40' : '50' } height={isMenuOpen ? '40' : '50' } viewBox='0 0 200 200'>
+        {!isMobile && (
+          <nav className='navigation'>
+            <slot name='navigation' />
+          </nav>
+        )}
+
+        <div className='options'>
+          <slot name='options' />
+        </div>
+
+        {isMobile && (
+          <button
+            className={classNames('burger-menu', { active: isMenuOpen })}
+            onClick={toggleMenu}
+            aria-label='Toggle menu'
+          >
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width={isMenuOpen ? '40' : '50'}
+              height={isMenuOpen ? '40' : '50'}
+              viewBox='0 0 200 200'
+            >
               <g stroke-width='6.5' stroke-linecap='round'>
                 <path d='M72 82.286h28.75' fill='#000000' fill-rule='evenodd' stroke='#000000' />
                 <path
@@ -73,22 +92,12 @@ const Header: FunctionComponent = () => {
               </g>
             </svg>
           </button>
-        ) : (
-          <nav className='navigation'>
-            <slot name='navigation'></slot>
-          </nav>
-        )}
-
-        {!isMobile && (
-          <div className='options'>
-            <slot name='options'></slot>
-          </div>
         )}
 
         {isMobile && (
           <aside className={classNames('side-menu', { open: isMenuOpen })}>
             <div className='mobile-nav'>
-              <slot name='navigation'></slot>
+              <slot name='navigation' />
             </div>
           </aside>
         )}
