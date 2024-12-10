@@ -18,7 +18,7 @@ import './Button.modules.scss';
  * @prop {boolean} [disabled] - Toggles disabled state
  *
  * @example
- * <nge-button type="primary">Button</nge-button>
+ * <nge-button type="primary" value="Button"></nge-button>
  */
 
 const Button: FunctionComponent<ButtonProps> = ({ value, type, icon, disabled = StringBoolean.FALSE }: ButtonProps) => {
@@ -26,7 +26,6 @@ const Button: FunctionComponent<ButtonProps> = ({ value, type, icon, disabled = 
   const buttonClass = classNames((type && ButtonTypes[type]) || ButtonTypes.primary, 'nge-button', {
     disabled: isDisabled,
   });
-  console.log(icon)
   return (
     <Fragment>
       <button className={buttonClass} disabled={isDisabled} aria-disabled={isDisabled}>

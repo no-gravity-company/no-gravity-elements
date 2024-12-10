@@ -1,6 +1,6 @@
 @import '../../../stylesheets/base/variables';
 
-$button-border-radius: var(--button-border-radius, baseUnit(0.75));
+$button-border-radius: var(--nge-button-border-radius, baseUnit(0.75));
 
 @mixin button-styles {
   position: relative;
@@ -15,7 +15,7 @@ $button-border-radius: var(--button-border-radius, baseUnit(0.75));
   text-align: center;
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
-  border: var(--button-border, none);
+  border: var(--nge-button-border, none);
 }
 
 @mixin button-hover($bg: red) {
@@ -30,7 +30,9 @@ $button-border-radius: var(--button-border-radius, baseUnit(0.75));
   }
 }
   .nge-button {
-    width: min-content;
+    width: var(--nge-button-width, auto);
+    align-items: center;
+    justify-content: center;
     font-weight: $font-weight-button;
     font-size: 16px;
     color: var(--text-color);
@@ -69,7 +71,7 @@ $button-border-radius: var(--button-border-radius, baseUnit(0.75));
     @include button-hover($primary-light);
     @include button-active($primary-light-active, $primary-hover);
     --text-color: #{$primary};
-    --button-border: 1px solid #{$primary};
+    --nge-button-border: 1px solid #{$primary};
     background-color: $background;
   }
 
