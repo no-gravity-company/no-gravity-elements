@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.1.0...@no-gravity-elements/header@1.1.1) (2024-12-10)
+
+### Bug Fixes
+
+- add css variables to nge-header ([1bb5d2a](https://github.com/no-gravity-company/no-gravity-elements/commit/1bb5d2a21bbe2a6c3982a6d8b0a014ecd3f7554b))
+
 # 1.1.0 (2024-12-10)
 
 ### Features
