@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.4](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.3.3...@no-gravity-elements/button@2.3.4) (2024-12-10)
+
+### Bug Fixes
+
+- add --nge-button-text-transform ([3a6bcc6](https://github.com/no-gravity-company/no-gravity-elements/commit/3a6bcc6f992434f0f77837a3d94bb8f93e0ff156))
+
 ## [2.3.3](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.3.2...@no-gravity-elements/button@2.3.3) (2024-12-10)
 
 ### Bug Fixes
