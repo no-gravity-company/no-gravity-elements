@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.3.4...@no-gravity-elements/button@2.4.0) (2024-12-10)
+
+### Bug Fixes
+
+- add unit test snapshot ([12855f0](https://github.com/no-gravity-company/no-gravity-elements/commit/12855f03367b524ac620f66e4140e5586810267e))
+
+### Features
+
+- add variant and aria-label ([d796f7e](https://github.com/no-gravity-company/no-gravity-elements/commit/d796f7e8fbfb3b7fa61c0aef89b9451ce833cdd1))
+
 ## [2.3.4](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.3.3...@no-gravity-elements/button@2.3.4) (2024-12-10)
 
 ### Bug Fixes
