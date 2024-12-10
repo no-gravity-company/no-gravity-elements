@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.2.0...@no-gravity-elements/button@2.3.0) (2024-12-10)
+
+### Features
+
+- add header WC ([b8ade85](https://github.com/no-gravity-company/no-gravity-elements/commit/b8ade85c6ba761d5c87bb91ae058db8ccfcc2173))
+- add value as observedAttributes ([9d183ae](https://github.com/no-gravity-company/no-gravity-elements/commit/9d183aeaba22f4396d98f1167418a17815b86286))
+- small refactor for nge-button ([c242f6b](https://github.com/no-gravity-company/no-gravity-elements/commit/c242f6bfa6a329562aa1aa600f2be32d3ef850d5))
+
 # [2.2.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.1.0...@no-gravity-elements/button@2.2.0) (2024-11-12)
 
 ### Features

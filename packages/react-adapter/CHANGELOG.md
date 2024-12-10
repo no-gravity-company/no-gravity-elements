@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.1](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/react-adapter@3.1.0...@no-gravity-elements/react-adapter@3.1.1) (2024-12-10)
+
+**Note:** Version bump only for package @no-gravity-elements/react-adapter
+
 # [3.1.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/react-adapter@3.0.0...@no-gravity-elements/react-adapter@3.1.0) (2024-11-12)
 
 ### Features
