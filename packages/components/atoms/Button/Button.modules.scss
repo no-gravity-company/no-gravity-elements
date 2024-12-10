@@ -26,7 +26,7 @@ $button-border-radius: var(--nge-button-border-radius, baseUnit(0.75));
 @mixin button-active($bg: red, $textColor: #{$background}) {
   &:active {
     background-color: $bg;
-    --text-color: #{$textColor};
+    color: var(--text-color, #{$textColor})
   }
 }
   .nge-button {
