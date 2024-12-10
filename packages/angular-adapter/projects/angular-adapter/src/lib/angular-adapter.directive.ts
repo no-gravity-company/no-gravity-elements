@@ -23,6 +23,13 @@ export class CardDirective {
 
     
 @Directive({
+  selector: 'nge-header',
+})
+export class HeaderDirective {
+}
+
+    
+@Directive({
   selector: 'nge-icon',
 })
 export class IconDirective {

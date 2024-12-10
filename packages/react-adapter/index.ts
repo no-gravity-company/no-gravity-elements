@@ -18,6 +18,7 @@ declare global {
     interface IntrinsicElements {
       'nge-button': ButtonProps & ReactWebComponent;
       'nge-card': ReactWebComponent;
+      'nge-header': ReactWebComponent;
       'nge-icon': IconProps & ReactWebComponent;
       'nge-link': LinkProps & ReactWebComponent;
       'nge-typography': TypographyProps & ReactWebComponent;
