@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/footer@1.1.1...@no-gravity-elements/footer@1.1.2) (2024-12-11)
+
+### Bug Fixes
+
+- add --nge-footer-powered-border-color ([67e674b](https://github.com/no-gravity-company/no-gravity-elements/commit/67e674b102721fff0d17a3e7c42aaafe98024c6d))
+- add width to content slot ([8451c04](https://github.com/no-gravity-company/no-gravity-elements/commit/8451c041a602ed99aec2b5d492b36621c66f0f70))
+
 ## [1.1.1](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/footer@1.1.0...@no-gravity-elements/footer@1.1.1) (2024-12-11)
 
 ### Bug Fixes
