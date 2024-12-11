@@ -24,6 +24,14 @@ export class CardDirective {
 
     
 @Directive({
+  selector: 'nge-footer',
+})
+export class FooterDirective {
+  @HostBinding('attr.x') @Input() x: string;
+}
+
+    
+@Directive({
   selector: 'nge-header',
 })
 export class HeaderDirective {
