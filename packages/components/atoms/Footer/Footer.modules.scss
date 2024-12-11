@@ -25,6 +25,19 @@
   text-align: start;
   font-size: baseUnit(1.5);
   border-top: 1px solid var(--nge-footer-powered-border-color, white);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  a {
+    text-decoration: none;
+    display: flex;
+  }
+  svg {
+    width: 70px;
+    path {
+      fill: white;
+    }
+  }
 }
 
 .nge-footer {
