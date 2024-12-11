@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should match the snapshot 1`] = `
+[
+  <div
+    className="nge-footer"
+  >
+    <div
+      className="branding"
+    >
+      <slot
+        name="branding"
+      />
+    </div>
+    <div
+      className="content"
+    >
+      <slot
+        name="content"
+      />
+    </div>
+    <div
+      className="social"
+    >
+      <slot
+        name="social"
+      />
+    </div>
+  </div>,
+  <div
+    className="powered"
+  >
+    Powered by: No Gravity
+  </div>,
+]
+`;
