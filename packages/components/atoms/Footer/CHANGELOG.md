@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.5](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/footer@1.1.4...@no-gravity-elements/footer@1.1.5) (2024-12-11)
+
+### Bug Fixes
+
+- add snapshot ([97477d5](https://github.com/no-gravity-company/no-gravity-elements/commit/97477d5e9a0b8861688dc296024b8381a1b002fe))
+- make social container full width ([8dbb951](https://github.com/no-gravity-company/no-gravity-elements/commit/8dbb9514d85f4968b0fb4ce4492955bb45726caf))
+
 ## [1.1.4](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/footer@1.1.3...@no-gravity-elements/footer@1.1.4) (2024-12-11)
 
 ### Bug Fixes
