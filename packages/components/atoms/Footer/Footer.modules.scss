@@ -24,7 +24,7 @@
   padding: var(--nge-footer-padding);
   text-align: start;
   font-size: baseUnit(1.5);
-  border-top: 1px solid var(--nge-footer-text-color);
+  border-top: 1px solid var(--nge-footer-powered-border-color, white);
 }
 
 .nge-footer {

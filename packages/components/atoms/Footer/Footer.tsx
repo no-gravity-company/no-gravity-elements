@@ -19,6 +19,8 @@ import './Footer.modules.scss';
  * @cssproperty --nge-footer-link-color - Color of footer links (default: inherit).
  * @cssproperty --nge-footer-link-hover-color - Hover color of footer links (default: inherit).
  * @cssproperty --nge-footer-social-icon-size - Size of social media icons (default: 24px).
+ * @cssproperty --nge-footer-powered-border-color - powered by container border top color (default: white).
+ * 
  *
  * @example
  * <nge-footer>
