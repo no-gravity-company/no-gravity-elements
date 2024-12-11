@@ -15,6 +15,15 @@ import classNames from 'classnames';
  * @slot navigation - Slot for navigation links
  * @slot options - Slot for additional options
  *
+ * @cssproperty --nge-header-background-color - Background color of the header.
+ * @cssproperty --text-color - Text color of the header.
+ * @cssproperty --nge-header-padding - Padding around the header content.
+ * @cssproperty --nge-header-gap - Gap between header sections.
+ * @cssproperty --nge-header-height - Height of the header.
+ * @cssproperty --nge-border-bottom - Border bottom for header.
+ * @cssproperty --nge-header-border-radius - Border radius of the header content.
+ * @cssproperty --nge-header-icon-stroke - Color of the menu icon when header is on mobile
+ * 
  * @example
  * <nge-header>
  *   <div slot="logo">Logo</div>
