@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.6](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/footer@1.1.5...@no-gravity-elements/footer@1.1.6) (2024-12-11)
+
+### Bug Fixes
+
+- remove svg id ([08febb0](https://github.com/no-gravity-company/no-gravity-elements/commit/08febb02c4ff2febd7e676288c79ed92083ba600))
+- update snapshot ([a1f4b29](https://github.com/no-gravity-company/no-gravity-elements/commit/a1f4b29489cc601e6f54cfa4cacee050bade273c))
+
 ## [1.1.5](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/footer@1.1.4...@no-gravity-elements/footer@1.1.5) (2024-12-11)
 
 ### Bug Fixes
