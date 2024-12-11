@@ -54,7 +54,6 @@ const Footer: FunctionComponent = () => {
             y='0px'
             viewBox='0 0 1080 389.2'
             style='enable-background:new 0 0 1080 389.2;'
-            xml:space='preserve'
           >
             <g>
               <g>
