@@ -44,7 +44,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: var(--nge-footer-padding);
   background-color: var(--nge-footer-background-color);
   color: var(--nge-footer-text-color);
@@ -52,6 +51,7 @@
   box-sizing: border-box;
   border-top: var(--nge-footer-border-top);
   gap: var(--nge-footer-gap);
+  align-items: flex-start;
 
   .branding {
   }
