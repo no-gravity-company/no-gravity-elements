@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/footer@1.1.2...@no-gravity-elements/footer@1.1.3) (2024-12-11)
+
+### Bug Fixes
+
+- powered by with icon ([f67ed61](https://github.com/no-gravity-company/no-gravity-elements/commit/f67ed61712a6229480d71971a92567c3872a24c6))
+- remove xm:space from svg ([5fde4c7](https://github.com/no-gravity-company/no-gravity-elements/commit/5fde4c7b97946bfb3d4c40bb224beb4e1a72fc0b))
+
 ## [1.1.2](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/footer@1.1.1...@no-gravity-elements/footer@1.1.2) (2024-12-11)
 
 ### Bug Fixes
