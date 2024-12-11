@@ -38,7 +38,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   loading = StringBoolean.FALSE,
   type = 'submit',
 }: ButtonProps) => {
-  const isDisabled = disabled === StringBoolean.TRUE /*|| loading === StringBoolean.TRUE*/;
+  const isDisabled = disabled === StringBoolean.TRUE || loading === StringBoolean.TRUE;
   const isLoading = loading === StringBoolean.TRUE;
 
   const buttonClass = classNames(
