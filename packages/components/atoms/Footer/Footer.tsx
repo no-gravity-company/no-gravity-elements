@@ -48,7 +48,6 @@ const Footer: FunctionComponent = () => {
         Powered by:
         <a href='https://www.no-gravity.es'>
           <svg
-            version='1.1'
             id='No_Gravity__Lgtp_-_VPositiva'
             x='0px'
             y='0px'
