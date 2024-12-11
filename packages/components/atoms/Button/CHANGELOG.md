@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.4.0...@no-gravity-elements/button@2.5.0) (2024-12-11)
+
+### Features
+
+- add jsdoc for css variables on header and button ([2e07757](https://github.com/no-gravity-company/no-gravity-elements/commit/2e0775732333ff0eeebdb4ad490c19e4d4b29462))
+
 # [2.4.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.3.4...@no-gravity-elements/button@2.4.0) (2024-12-10)
 
 ### Bug Fixes

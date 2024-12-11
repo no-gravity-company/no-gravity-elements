@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.1.2...@no-gravity-elements/header@1.2.0) (2024-12-11)
+
+### Features
+
+- add jsdoc for css variables on header and button ([2e07757](https://github.com/no-gravity-company/no-gravity-elements/commit/2e0775732333ff0eeebdb4ad490c19e4d4b29462))
+
 ## [1.1.2](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.1.1...@no-gravity-elements/header@1.1.2) (2024-12-10)
 
 ### Bug Fixes
