@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/footer@1.1.3...@no-gravity-elements/footer@1.1.4) (2024-12-11)
+
+### Bug Fixes
+
+- align items start on mobile ([ec379cd](https://github.com/no-gravity-company/no-gravity-elements/commit/ec379cdf1fc0d55a253380fc761f2ea16818156d))
+
 ## [1.1.3](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/footer@1.1.2...@no-gravity-elements/footer@1.1.3) (2024-12-11)
 
 ### Bug Fixes
