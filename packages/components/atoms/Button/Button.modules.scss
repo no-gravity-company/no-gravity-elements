@@ -26,33 +26,51 @@ $button-border-radius: var(--nge-button-border-radius, baseUnit(0.75));
 @mixin button-active($bg: red, $textColor: #{$background}) {
   &:active {
     background-color: $bg;
-    color: var(--text-color, #{$textColor})
+    color: var(--text-color, #{$textColor});
   }
 }
-  .nge-button {
-    width: var(--nge-button-width, auto);
-    font-size: var(--nge-button-font-size, 16px);
-    align-items: center;
-    justify-content: center;
+
+.nge-button {
+  width: var(--nge-button-width, auto);
+  font-size: var(--nge-button-font-size, 16px);
+  align-items: center;
+  justify-content: center;
+  font-weight: $font-weight-button;
+  color: var(--text-color);
+  background: unset;
+  @include button-styles();
+
+  span {
     font-weight: $font-weight-button;
     color: var(--text-color);
-    background: unset;
-    @include button-styles();
+    text-transform: var(--nge-button-text-transform, none);
+  }
 
-    span {
-      font-weight: $font-weight-button;
-      color: var(--text-color);
-      text-transform: var(--nge-button-text-transform, none);
+  &.loading {
+    .loading-icon {
+      display: block;
     }
-
-    &.disabled {
-      cursor: default;
-      pointer-events: none;
-      opacity: .5;
+    .content {
+      color: transparent;
+      --text-color: transparent;
     }
+  }
 
+  &.disabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.5;
+  }
 
-  &.primary { 
+  .loading-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    display: none;
+  }
+
+  &.primary {
     @include button-hover($primary-hover);
     @include button-active($primary-active);
     background-color: $primary;
@@ -88,5 +106,3 @@ $button-border-radius: var(--nge-button-border-radius, baseUnit(0.75));
     background-color: $background;
   }
 }
-
-

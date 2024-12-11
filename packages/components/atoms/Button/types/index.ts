@@ -6,4 +6,5 @@ export interface ButtonProps {
   icon?: IconNames;
   disabled?: StringBoolean;
   type?: string;
+  loading?: StringBoolean;
 }

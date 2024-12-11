@@ -32,6 +32,7 @@ export enum IconNames {
   eye = 'eye',
   menuBurger = 'menu-burger',
   search = 'search',
+  bouncingCircles ='bouncing-circles',
 }
 
 export enum ButtonTypes {

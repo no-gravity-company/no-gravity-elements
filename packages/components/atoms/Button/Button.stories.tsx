@@ -26,7 +26,7 @@ const meta: Meta<CustomArgs> = {
       description: 'Button variant',
       options: Object.values(ButtonTypes),
       table: {
-        defaultValue: { summary: ButtonTypes.primary },
+        defaultValue: { summary: "primary" },
       },
     },
     icon: {
@@ -36,9 +36,16 @@ const meta: Meta<CustomArgs> = {
         defaultValue: { summary: undefined },
       },
     },
+    loading: {
+      description: 'Toggle loading state',
+      control: { type: 'boolean' },
+      table: {
+        defaultValue: { summary: false },
+      },
+    },
   },
-  render: ({ variant, text, disabled, icon }) => {
-    return html` <nge-button variant=${variant} .disabled=${disabled} value=${text} icon=${icon}> </nge-button> `;
+  render: ({ variant, text, disabled, icon, loading }) => {
+    return html` <nge-button variant=${variant} .disabled=${disabled} .loading=${loading} value=${text} icon=${icon}> </nge-button> `;
   },
 };
 
@@ -51,5 +58,6 @@ export const Default: Story = {
     text: 'Button',
     icon: IconNames.cross,
     disabled: StringBoolean.FALSE,
+    loading: StringBoolean.FALSE,
   },
 };
