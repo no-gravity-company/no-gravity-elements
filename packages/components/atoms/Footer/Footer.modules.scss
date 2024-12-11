@@ -1,6 +1,7 @@
 @import '../../../stylesheets/base/variables';
 
 :host {
+  width: 100%;
   ::slotted([slot='content']) {
     display: flex;
     flex-direction: column;
