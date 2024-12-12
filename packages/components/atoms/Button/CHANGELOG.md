@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.5.0...@no-gravity-elements/button@2.6.0) (2024-12-12)
+
+### Bug Fixes
+
+- disable while loading ([2a3c6b4](https://github.com/no-gravity-company/no-gravity-elements/commit/2a3c6b4e861c1909aba9ce9a2caa9108828027bb))
+- update snapshot ([ab3b5df](https://github.com/no-gravity-company/no-gravity-elements/commit/ab3b5df645029b1a2929512317c5d54c3a054bfa))
+
+### Features
+
+- add loading state to button ([79bd2fe](https://github.com/no-gravity-company/no-gravity-elements/commit/79bd2fe2189955ef6e8e1238e8ff950cbf835ca6))
+
 # [2.5.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.4.0...@no-gravity-elements/button@2.5.0) (2024-12-11)
 
 ### Features

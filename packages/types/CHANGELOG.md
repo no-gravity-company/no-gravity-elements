@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/types@2.1.0...@no-gravity-elements/types@2.2.0) (2024-12-12)
+
+### Features
+
+- add loading state to button ([79bd2fe](https://github.com/no-gravity-company/no-gravity-elements/commit/79bd2fe2189955ef6e8e1238e8ff950cbf835ca6))
+
 # [2.1.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/types@2.0.1...@no-gravity-elements/types@2.1.0) (2024-11-12)
 
 ### Features

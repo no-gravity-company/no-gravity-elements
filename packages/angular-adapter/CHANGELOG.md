@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.5](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/angular-adapter@2.0.4...@no-gravity-elements/angular-adapter@2.0.5) (2024-12-12)
+
+**Note:** Version bump only for package @no-gravity-elements/angular-adapter
+
 ## [2.0.4](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/angular-adapter@2.0.3...@no-gravity-elements/angular-adapter@2.0.4) (2024-12-11)
 
 **Note:** Version bump only for package @no-gravity-elements/angular-adapter
