@@ -3,7 +3,7 @@ import { useState, useEffect } from 'preact/hooks';
 import './Header.modules.scss';
 import classNames from 'classnames';
 import { messageBus } from '@no-gravity-elements/message-bus';
-import { MessageBusEvents } from 'packages/types';
+import { MessageBusEvents } from '@no-gravity-elements/types';
 
 /**
  * <nge-header>

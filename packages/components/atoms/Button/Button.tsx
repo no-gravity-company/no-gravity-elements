@@ -5,7 +5,6 @@ import { ButtonTypes, IconNames, IconSizes, StringBoolean } from '@no-gravity-el
 import { ButtonProps } from './types';
 import classNames from 'classnames';
 import './Button.modules.scss';
-import '@no-gravity-elements/icon';
 
 /**
  * <nge-button>

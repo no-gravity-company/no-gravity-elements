@@ -49,8 +49,6 @@ const getCommonOps = (componentPaths) => {
 };
 
 const getMessageBusOps = () => {
-
-
   const ops =   {
     entryPoints: ['packages/messageBus/index.ts'],  
     bundle: true,
