@@ -1,0 +1,24 @@
+{
+  "name": "@no-gravity-elements/message-bus",
+  "version": "1.0.0",
+  "description": "No Gravity Elements message bus",
+  "author": "No Gravity Company",
+  "private": false,
+  "homepage": "https://github.com/no-gravity-company/no-gravity-elements#readme",
+  "license": "ISC",
+  "typings": "index.ts",
+  "main": "index.ts",
+  "files": [
+    "index.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/no-gravity-company/no-gravity-elements.git"
+  },
+  "scripts": {
+    "publish-package": "yarn publish --access=public"
+  },
+  "bugs": {
+    "url": "https://github.com/no-gravity-company/no-gravity-elements/issues"
+  }
+}
