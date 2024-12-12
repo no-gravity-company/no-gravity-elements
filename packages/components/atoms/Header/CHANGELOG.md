@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.2.1...@no-gravity-elements/header@1.2.2) (2024-12-12)
+
+### Bug Fixes
+
+- avoid header menu icon size grow ([2efb2a6](https://github.com/no-gravity-company/no-gravity-elements/commit/2efb2a60f36894c0b6186b991532529d15ed0d02))
+
 ## [1.2.1](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.2.0...@no-gravity-elements/header@1.2.1) (2024-12-11)
 
 ### Bug Fixes
