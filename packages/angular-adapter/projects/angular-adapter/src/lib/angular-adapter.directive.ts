@@ -13,6 +13,7 @@ export class ButtonDirective {
   @HostBinding('attr.icon') @Input() icon?: IconNames;
   @HostBinding('attr.disabled') @Input() disabled?: StringBoolean;
   @HostBinding('attr.type') @Input() type?: string;
+  @HostBinding('attr.loading') @Input() loading?: StringBoolean;
 }
 
     
