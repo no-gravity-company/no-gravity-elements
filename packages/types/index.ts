@@ -48,4 +48,8 @@ export enum StringBoolean {
   FALSE = 'false'
 }
 
+export enum MessageBusEvents {
+  HEADER_MENU_ICON = 'nge_header_menu_icon'
+}
+
 export default {};

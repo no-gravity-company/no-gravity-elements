@@ -1,8 +1,9 @@
 import { Fragment, FunctionComponent, h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import './Header.modules.scss';
-import { IconNames, IconSizes } from 'packages/types';
 import classNames from 'classnames';
+import { messageBus } from '@no-gravity-elements/message-bus';
+import { MessageBusEvents } from 'packages/types';
 
 /**
  * <nge-header>
@@ -39,6 +40,9 @@ const Header: FunctionComponent = () => {
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener('resize', handleResize);
+    messageBus.subscribe(MessageBusEvents.HEADER_MENU_ICON, (data) => {
+      setIsMenuOpen(data.show);
+    })
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
