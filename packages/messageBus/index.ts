@@ -23,7 +23,7 @@ class MessageBus {
 
 export const messageBus = new MessageBus();
 
-// Registrar el MessageBus en el objeto global
+// Registrar el MessageBus en window
 if (typeof window !== 'undefined') {
   (window as any).messageBus = messageBus;
 }
