@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.1](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/types@2.2.0...@no-gravity-elements/types@2.2.1) (2024-12-12)
+
+### Bug Fixes
+
+- add messageBuss to header WC ([31c9380](https://github.com/no-gravity-company/no-gravity-elements/commit/31c938082e19f36a63da2f722870e7a6d937604f))
+
 # [2.2.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/types@2.1.0...@no-gravity-elements/types@2.2.0) (2024-12-12)
 
 ### Features
