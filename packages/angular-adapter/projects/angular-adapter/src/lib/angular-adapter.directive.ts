@@ -1,6 +1,6 @@
 import { Directive, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 
-import { TypographySizes, IconSizes, IconNames, ButtonTypes, StringBoolean } from '@no-gravity-elements/types';
+import { TypographySizes, IconSizes, IconNames, ButtonTypes, StringBoolean, MessageBusEvents } from '@no-gravity-elements/types';
 
 import { InfoBoxData } from '@no-gravity-elements/info-box'
   
