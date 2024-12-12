@@ -48,6 +48,23 @@ const getCommonOps = (componentPaths) => {
   return ops;
 };
 
+const getMessageBusOps = () => {
+
+
+  const ops =   {
+    entryPoints: ['packages/messageBus/index.ts'],  
+    bundle: true,
+    outfile: 'packages/messageBus/lib/index.js', 
+    minify: true,
+    sourcemap: true, 
+    platform: 'browser', 
+    target: 'esnext',
+    format: 'esm',
+    allowOverwrite: true,
+  };
+  return ops;
+};
+
 (async () => {
   let componentPaths = await glob('packages/components/**/*.tsx');
   componentPaths = componentPaths.filter(
@@ -55,6 +72,7 @@ const getCommonOps = (componentPaths) => {
   );
   const buildOps = getCommonOps(componentPaths);
   await esbuild.build(buildOps);
+  await esbuild.build(getMessageBusOps());
   if (process.argv.includes('--watch')) {
     const watcher = chokidar.watch([
       'packages/components/**/*.{ts,tsx}',
