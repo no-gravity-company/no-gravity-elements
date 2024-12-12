@@ -69,8 +69,8 @@ const Header: FunctionComponent = () => {
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width={isMenuOpen ? '40' : '50'}
-              height={isMenuOpen ? '40' : '50'}
+              width='40'
+              height='40'
               viewBox='0 0 200 200'
             >
               <g stroke-width='6.5' stroke-linecap='round'>
