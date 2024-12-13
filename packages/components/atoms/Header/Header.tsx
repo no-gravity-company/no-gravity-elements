@@ -49,7 +49,9 @@ const Header: FunctionComponent = () => {
     }
   }, []);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => {
+    messageBus.publish(MessageBusEvents.HEADER_MENU_ICON, { show: !isMenuOpen })
+  };
 
   return (
     <Fragment>
