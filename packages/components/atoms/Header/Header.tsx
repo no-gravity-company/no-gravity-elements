@@ -40,10 +40,13 @@ const Header: FunctionComponent = () => {
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener('resize', handleResize);
-    messageBus.subscribe(MessageBusEvents.HEADER_MENU_ICON, (data) => {
+    const eventId = messageBus.subscribe(MessageBusEvents.HEADER_MENU_ICON, (data) => {
       setIsMenuOpen(data.show);
     })
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      messageBus.unsubscribe(MessageBusEvents.HEADER_MENU_ICON, eventId)
+    }
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
