@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.5](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.2.4...@no-gravity-elements/header@1.2.5) (2024-12-13)
+
+### Bug Fixes
+
+- use event to change menu status ([c145f40](https://github.com/no-gravity-company/no-gravity-elements/commit/c145f405845b1801523af7ac43b05455a349743b))
+
 ## [1.2.4](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.2.3...@no-gravity-elements/header@1.2.4) (2024-12-13)
 
 ### Bug Fixes
