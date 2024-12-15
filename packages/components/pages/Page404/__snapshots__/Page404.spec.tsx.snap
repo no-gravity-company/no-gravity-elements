@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page404 should match the snapshot 1`] = `
+[
+  <div
+    className="title"
+  >
+    <slot
+      name="title"
+    >
+      404 - Page Not Found
+    </slot>
+  </div>,
+  <div
+    className="message"
+  >
+    <slot
+      name="message"
+    >
+      The page you are looking for does not exist.
+    </slot>
+  </div>,
+  <div
+    className="actions"
+  >
+    <slot
+      name="actions"
+    >
+      <a
+        className="home-link"
+        href="/"
+      >
+        Go Home
+      </a>
+    </slot>
+  </div>,
+]
+`;
