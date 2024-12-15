@@ -7,7 +7,7 @@ import { ButtonTypes, IconNames, StringBoolean } from '@no-gravity-elements/type
 
 import { ButtonProps } from './types';
 
-type CustomArgs = ButtonProps & { text: string };
+type CustomArgs = ButtonProps & { text: string; href?: string; target?: string; rel?: string };
 
 const meta: Meta<CustomArgs> = {
   title: 'atoms/Button',
@@ -26,7 +26,7 @@ const meta: Meta<CustomArgs> = {
       description: 'Button variant',
       options: Object.values(ButtonTypes),
       table: {
-        defaultValue: { summary: "primary" },
+        defaultValue: { summary: 'primary' },
       },
     },
     icon: {
@@ -43,9 +43,41 @@ const meta: Meta<CustomArgs> = {
         defaultValue: { summary: false },
       },
     },
+    disabled: {
+      description: 'Toggle disabled state',
+      control: { type: 'boolean' },
+      table: {
+        defaultValue: { summary: false },
+      },
+    },
+    href: {
+      description: 'URL for the link mode',
+      control: { type: 'text' },
+    },
+    target: {
+      description: 'Target attribute for the link mode',
+      control: { type: 'select' },
+      options: ['_self', '_blank', '_parent', '_top'],
+    },
+    rel: {
+      description: 'Rel attribute for the link mode',
+      control: { type: 'text' },
+    },
   },
-  render: ({ variant, text, disabled, icon, loading }) => {
-    return html` <nge-button variant=${variant} .disabled=${disabled} .loading=${loading} value=${text} icon=${icon}> </nge-button> `;
+  render: ({ variant, text, disabled, icon, loading, href, target, rel }) => {
+    return html`
+      <nge-button
+        variant=${variant}
+        .disabled=${disabled}
+        .loading=${loading}
+        value=${text}
+        icon=${icon}
+        href=${href || undefined}
+        target=${target || undefined}
+        rel=${rel || undefined}
+      >
+      </nge-button>
+    `;
   },
 };
 
@@ -54,9 +86,21 @@ type Story = StoryObj<CustomArgs>;
 
 export const Default: Story = {
   args: {
-    type: ButtonTypes.primary,
+    variant: ButtonTypes.primary,
     text: 'Button',
     icon: IconNames.cross,
+    disabled: StringBoolean.FALSE,
+    loading: StringBoolean.FALSE,
+  },
+};
+
+export const AsLink: Story = {
+  args: {
+    variant: ButtonTypes.primary,
+    text: 'Go to Google',
+    href: 'https://www.google.com',
+    target: '_blank',
+    rel: 'noopener noreferrer',
     disabled: StringBoolean.FALSE,
     loading: StringBoolean.FALSE,
   },

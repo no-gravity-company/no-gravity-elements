@@ -7,4 +7,7 @@ export interface ButtonProps {
   disabled?: StringBoolean;
   type?: string;
   loading?: StringBoolean;
+  href?: string,
+  target?: string,
+  rel?: string,
 }
