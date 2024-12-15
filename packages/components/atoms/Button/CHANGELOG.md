@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.1](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.6.0...@no-gravity-elements/button@2.6.1) (2024-12-15)
+
+### Bug Fixes
+
+- add messageBuss to header WC ([31c9380](https://github.com/no-gravity-company/no-gravity-elements/commit/31c938082e19f36a63da2f722870e7a6d937604f))
+- reove icon import from button because of unit tests ([c61fcd3](https://github.com/no-gravity-company/no-gravity-elements/commit/c61fcd3b0f944e37230aacdbc7f3350921a04a1f))
+
 # [2.6.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.5.0...@no-gravity-elements/button@2.6.0) (2024-12-12)
 
 ### Bug Fixes
