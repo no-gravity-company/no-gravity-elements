@@ -5,6 +5,7 @@ import type { IconProps } from '@no-gravity-elements/icon/types';
 import type { LinkProps } from '@no-gravity-elements/link/types';
 import type { TypographyProps } from '@no-gravity-elements/typography/types';
 import type { InfoBoxProps } from '@no-gravity-elements/info-box/types';
+import type { Page404Props } from '@no-gravity-elements/page404/types';
 
 export * from './hooks';
 
@@ -25,6 +26,7 @@ declare global {
       'nge-link': LinkProps & ReactWebComponent;
       'nge-typography': TypographyProps & ReactWebComponent;
       'nge-info-box': InfoBoxProps & ReactWebComponent;
+      'nge-page404': Page404Props & ReactWebComponent;
       'nge-section': ReactWebComponent;
     }
   }

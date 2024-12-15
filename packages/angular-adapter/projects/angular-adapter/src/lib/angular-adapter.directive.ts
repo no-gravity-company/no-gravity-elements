@@ -79,6 +79,14 @@ export class InfoBoxDirective {
 
     
 @Directive({
+  selector: 'nge-page404',
+})
+export class Page404Directive {
+  @HostBinding('attr.x') @Input() x: string;
+}
+
+    
+@Directive({
   selector: 'nge-section',
 })
 export class SectionDirective {
