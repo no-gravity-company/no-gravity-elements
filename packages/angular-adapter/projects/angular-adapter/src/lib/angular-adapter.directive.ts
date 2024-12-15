@@ -67,6 +67,14 @@ export class TypographyDirective {
 
     
 @Directive({
+  selector: 'nge-banner-cta',
+})
+export class BannerCtaDirective {
+  @HostBinding('attr.x') @Input() x: string;
+}
+
+    
+@Directive({
   selector: 'nge-info-box',
 })
 export class InfoBoxDirective {
