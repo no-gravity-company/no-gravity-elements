@@ -24,6 +24,7 @@ import { messageBus } from '@no-gravity-elements/message-bus';
  * @cssproperty --nge-border-bottom - Border bottom for header.
  * @cssproperty --nge-header-border-radius - Border radius of the header content.
  * @cssproperty --nge-header-icon-stroke - Color of the menu icon when header is on mobile
+ * @cssproperty --nge-header-transition - Transition for header
  * 
  * @example
  * <nge-header>

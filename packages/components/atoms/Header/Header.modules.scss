@@ -27,6 +27,7 @@ $header-padding: var(--nge-header-padding, baseUnit(2));
   box-sizing: border-box;
   gap: var(--nge-header-gap, #{baseUnit(1)});
   border-radius: var(--nge-header-border-radius, 0px);
+  transition: var(--nge-header-transition, unset);
 
   .logo {
     flex: 1;
