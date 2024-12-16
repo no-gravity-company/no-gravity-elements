@@ -22,14 +22,27 @@ function findCommonPath(componentPaths) {
 }
 const lernaJsonList = JSON.parse(execSync('lerna ls --json').toString());
 
-const getCommonOps = (componentPaths) => {
+const getEnvironmentConfig = (isDev = false) => ({
+  minify: !isDev,
+  sourcemap: isDev,
+});
+
+const handleBuildError = (error, context) => {
+  console.error(`🔴 Error en build ${context}:`);
+  console.error('  → Mensaje:', error.message);
+  console.error('  → Location:', error.location);
+  process.exit(1);
+};
+
+const getCommonOps = (componentPaths, isDev = false) => {
+  const envConfig = getEnvironmentConfig(isDev);
   const ops = {
     entryNames: '[dir]/lib/index',
     entryPoints: componentPaths,
     bundle: true,
-    minify: true,
+    minify: envConfig.minify,
     outdir: findCommonPath(componentPaths),
-    sourcemap: true,
+    sourcemap: envConfig.sourcemap,
     platform: 'browser',
     target: 'esnext',
     format: 'esm',
@@ -64,26 +77,51 @@ const getMessageBusOps = () => {
 };
 
 (async () => {
-  let componentPaths = await glob('packages/components/**/*.tsx');
-  componentPaths = componentPaths.filter(
-    (path) => !path.includes('.stories.tsx') && !path.includes('.spec.tsx'),
-  );
-  const buildOps = getCommonOps(componentPaths);
-  await esbuild.build(buildOps);
-  await esbuild.build(getMessageBusOps());
-  if (process.argv.includes('--watch')) {
-    const watcher = chokidar.watch([
-      'packages/components/**/*.{ts,tsx}',
-      '!packages/components/**/*.{spec,stories}.*',
+  try {
+    const isDev = process.argv.includes('--dev');
+    console.log(`🚀 Iniciando build en modo ${isDev ? 'desarrollo' : 'producción'}...`);
+
+    let componentPaths = await glob('packages/components/**/*.tsx');
+    componentPaths = componentPaths.filter(
+      (path) => !path.includes('.stories.tsx') && !path.includes('.spec.tsx'),
+    );
+
+    const buildOps = getCommonOps(componentPaths, isDev);
+    const messageBusOps = getMessageBusOps();
+
+    console.time('⏱️ Tiempo de build');
+    
+    await Promise.all([
+      esbuild.build(buildOps),
+      esbuild.build(messageBusOps)
     ]);
-    watcher.on('change', async (path) => {
-      console.log(`Detected change in ${path}, rebuilding...`);
-      try {
-        await esbuild.build(buildOps);
-        console.log(`Rebuild of ${path} succeeded!`);
-      } catch (error) {
-        console.error(`Rebuild of ${path} failed:`, error);
-      }
-    });
+
+    console.timeEnd('⏱️ Tiempo de build');
+    console.log('✅ Build completado exitosamente');
+
+    if (process.argv.includes('--watch')) {
+      console.log('👀 Iniciando modo watch...');
+      const watcher = chokidar.watch([
+        'packages/components/**/*.{ts,tsx}',
+        '!packages/components/**/*.{spec,stories}.*',
+      ]);
+
+      watcher.on('change', async (path) => {
+        console.log(`🔄 Cambio detectado en ${path}, rebuilding...`);
+        try {
+          console.time('⏱️ Rebuild time');
+          await Promise.all([
+            esbuild.build(buildOps),
+            esbuild.build(messageBusOps)
+          ]);
+          console.timeEnd('⏱️ Rebuild time');
+          console.log(`✅ Rebuild de ${path} completado!`);
+        } catch (error) {
+          handleBuildError(error, path);
+        }
+      });
+    }
+  } catch (error) {
+    handleBuildError(error, 'inicial');
   }
 })();
