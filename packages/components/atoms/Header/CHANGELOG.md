@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.6](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.2.5...@no-gravity-elements/header@1.2.6) (2024-12-16)
+
+### Bug Fixes
+
+- remove header margin right ([c02adfe](https://github.com/no-gravity-company/no-gravity-elements/commit/c02adfebde5da1bb3573c2d0a20a388fcafa929d))
+
 ## [1.2.5](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.2.4...@no-gravity-elements/header@1.2.5) (2024-12-13)
 
 ### Bug Fixes
