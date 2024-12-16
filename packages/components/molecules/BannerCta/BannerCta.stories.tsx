@@ -36,6 +36,27 @@ const meta: Meta<CustomArgs> = {
     },
   },
   render: ({ title, message, buttonLabel }) => html`
+    <style>
+      :root {
+        --nge-button-padding: 8px 16px;
+        --nge-button-border-radius: 280px;
+      }
+      h5,
+      p {
+        margin: 0;
+      }
+      @media only screen and (max-width: 768px) {
+        :root {
+          --nge-button-width: 100%;
+        }
+        nge-button {
+          margin-top: 16px;
+          .nge-button {
+            justify-content: center !important;
+          }
+        }
+      }
+    </style>
     <nge-banner-cta>
       <h5 slot="title">${title}</h5>
       <p slot="message">${message}</p>

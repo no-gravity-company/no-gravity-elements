@@ -4,26 +4,26 @@ import './BannerCta.modules.scss';
 /**
  * <nge-banner-cta>
  *
- * A web component for a customizable call-to-action section.
+ * Un componente web para una sección personalizable de llamada a la acción.
  *
  * @element nge-banner-cta
  *
- * @slot title - Slot for the call-to-action title.
- * @slot message - Slot for the call-to-action message.
- * @slot button - Slot for the button element or other actions.
+ * @slot title - Espacio para el título de la llamada a la acción.
+ * @slot message - Espacio para el mensaje de la llamada a la acción.
+ * @slot button - Espacio para el botón u otras acciones.
  *
- * @cssproperty --space-xl - Padding for the background container (default: 2rem).
- * @cssproperty --text-color-50 - Text color for the title and message.
- * @cssproperty --section-padding - Padding for the call-to-action section (default: 2rem).
- * @cssproperty --space-s - Gap between title and message (default: 1rem).
- * @cssproperty --space-l - Padding for small screen sizes.
- * @cssproperty --space-m - Margin for the button on small screens.
+ * @cssproperty --nge-cta-banner-padding - Relleno del contenedor (por defecto: 80px).
+ * @cssproperty --nge-cta-banner-border-radius - Radio del borde del banner (por defecto: 10px).
+ * @cssproperty --nge-cta-banner-background-image - Imagen de fondo y gradiente.
+ * @cssproperty --nge-cta-banner-gap - Espacio entre elementos (por defecto: 16px).
+ * @cssproperty --nge-cta-banner-text-color - Color del texto (por defecto: #ffffff).
+ * @cssproperty --nge-cta-banner-title-font-weight - Peso de la fuente del título (por defecto: 600).
  *
  * @example
  * <nge-banner-cta>
- *   <h5 slot="title">Your Custom Title</h5>
- *   <p slot="message">Your custom call-to-action message.</p>
- *   <nge-button slot="button" value="Click Me"></nge-button>
+ *   <h5 slot="title">Tu Título Personalizado</h5>
+ *   <p slot="message">Tu mensaje personalizado de llamada a la acción.</p>
+ *   <nge-button slot="button" value="Haz Clic"></nge-button>
  * </nge-banner-cta>
  */
 const BannerCta: FunctionComponent = () => {

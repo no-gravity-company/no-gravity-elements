@@ -3,15 +3,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 10px;
-    padding: var(--space-xl, 2rem);
-    background-image: linear-gradient(to right, #408c82d6, #1c2322cf),
-      url('https://s3.eu-north-1.amazonaws.com/cdn.no-gravity.es/webs/fisiofit/service-5.webp');
+    padding: var(--nge-cta-banner-padding, 80px);
+    border-radius: var(--nge-cta-banner-border-radius, 10px);
+    background-image: var(--nge-cta-banner-background-image, linear-gradient(to right, #408c82d6, #1c2322cf), url('https://s3.eu-north-1.amazonaws.com/cdn.no-gravity.es/webs/fisiofit/service-5.webp'));
     background-size: cover;
     background-position: center;
   
     &::before {
-      content: url('/assets/svgs/abstract-design.svg');
+      content: url('https://s3.eu-north-1.amazonaws.com/cdn.no-gravity.es/no-gravity-elements/abstract-design.svg');
       position: absolute;
       top: 0;
       left: 0px;
@@ -20,22 +19,31 @@
     .main-call {
       display: flex;
       flex-direction: column;
-      gap: var(--space-s, 1rem);
+      gap: var(--nge-cta-banner-gap, 16px);
   
       h5,
       p {
-        color: var(--text-color-50, #ffffff);
+        color: var(--nge-cta-banner-text-color, #ffffff);
+        margin: 0;
       }
   
       h5 {
-        font-weight: 600;
+        font-weight: var(--nge-cta-banner-title-font-weight, 600);
+        font-size: 26px;
+        line-height: 39px;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
       }
     }
-  }
-  
-  :host {
-    display: block;
-    padding: var(--section-padding, 2rem);
   }
   
   @media only screen and (max-width: 768px) {
