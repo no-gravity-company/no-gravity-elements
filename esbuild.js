@@ -6,6 +6,10 @@ const webComponentsPlugin = require('./plugins/web-components-plugin');
 const { execSync } = require('child_process');
 const { minify } = require('csso');
 
+// Configuración según el entorno
+const isDev = process.argv.includes('--dev') || process.env.NODE_ENV !== 'production';
+const buildMode = isDev ? 'desarrollo' : 'producción';
+
 function findCommonPath(componentPaths) {
   const separator = '/';
   let commonPrefix = '';
@@ -20,29 +24,31 @@ function findCommonPath(componentPaths) {
   }
   return commonPrefix;
 }
-const lernaJsonList = JSON.parse(execSync('lerna ls --json').toString());
 
-const getEnvironmentConfig = (isDev = false) => ({
-  minify: !isDev,
-  sourcemap: isDev,
-});
-
+// Manejo de errores mejorado
 const handleBuildError = (error, context) => {
   console.error(`🔴 Error en build ${context}:`);
   console.error('  → Mensaje:', error.message);
-  console.error('  → Location:', error.location);
-  process.exit(1);
+  if (error.location) {
+    console.error('  → Archivo:', error.location.file);
+    console.error('  → Línea:', error.location.line);
+    console.error('  → Columna:', error.location.column);
+  }
+  if (!isDev) {
+    process.exit(1);
+  }
 };
 
-const getCommonOps = (componentPaths, isDev = false) => {
-  const envConfig = getEnvironmentConfig(isDev);
+const lernaJsonList = JSON.parse(execSync('lerna ls --json').toString());
+
+const getCommonOps = (componentPaths) => {
   const ops = {
     entryNames: '[dir]/lib/index',
     entryPoints: componentPaths,
     bundle: true,
-    minify: envConfig.minify,
+    minify: !isDev,
     outdir: findCommonPath(componentPaths),
-    sourcemap: envConfig.sourcemap,
+    sourcemap: true,
     platform: 'browser',
     target: 'esnext',
     format: 'esm',
@@ -57,46 +63,48 @@ const getCommonOps = (componentPaths, isDev = false) => {
       }),
       webComponentsPlugin(),
     ],
+    logLevel: isDev ? 'info' : 'warning',
   };
   return ops;
 };
 
 const getMessageBusOps = () => {
-  const ops =   {
-    entryPoints: ['packages/messageBus/index.ts'],  
+  const ops = {
+    entryPoints: ['packages/messageBus/index.ts'],
     bundle: true,
-    outfile: 'packages/messageBus/lib/index.js', 
-    minify: true,
-    sourcemap: true, 
-    platform: 'browser', 
+    outfile: 'packages/messageBus/lib/index.js',
+    minify: !isDev,
+    sourcemap: true,
+    platform: 'browser',
     target: 'esnext',
     format: 'esm',
     allowOverwrite: true,
+    logLevel: isDev ? 'info' : 'warning',
   };
   return ops;
 };
 
 (async () => {
   try {
-    const isDev = process.argv.includes('--dev');
-    console.log(`🚀 Iniciando build en modo ${isDev ? 'desarrollo' : 'producción'}...`);
+    console.log(`🚀 Iniciando build en modo ${buildMode}...`);
+    console.time('⏱️ Tiempo total de build');
 
     let componentPaths = await glob('packages/components/**/*.tsx');
     componentPaths = componentPaths.filter(
       (path) => !path.includes('.stories.tsx') && !path.includes('.spec.tsx'),
     );
 
-    const buildOps = getCommonOps(componentPaths, isDev);
+    const buildOps = getCommonOps(componentPaths);
     const messageBusOps = getMessageBusOps();
 
-    console.time('⏱️ Tiempo de build');
+    console.log(`📦 Construyendo ${componentPaths.length} componentes...`);
     
     await Promise.all([
       esbuild.build(buildOps),
       esbuild.build(messageBusOps)
     ]);
 
-    console.timeEnd('⏱️ Tiempo de build');
+    console.timeEnd('⏱️ Tiempo total de build');
     console.log('✅ Build completado exitosamente');
 
     if (process.argv.includes('--watch')) {
