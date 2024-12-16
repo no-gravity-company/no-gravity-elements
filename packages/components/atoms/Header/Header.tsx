@@ -2,8 +2,8 @@ import { Fragment, FunctionComponent, h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import './Header.modules.scss';
 import classNames from 'classnames';
-import { messageBus } from '@no-gravity-elements/message-bus';
 import { MessageBusEvents } from '@no-gravity-elements/types';
+import { messageBus } from '@no-gravity-elements/message-bus';
 
 /**
  * <nge-header>
