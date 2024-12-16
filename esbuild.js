@@ -3,43 +3,65 @@ const chokidar = require('chokidar');
 const { sassPlugin } = require('esbuild-sass-plugin');
 const glob = require('tiny-glob');
 const webComponentsPlugin = require('./plugins/web-components-plugin');
-const { execSync } = require('child_process');
 const { minify } = require('csso');
+const fs = require('fs');
+const path = require('path');
 
 // Configuración según el entorno
 const isDev = process.argv.includes('--dev') || process.env.NODE_ENV !== 'production';
 const buildMode = isDev ? 'desarrollo' : 'producción';
+const shouldAnalyze = process.argv.includes('--analyze');
 
-function findCommonPath(componentPaths) {
-  const separator = '/';
-  let commonPrefix = '';
-  const substrings = componentPaths.map((str) => str.split(separator));
-  for (let i = 0; i < substrings[0].length; i++) {
-    const substring = substrings[0][i];
-    if (substrings.every((arr) => arr[i] === substring)) {
-      commonPrefix += substring + separator;
-    } else {
-      break;
-    }
-  }
-  return commonPrefix;
+// Asegurarse de que existe el directorio dist
+if (!fs.existsSync('dist')) {
+  fs.mkdirSync('dist');
 }
 
-// Manejo de errores mejorado
-const handleBuildError = (error, context) => {
-  console.error(`🔴 Error en build ${context}:`);
-  console.error('  → Mensaje:', error.message);
-  if (error.location) {
-    console.error('  → Archivo:', error.location.file);
-    console.error('  → Línea:', error.location.line);
-    console.error('  → Columna:', error.location.column);
-  }
-  if (!isDev) {
-    process.exit(1);
-  }
-};
+function generateStats(result, outfile) {
+  const stats = {
+    assets: [],
+    chunks: [],
+    modules: []
+  };
 
-const lernaJsonList = JSON.parse(execSync('lerna ls --json').toString());
+  // Procesar outputs
+  for (const [file, info] of Object.entries(result.metafile.outputs)) {
+    const relativePath = path.relative(process.cwd(), file)
+      .replace('/lib/', '/') // Eliminar /lib/ de la ruta
+      .replace('packages/', '') // Eliminar packages/ del inicio
+      .replace('dist/', ''); 
+    
+    // Añadir asset
+    stats.assets.push({
+      name: relativePath,
+      size: info.bytes,
+      chunks: [path.basename(file, path.extname(file))],
+      chunkNames: [path.basename(file, path.extname(file))],
+      emitted: true
+    });
+
+    // Añadir chunk
+    stats.chunks.push({
+      id: relativePath,
+      names: [path.basename(file, path.extname(file))],
+      files: [relativePath],
+      size: info.bytes
+    });
+
+    // Añadir módulos
+    if (info.inputs) {
+      for (const [inputFile, inputInfo] of Object.entries(info.inputs)) {
+        stats.modules.push({
+          name: inputFile.replace('packages/', ''), // Ajustar ruta de módulos también
+          size: inputInfo.bytes || 0,
+          chunks: [path.basename(file, path.extname(file))]
+        });
+      }
+    }
+  }
+
+  fs.writeFileSync(outfile, JSON.stringify(stats, null, 2));
+}
 
 const getCommonOps = (componentPaths) => {
   const ops = {
@@ -47,13 +69,13 @@ const getCommonOps = (componentPaths) => {
     entryPoints: componentPaths,
     bundle: true,
     minify: !isDev,
-    outdir: findCommonPath(componentPaths),
+    outbase: 'packages',
+    outdir: 'packages',
     sourcemap: true,
     platform: 'browser',
     target: 'esnext',
     format: 'esm',
     allowOverwrite: true,
-    external: lernaJsonList.map((i) => i.name),
     plugins: [
       sassPlugin({
         type: 'css-text',
@@ -64,6 +86,35 @@ const getCommonOps = (componentPaths) => {
       webComponentsPlugin(),
     ],
     logLevel: isDev ? 'info' : 'warning',
+    metafile: true,
+  };
+  return ops;
+};
+
+const getDocsOps = (componentPaths) => {
+  const ops = {
+    entryNames: '[dir]/index',
+    entryPoints: componentPaths,
+    bundle: true,
+    minify: !isDev,
+    outbase: 'packages/components',
+    outdir: 'dist/docs',
+    sourcemap: true,
+    platform: 'browser',
+    target: 'esnext',
+    format: 'esm',
+    allowOverwrite: true,
+    plugins: [
+      sassPlugin({
+        type: 'css-text',
+        async transform(source) {
+          return minify(source).css;
+        },
+      }),
+      webComponentsPlugin(),
+    ],
+    logLevel: isDev ? 'info' : 'warning',
+    metafile: true,
   };
   return ops;
 };
@@ -80,8 +131,23 @@ const getMessageBusOps = () => {
     format: 'esm',
     allowOverwrite: true,
     logLevel: isDev ? 'info' : 'warning',
+    metafile: true,
   };
   return ops;
+};
+
+// Manejo de errores mejorado
+const handleBuildError = (error, context) => {
+  console.error(`🔴 Error en build ${context}:`);
+  console.error('  → Mensaje:', error.message);
+  if (error.location) {
+    console.error('  → Archivo:', error.location.file);
+    console.error('  → Línea:', error.location.line);
+    console.error('  → Columna:', error.location.column);
+  }
+  if (!isDev) {
+    process.exit(1);
+  }
 };
 
 (async () => {
@@ -96,13 +162,21 @@ const getMessageBusOps = () => {
 
     const buildOps = getCommonOps(componentPaths);
     const messageBusOps = getMessageBusOps();
+    const docsOps = getDocsOps(componentPaths);
 
     console.log(`📦 Construyendo ${componentPaths.length} componentes...`);
     
-    await Promise.all([
+    const [componentResult, messageBusResult, docsResult] = await Promise.all([
       esbuild.build(buildOps),
-      esbuild.build(messageBusOps)
+      esbuild.build(messageBusOps),
+      esbuild.build(docsOps)
     ]);
+
+    if (shouldAnalyze) {
+      console.log('📊 Generando estadísticas del bundle...');
+      docsResult
+      generateStats(docsResult, 'dist/stats.json');
+    }
 
     console.timeEnd('⏱️ Tiempo total de build');
     console.log('✅ Build completado exitosamente');
@@ -120,7 +194,8 @@ const getMessageBusOps = () => {
           console.time('⏱️ Rebuild time');
           await Promise.all([
             esbuild.build(buildOps),
-            esbuild.build(messageBusOps)
+            esbuild.build(messageBusOps),
+            esbuild.build(docsOps)
           ]);
           console.timeEnd('⏱️ Rebuild time');
           console.log(`✅ Rebuild de ${path} completado!`);
