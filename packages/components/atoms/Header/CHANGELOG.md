@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.7](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.2.6...@no-gravity-elements/header@1.2.7) (2024-12-16)
+
+### Bug Fixes
+
+- add transition css variable to header ([b149a51](https://github.com/no-gravity-company/no-gravity-elements/commit/b149a51be4b81edad515125e2c090eee840f893f))
+
 ## [1.2.6](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.2.5...@no-gravity-elements/header@1.2.6) (2024-12-16)
 
 ### Bug Fixes
