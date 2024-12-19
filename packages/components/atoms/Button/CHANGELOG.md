@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.1](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.7.0...@no-gravity-elements/button@2.7.1) (2024-12-19)
+
+### Bug Fixes
+
+- fix button in banner cta ([19e2b3b](https://github.com/no-gravity-company/no-gravity-elements/commit/19e2b3b11a8c69ce6699960227b9809ada4c56ba))
+
 # [2.7.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.6.1...@no-gravity-elements/button@2.7.0) (2024-12-19)
 
 ### Features
