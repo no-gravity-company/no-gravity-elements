@@ -11,7 +11,7 @@ type CustomArgs = {
 };
 
 const meta: Meta<CustomArgs> = {
-  title: 'BannerCTA',
+  title: 'molecules/BannerCTA',
   component: 'nge-banner-cta',
   parameters: {
     webComponents: {
