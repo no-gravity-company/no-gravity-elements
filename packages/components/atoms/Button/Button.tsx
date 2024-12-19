@@ -65,9 +65,9 @@ const Button: FunctionComponent<ButtonProps> = ({
   const content = (
     <>
       <nge-icon className='loading-icon' name={IconNames.bouncingCircles} size={IconSizes.medium} />
-      {icon && iconside === 'left' &&  <nge-icon className='content' name={icon} size={IconSizes.small} />}
-      <span className='content'>{value}</span>
-      {icon && iconside === 'right' && <nge-icon className='content' name={icon} size={IconSizes.small} />}
+      {icon && iconside === 'left' &&  <nge-icon className='button-left-icon' name={icon} size={IconSizes.small} />}
+      <span className='button-text'>{value}</span>
+      {icon && iconside === 'right' && <nge-icon className='button-right-icon' name={icon} size={IconSizes.small} />}
     </>
   );
 
