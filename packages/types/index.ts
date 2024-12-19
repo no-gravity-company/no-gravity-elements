@@ -33,6 +33,13 @@ export enum IconNames {
   menuBurger = 'menu-burger',
   search = 'search',
   bouncingCircles ='bouncing-circles',
+  arrowRight ='arrow-right',
+  logOut ='log-out',
+  edit ='edit',
+  fisio ='fisio',
+  gym ='gym',
+  quote ='quote',
+  star ='star',
 }
 
 export enum ButtonTypes {

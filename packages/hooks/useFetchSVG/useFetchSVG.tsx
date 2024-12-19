@@ -20,7 +20,7 @@ export const useFetchSVG = (name: string) => {
     const fetchSVG = async () => {
       try {
         const response = await fetch(
-          `https://firebasestorage.googleapis.com/v0/b/no-gravity-76bb2.appspot.com/o/icons%2F${name}.svg?alt=media`,
+          `https://s3.eu-north-1.amazonaws.com/cdn.no-gravity.es/no-gravity-elements/icons/${name}.svg`,
         );
         const svgText = await response.text();
         const domParser = new DOMParser();
