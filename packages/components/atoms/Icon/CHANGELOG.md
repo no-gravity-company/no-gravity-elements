@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/icon@1.3.0...@no-gravity-elements/icon@1.3.1) (2024-12-19)
+
+### Bug Fixes
+
+- icon change to force version update ([31bf937](https://github.com/no-gravity-company/no-gravity-elements/commit/31bf9377e2b387a3fb5739aa3ed72353baa5a31b))
+
 # [1.3.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/icon@1.2.0...@no-gravity-elements/icon@1.3.0) (2024-12-12)
 
 ### Features
