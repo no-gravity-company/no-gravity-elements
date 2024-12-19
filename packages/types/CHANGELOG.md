@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.2](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/types@2.2.1...@no-gravity-elements/types@2.2.2) (2024-12-19)
+
+### Bug Fixes
+
+- use icons from s3 + add new icons ([22c5bcb](https://github.com/no-gravity-company/no-gravity-elements/commit/22c5bcb927de602a6de5bff39de209e7c1ef9c4f))
+
 ## [2.2.1](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/types@2.2.0...@no-gravity-elements/types@2.2.1) (2024-12-12)
 
 ### Bug Fixes
