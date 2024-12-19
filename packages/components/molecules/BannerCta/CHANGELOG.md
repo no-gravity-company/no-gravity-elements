@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/banner-cta@1.0.3...@no-gravity-elements/banner-cta@1.0.4) (2024-12-19)
+
+### Bug Fixes
+
+- add important to button margin ([241c3b9](https://github.com/no-gravity-company/no-gravity-elements/commit/241c3b9086448d78b848aefcd0c3e532f20bc5a8))
+
 ## [1.0.3](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/banner-cta@1.0.2...@no-gravity-elements/banner-cta@1.0.3) (2024-12-19)
 
 ### Bug Fixes
