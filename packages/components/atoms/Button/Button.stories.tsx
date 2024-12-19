@@ -63,9 +63,26 @@ const meta: Meta<CustomArgs> = {
       description: 'Rel attribute for the link mode',
       control: { type: 'text' },
     },
+    fullwidth: {
+      description: 'Toggle full width state',
+      control: { type: 'boolean' },
+      table: {
+        defaultValue: { summary: false },
+      },
+    },
+    iconside: {
+      description: 'Specifies the side of the icon',
+      control: { type: 'select' },
+      options: ['left', 'right'],
+    },
   },
-  render: ({ variant, text, disabled, icon, loading, href, target, rel }) => {
+  render: ({ variant, text, disabled, icon, loading, href, target, rel, fullwidth, iconside }) => {
     return html`
+    <style>
+      .nge-button {
+       ${(variant === ButtonTypes.primary || variant === ButtonTypes.disruptive || variant === ButtonTypes.destructive ) ? "--text-color:white;" : ""}
+      }
+    </style>
       <nge-button
         variant=${variant}
         .disabled=${disabled}
@@ -75,6 +92,8 @@ const meta: Meta<CustomArgs> = {
         href=${href || undefined}
         target=${target || undefined}
         rel=${rel || undefined}
+        .fullwidth=${fullwidth}
+        .iconside=${iconside}
       >
       </nge-button>
     `;
@@ -91,6 +110,8 @@ export const Default: Story = {
     icon: IconNames.cross,
     disabled: StringBoolean.FALSE,
     loading: StringBoolean.FALSE,
+    fullwidth: StringBoolean.FALSE,
+    iconside: 'left',
   },
 };
 
@@ -103,5 +124,7 @@ export const AsLink: Story = {
     rel: 'noopener noreferrer',
     disabled: StringBoolean.FALSE,
     loading: StringBoolean.FALSE,
+    fullwidth: StringBoolean.FALSE,
+    iconside: 'left',
   },
 };

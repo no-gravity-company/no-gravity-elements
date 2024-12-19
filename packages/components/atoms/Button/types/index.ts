@@ -10,4 +10,6 @@ export interface ButtonProps {
   href?: string,
   target?: string,
   rel?: string,
+  iconside?: 'left' | 'right';
+  fullwidth?: StringBoolean;
 }

@@ -19,15 +19,18 @@ import './Button.modules.scss';
  * @prop {string} [href] - URL to navigate to when the button is rendered as a link
  * @prop {string} [target] - Specifies where to open the linked document (used with href)
  * @prop {string} [rel] - Specifies the relationship between the current document and the linked document (used with href)
+ * @prop {'left'|'right'} [iconside] - Specifies the side of the icon
+ * @prop {boolean} [fullwidth] - Toggles full width state
  *
- * @cssproperty --nge-button-border-radius - Border radius for buttons. Default is calculated using a base unit of 0.75.
- * @cssproperty --nge-button-padding - Padding inside buttons. Default is calculated using base units of 1.25 and 2.
- * @cssproperty --nge-button-transition - Transition for background and color changes in buttons.
+ * @cssproperty --nge-button-border-radius - Border radius for buttons. Default 6px.
+ * @cssproperty --nge-button-padding - Padding inside buttons. Default 10px 16px.
+ * @cssproperty --nge-button-transition - Transition for background and color changes in buttons. Default background-color 0.2s ease, color 0.2s ease
  * @cssproperty --nge-button-border - Border style for buttons. Default is `none`.
  * @cssproperty --nge-button-width - Width of the button. Default is `auto`.
  * @cssproperty --nge-button-font-size - Font size for button text. Default is 16px.
  * @cssproperty --text-color - text and icon color of the button
- *
+ * @cssproperty --nge-button-gap - Gap between the icon and the text. Default is px.
+ * 
  * @example
  * <nge-button variant="primary" value="Button"></nge-button>
  * @example
@@ -44,21 +47,25 @@ const Button: FunctionComponent<ButtonProps> = ({
   href,
   target,
   rel,
+  iconside = 'left',
+  fullwidth = StringBoolean.FALSE,
 }: ButtonProps) => {
   const isDisabled = disabled === StringBoolean.TRUE || loading === StringBoolean.TRUE;
   const isLoading = loading === StringBoolean.TRUE;
+  const isFullWidth = fullwidth === StringBoolean.TRUE;
 
   const buttonClass = classNames(
     (variant && ButtonTypes[variant]) || ButtonTypes.primary,
     'nge-button',
-    { disabled: isDisabled, loading: isLoading }
+    { disabled: isDisabled, loading: isLoading, 'full-width': isFullWidth }
   );
 
   const content = (
     <>
       <nge-icon className='loading-icon' name={IconNames.bouncingCircles} size={IconSizes.medium} />
-      {icon && <nge-icon className='content' name={icon} size={IconSizes.small} />}
+      {icon && iconside === 'left' &&  <nge-icon className='content' name={icon} size={IconSizes.small} />}
       <span className='content'>{value}</span>
+      {icon && iconside === 'right' && <nge-icon className='content' name={icon} size={IconSizes.small} />}
     </>
   );
 
@@ -90,7 +97,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   );
 };
 
-Button.observedAttributes = ['type', 'icon', 'disabled', 'value', 'loading', 'variant', 'href', 'target', 'rel'];
+Button.observedAttributes = ['type', 'icon', 'disabled', 'value', 'loading', 'variant', 'href', 'target', 'rel', 'fullwidth', 'iconside'];
 Button.useShadowDom = false;
 
 export default Button;

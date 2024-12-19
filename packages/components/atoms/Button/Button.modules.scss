@@ -8,7 +8,7 @@ $button-border-radius: var(--nge-button-border-radius, baseUnit(0.75));
   align-items: center;
   justify-content: space-between;
   height: baseUnit(5);
-  column-gap: baseUnit(1);
+  column-gap: var(--nge-button-gap, baseUnit(1));
   padding: var(--nge-button-padding, baseUnit(1.25) baseUnit(2));
   border-radius: $button-border-radius;
   cursor: pointer;
@@ -32,7 +32,7 @@ $button-border-radius: var(--nge-button-border-radius, baseUnit(0.75));
 
 .nge-button {
   width: var(--nge-button-width, auto);
-  font-size: var(--nge-button-font-size, 16px);
+  font-size: var(--nge-button-font-size, baseUnit(2));
   align-items: center;
   justify-content: center;
   font-weight: $font-weight-button;
@@ -70,6 +70,11 @@ $button-border-radius: var(--nge-button-border-radius, baseUnit(0.75));
     display: none;
   }
 
+  &.full-width  {
+    width: 100%;
+    justify-content: center;
+  }
+
   &.primary {
     @include button-hover($primary-hover);
     @include button-active($primary-active);
@@ -105,6 +110,7 @@ $button-border-radius: var(--nge-button-border-radius, baseUnit(0.75));
     color: var(--text-color, #{$primary});
     background-color: $background;
   }
+
 }
 
 a.nge-button {
