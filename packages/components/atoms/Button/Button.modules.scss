@@ -44,6 +44,7 @@ $button-border-radius: var(--nge-button-border-radius, baseUnit(0.75));
     font-weight: $font-weight-button;
     color: var(--text-color);
     text-transform: var(--nge-button-text-transform, none);
+    text-wrap: nowrap;
   }
 
   &.loading {

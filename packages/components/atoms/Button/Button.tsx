@@ -2,6 +2,7 @@ import { Fragment, FunctionComponent, h } from 'preact';
 import { ButtonTypes, IconNames, IconSizes, StringBoolean } from '@no-gravity-elements/types';
 import { ButtonProps } from './types';
 import classNames from 'classnames';
+
 import './Button.modules.scss';
 
 /**
