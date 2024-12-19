@@ -45,17 +45,6 @@ const meta: Meta<CustomArgs> = {
       p {
         margin: 0;
       }
-      @media only screen and (max-width: 768px) {
-        :root {
-          --nge-button-width: 100%;
-        }
-        nge-button {
-          margin-top: 16px;
-          .nge-button {
-            justify-content: center !important;
-          }
-        }
-      }
     </style>
     <nge-banner-cta>
       <h5 slot="title">${title}</h5>

@@ -30,6 +30,7 @@ import './Button.modules.scss';
  * @cssproperty --nge-button-font-size - Font size for button text. Default is 16px.
  * @cssproperty --text-color - text and icon color of the button
  * @cssproperty --nge-button-gap - Gap between the icon and the text. Default is px.
+ * @cssproperty --nge-button-justify-content - Justify content for the button. Default is `space-between`.
  * 
  * @example
  * <nge-button variant="primary" value="Button"></nge-button>

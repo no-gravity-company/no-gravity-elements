@@ -59,9 +59,10 @@
         }
       }
   
-      slot[name='button'] {
-        margin-top: var(--space-m, 1rem);
-        width: 100%;
+      ::slotted(nge-button) {
+          margin-top: var(--nge-cta-banner-gap, 16px);
+          --nge-button-width: 100%;
+          --nge-button-justify-content: center;
       }
     }
   }

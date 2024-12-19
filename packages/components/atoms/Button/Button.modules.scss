@@ -6,7 +6,7 @@ $button-border-radius: var(--nge-button-border-radius, baseUnit(0.75));
   position: relative;
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: var(--nge-button-justify-content, space-between);
   height: baseUnit(5);
   column-gap: var(--nge-button-gap, baseUnit(1));
   padding: var(--nge-button-padding, baseUnit(1.25) baseUnit(2));
@@ -72,7 +72,7 @@ $button-border-radius: var(--nge-button-border-radius, baseUnit(0.75));
 
   &.full-width  {
     width: 100%;
-    justify-content: center;
+    --nge-button-justify-content: center;
   }
 
   &.primary {
