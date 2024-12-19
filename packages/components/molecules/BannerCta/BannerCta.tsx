@@ -18,6 +18,7 @@ import './BannerCta.modules.scss';
  * @cssproperty --nge-cta-banner-gap - Espacio entre elementos (por defecto: 16px).
  * @cssproperty --nge-cta-banner-text-color - Color del texto (por defecto: #ffffff).
  * @cssproperty --nge-cta-banner-title-font-weight - Peso de la fuente del título (por defecto: 600).
+ * @cssproperty --nge-banner-button-margin-top - Margen superior del botón (por defecto: 16px).
  *
  * @example
  * <nge-banner-cta>

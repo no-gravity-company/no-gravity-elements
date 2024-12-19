@@ -60,7 +60,7 @@
       }
   
       ::slotted(nge-button) {
-          margin-top: var(--nge-cta-banner-gap, 16px);
+          margin-top: var(--nge-banner-button-margin-top, 16px) !important;
           --nge-button-width: 100%;
           --nge-button-justify-content: center;
       }
