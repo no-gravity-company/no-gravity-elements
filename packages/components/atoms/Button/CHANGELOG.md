@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.3](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.7.2...@no-gravity-elements/button@2.7.3) (2024-12-19)
+
+### Bug Fixes
+
+- change button classnames ([47a67d0](https://github.com/no-gravity-company/no-gravity-elements/commit/47a67d0511af9e5d90bc3bf1a9f58cda6c25b779))
+- update snapshot ([e04b4ef](https://github.com/no-gravity-company/no-gravity-elements/commit/e04b4efb26ca135291371b89f4687b19f7632a7f))
+
 ## [2.7.2](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.7.1...@no-gravity-elements/button@2.7.2) (2024-12-19)
 
 ### Bug Fixes
