@@ -14,7 +14,7 @@ exports[`Button should match the snapshot 1`] = `
     size="medium"
   />
   <span
-    className="content"
+    className="button-text"
   >
     test
   </span>
