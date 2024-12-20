@@ -8,11 +8,6 @@ exports[`Button should match the snapshot 1`] = `
   disabled={false}
   type="submit"
 >
-  <nge-icon
-    className="loading-icon"
-    name="bouncing-circles"
-    size="medium"
-  />
   <span
     className="button-text"
   >
