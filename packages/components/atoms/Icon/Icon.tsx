@@ -1,7 +1,6 @@
 import { Fragment, FunctionComponent, h } from 'preact';
 
 import useFetchSVG from '@hooks/useFetchSVG';
-
 import { IconProps } from './types';
 
 /**
