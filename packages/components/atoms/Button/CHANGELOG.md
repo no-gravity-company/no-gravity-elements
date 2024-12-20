@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.4](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.7.3...@no-gravity-elements/button@2.7.4) (2024-12-20)
+
+### Bug Fixes
+
+- loading button visible only when loading is true ([e0d8a53](https://github.com/no-gravity-company/no-gravity-elements/commit/e0d8a533868a21f11bfb66a48a392e1fc2c34a89))
+- update snapshot ([879948e](https://github.com/no-gravity-company/no-gravity-elements/commit/879948eeac7dcbb9fafd726b27024eea5b9a357d))
+
 ## [2.7.3](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.7.2...@no-gravity-elements/button@2.7.3) (2024-12-19)
 
 ### Bug Fixes
