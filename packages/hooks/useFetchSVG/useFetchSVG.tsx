@@ -20,7 +20,7 @@ export const useFetchSVG = (name: string) => {
     const fetchSVG = async () => {
       try {
         const response = await fetch(
-          `http://cdn.no-gravity.es/no-gravity-elements/icons/${name}.svg`,
+          `https://cdn.no-gravity.es/no-gravity-elements/icons/${name}.svg`,
         );
         const svgText = await response.text();
         const domParser = new DOMParser();
