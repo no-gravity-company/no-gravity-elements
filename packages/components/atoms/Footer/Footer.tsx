@@ -1,4 +1,5 @@
 import { h, Fragment, FunctionComponent } from 'preact';
+
 import './Footer.modules.scss';
 
 /**

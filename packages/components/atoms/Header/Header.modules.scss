@@ -6,12 +6,12 @@ $header-padding: var(--nge-header-padding, baseUnit(2));
   width: 100%;
     ::slotted([slot="navigation"]) {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: baseUnit(1);      
     } 
-    @media (min-width: 768px) {
+    @media (max-width: 768px) {
         ::slotted([slot="navigation"]) {
-            flex-direction: row;
+            flex-direction: column;
         } 
     }
 }
@@ -137,16 +137,14 @@ $header-padding: var(--nge-header-padding, baseUnit(2));
       gap: baseUnit(1);
     }
   }
-}
 
-@media (min-width: 768px) {
-  .nge-header {
+  @media (max-width: 768px) {
     .burger-menu {
-      display: none;
+      display: block;
     }
 
     .side-menu {
-      display: none;
+      display: flex;
     }
   }
 }
