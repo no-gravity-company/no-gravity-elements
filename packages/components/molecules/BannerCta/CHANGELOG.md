@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.6](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/banner-cta@1.0.5...@no-gravity-elements/banner-cta@1.0.6) (2024-12-25)
+
+### Bug Fixes
+
+- make banner block ([4836783](https://github.com/no-gravity-company/no-gravity-elements/commit/4836783e712999abebe938a1352068db7ac5f4b4))
+
 ## [1.0.5](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/banner-cta@1.0.4...@no-gravity-elements/banner-cta@1.0.5) (2024-12-25)
 
 ### Bug Fixes
