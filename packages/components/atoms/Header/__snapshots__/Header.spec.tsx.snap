@@ -12,7 +12,7 @@ exports[`Header should match the snapshot 1`] = `
     />
   </div>
   <nav
-    className="navigation"
+    className="navigation desktop-nav"
   >
     <slot
       name="navigation"
@@ -25,5 +25,68 @@ exports[`Header should match the snapshot 1`] = `
       name="options"
     />
   </div>
+  <button
+    aria-label="Toggle menu"
+    className="burger-menu"
+    onClick={[Function]}
+  >
+    <svg
+      height="40"
+      viewBox="0 0 200 200"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        stroke-linecap="round"
+        stroke-width="6.5"
+      >
+        <path
+          d="M72 82.286h28.75"
+          fill="#000000"
+          fill-rule="evenodd"
+          stroke="#000000"
+        />
+        <path
+          d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+          fill="none"
+          stroke="#000000"
+        />
+        <path
+          d="M72 125.143h28.75"
+          fill="#000000"
+          fill-rule="evenodd"
+          stroke="#000000"
+        />
+        <path
+          d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+          fill="none"
+          stroke="#000000"
+        />
+        <path
+          d="M100.75 82.286h28.75"
+          fill="#000000"
+          fill-rule="evenodd"
+          stroke="#000000"
+        />
+        <path
+          d="M100.75 125.143h28.75"
+          fill="#009100"
+          fill-rule="evenodd"
+          stroke="#000000"
+        />
+      </g>
+    </svg>
+  </button>
+  <aside
+    className="side-menu"
+  >
+    <div
+      className="mobile-nav"
+    >
+      <slot
+        name="navigation"
+      />
+    </div>
+  </aside>
 </div>
 `;
