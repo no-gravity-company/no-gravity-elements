@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.8](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.2.7...@no-gravity-elements/header@1.2.8) (2024-12-25)
+
+### Bug Fixes
+
+- use max-width + responsiveness ([9c828d6](https://github.com/no-gravity-company/no-gravity-elements/commit/9c828d6486f4211cf6660586176eb7bcfc5039e4))
+
 ## [1.2.7](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.2.6...@no-gravity-elements/header@1.2.7) (2024-12-16)
 
 ### Bug Fixes
