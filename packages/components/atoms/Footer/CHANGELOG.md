@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.8](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/footer@1.1.7...@no-gravity-elements/footer@1.1.8) (2024-12-25)
+
+### Bug Fixes
+
+- improve header and footer ([5fb0ee6](https://github.com/no-gravity-company/no-gravity-elements/commit/5fb0ee675d62d7f6c0e9d9c56749215137f381a1))
+
 ## [1.1.7](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/footer@1.1.6...@no-gravity-elements/footer@1.1.7) (2024-12-25)
 
 ### Bug Fixes
