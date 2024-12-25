@@ -1,4 +1,5 @@
 import { h, FunctionComponent, Fragment } from 'preact';
+
 import './BannerCta.modules.scss';
 
 /**
