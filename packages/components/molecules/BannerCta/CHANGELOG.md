@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/banner-cta@1.0.4...@no-gravity-elements/banner-cta@1.0.5) (2024-12-25)
+
+### Bug Fixes
+
+- use container query on banner cta ([564f715](https://github.com/no-gravity-company/no-gravity-elements/commit/564f7158aa91d0195ae12dce5dd1287fb0c07b05))
+
 ## [1.0.4](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/banner-cta@1.0.3...@no-gravity-elements/banner-cta@1.0.4) (2024-12-19)
 
 ### Bug Fixes

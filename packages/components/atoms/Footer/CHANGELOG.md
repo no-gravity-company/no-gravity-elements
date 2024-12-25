@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.9](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/footer@1.1.8...@no-gravity-elements/footer@1.1.9) (2024-12-25)
+
+### Bug Fixes
+
+- use container query on banner cta ([564f715](https://github.com/no-gravity-company/no-gravity-elements/commit/564f7158aa91d0195ae12dce5dd1287fb0c07b05))
+
 ## [1.1.8](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/footer@1.1.7...@no-gravity-elements/footer@1.1.8) (2024-12-25)
 
 ### Bug Fixes
