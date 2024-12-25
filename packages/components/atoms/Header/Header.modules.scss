@@ -138,7 +138,24 @@ $header-padding: var(--nge-header-padding, baseUnit(2));
     }
   }
 
+  .navigation.desktop-nav {
+    display: flex;
+    gap: var(--nge-header-gap, #{baseUnit(1)});
+  }
+
+  .burger-menu {
+    display: none;
+  }
+
+  .side-menu {
+    display: none;
+  }
+
   @media (max-width: 768px) {
+    .navigation.desktop-nav {
+      display: none;
+    }
+
     .burger-menu {
       display: block;
     }
