@@ -24,6 +24,9 @@ jobs:
         with:
           email: ${{ secrets.BOT_EMAIL }}
 
+      - name: Install Dependencies
+        run: yarn install
+
       - name: Install Lerna
         run: yarn global add lerna@^6.5.1
 
