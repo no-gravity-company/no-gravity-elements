@@ -16,8 +16,10 @@ jobs:
       - name: Build packages
         run: yarn build
 
-      - name: Save Storybook cache
+      # Only cache node_modules for dependent jobs
+      - name: Cache for dependent jobs
         uses: actions/cache@v3
         with:
-          path: .storybook
-          key: storybook-${{ github.sha }}
+          path: '**/node_modules'
+          key: deps-${{ github.sha }}
+          max-age: 14400 # 4 hours in seconds
