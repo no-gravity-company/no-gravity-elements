@@ -15,11 +15,3 @@ jobs:
 
       - name: Build packages
         run: yarn build
-
-      # Only cache node_modules for dependent jobs
-      - name: Cache for dependent jobs
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: deps-${{ github.sha }}
-          max-age: 14400 # 4 hours in seconds
