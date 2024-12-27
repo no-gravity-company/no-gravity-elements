@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.11](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.2.10...@no-gravity-elements/header@1.2.11) (2024-12-27)
+
+### Bug Fixes
+
+- test if pipeline publish index.js for header ([daef339](https://github.com/no-gravity-company/no-gravity-elements/commit/daef339ac0af843d0cfa55375bc1ef7f92f2c2e1))
+
 ## [1.2.10](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.2.9...@no-gravity-elements/header@1.2.10) (2024-12-27)
 
 ### Bug Fixes
