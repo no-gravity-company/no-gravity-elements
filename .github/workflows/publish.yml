@@ -29,6 +29,9 @@ jobs:
 
       - name: Install Lerna
         run: yarn global add lerna@^6.5.1
+      
+      - name: Build Packages
+        run: yarn build
 
       - name: Get published branch code
         id: get_branch_code
