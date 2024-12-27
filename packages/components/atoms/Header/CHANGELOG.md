@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.10](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.2.9...@no-gravity-elements/header@1.2.10) (2024-12-27)
+
+### Bug Fixes
+
+- add snapshot ([045997f](https://github.com/no-gravity-company/no-gravity-elements/commit/045997f61c7b69e7a31fcf551c850fa2edd8651a))
+- show mobile with JS logic ([c2dbf42](https://github.com/no-gravity-company/no-gravity-elements/commit/c2dbf4270a1aca118bfa7cceb07587321895b999))
+
 ## [1.2.9](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/header@1.2.8...@no-gravity-elements/header@1.2.9) (2024-12-25)
 
 ### Bug Fixes
