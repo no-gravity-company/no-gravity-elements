@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.7.4...@no-gravity-elements/button@2.8.0) (2025-01-11)
+
+### Features
+
+- **Button:** enhance loading state with spinner animation ([9cf8fb8](https://github.com/no-gravity-company/no-gravity-elements/commit/9cf8fb866d39bcd18f76246bdf59306448d71184))
+
 ## [2.7.4](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/button@2.7.3...@no-gravity-elements/button@2.7.4) (2024-12-20)
 
 ### Bug Fixes
