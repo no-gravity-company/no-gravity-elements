@@ -50,12 +50,34 @@ $button-border-radius: var(--nge-button-border-radius, baseUnit(0.75));
   }
 
   &.loading {
-    .loading-icon {
-      display: block;
+    position: relative;
+    overflow: hidden;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 50%;
+      margin: -10px 0 0 -10px;
+      border: 2px solid transparent;
+      border-top-color: var(--text-color);
+      border-radius: 50%;
+      animation: button-loading-spinner 0.8s ease infinite;
     }
+
     .button-text, .button-left-icon, .button-right-icon {
-      color: transparent;
-      --text-color: transparent;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes button-loading-spinner {
+    from {
+      transform: rotate(0turn);
+    }
+    to {
+      transform: rotate(1turn);
     }
   }
 
