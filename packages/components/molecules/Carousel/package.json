@@ -1,0 +1,32 @@
+{
+  "name": "@no-gravity-elements/carousel",
+  "version": "0.1.0",
+  "description": "A highly customizable Carousel web component",
+  "author": "No Gravity Elements Team",
+  "license": "MIT",
+  "main": "dist/Carousel.js",
+  "module": "dist/Carousel.mjs",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "preact build --types --esm --no-unstyled",
+    "test": "jest",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "peerDependencies": {
+    "preact": ">=17.0.0"
+  },
+  "devDependencies": {
+    "preact": ">=17.0.0",
+    "classnames": "^2.3.2"
+  },
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
