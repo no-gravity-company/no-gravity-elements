@@ -1,0 +1,104 @@
+.nge-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--nge-modal-backdrop-bg, rgba(0, 0, 0, 0.5));
+  z-index: var(--nge-modal-backdrop-z-index, 999);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.nge-modal-backdrop.hidden {
+  display: none;
+}
+
+.nge-modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--nge-modal-z-index, 1000);
+}
+
+.nge-modal-content.hidden {
+  display: none;
+}
+
+.nge-modal {
+  background: var(--nge-modal-bg, #fff);
+  border-radius: var(--nge-modal-border-radius, 8px);
+  padding: var(--nge-modal-padding, 20px);
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nge-modal.small {
+  max-width: var(--nge-modal-max-width-small, 400px);
+}
+
+.nge-modal.medium {
+  max-width: var(--nge-modal-max-width-medium, 600px);
+}
+
+.nge-modal.large {
+  max-width: var(--nge-modal-max-width-large, 800px);
+}
+
+.nge-modal.full-height {
+  height: 90vh;
+}
+
+.nge-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.nge-modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.nge-modal-close-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  line-height: 1;
+}
+
+.nge-modal-close-button:hover {
+  color: #000;
+}
+
+.nge-modal-close-button.no-title {
+  margin-left: auto;
+  margin-bottom: 16px;
+}
+
+.nge-modal-body {
+  flex: 1;
+  overflow: auto;
+  margin-bottom: 16px;
+}
+
+.nge-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
