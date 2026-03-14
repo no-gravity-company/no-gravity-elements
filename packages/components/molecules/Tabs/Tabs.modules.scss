@@ -1,0 +1,112 @@
+.nge-tabs {
+  --nge-tabs-bg: #ffffff;
+  --nge-tabs-text-color: #333333;
+  --nge-tabs-active-bg: #007bff;
+  --nge-tabs-active-color: #ffffff;
+  --nge-tabs-disabled-color: #cccccc;
+  --nge-tabs-border: 1px solid #dddddd;
+  --nge-tabs-padding: 12px 24px;
+  --nge-tabs-font-size: 16px;
+  --nge-tabs-gap: 0px;
+  --nge-tabs-transition: background-color 0.2s ease, color 0.2s ease;
+
+  display: flex;
+  flex-direction: column;
+  background: var(--nge-tabs-bg);
+  border: var(--nge-tabs-border);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: var(--nge-tabs-font-size);
+
+  &.size-small {
+    --nge-tabs-padding: 8px 12px;
+    --nge-tabs-font-size: 14px;
+  }
+
+  &.size-medium {
+    --nge-tabs-padding: 12px 24px;
+    --nge-tabs-font-size: 16px;
+  }
+
+  &.size-large {
+    --nge-tabs-padding: 16px 32px;
+    --nge-tabs-font-size: 18px;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &.vertical {
+    flex-direction: row;
+  }
+
+  &.variant-secondary {
+    --nge-tabs-active-bg: #6c757d;
+  }
+
+  .tabs-headers {
+    display: flex;
+    flex-direction: row;
+    gap: var(--nge-tabs-gap);
+    border-bottom: var(--nge-tabs-border);
+
+    &.vertical {
+      flex-direction: column;
+      width: 200px;
+      border-bottom: none;
+      border-right: var(--nge-tabs-border);
+    }
+
+    &.horizontal {
+      flex-direction: row;
+    }
+  }
+
+  .tab {
+    background: none;
+    border: none;
+    padding: var(--nge-tabs-padding);
+    cursor: pointer;
+    text-align: left;
+    transition: var(--nge-tabs-transition);
+    color: var(--nge-tabs-text-color);
+    white-space: nowrap;
+    flex: 1;
+
+    &:hover:not(.disabled):not(.active) {
+      background-color: rgba(0, 123, 255, 0.1);
+    }
+
+    &.active {
+      background-color: var(--nge-tabs-active-bg);
+      color: var(--nge-tabs-active-color);
+    }
+
+    &.disabled {
+      color: var(--nge-tabs-disabled-color);
+      cursor: not-allowed;
+      opacity: 0.6;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .tabs-panels {
+    flex: 1;
+    padding: 24px;
+    background: var(--nge-tabs-bg);
+
+    .tab-panel {
+      display: none;
+      padding: 0;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

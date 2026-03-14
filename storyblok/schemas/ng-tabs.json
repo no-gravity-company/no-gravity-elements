@@ -1,0 +1,104 @@
+{
+  "name": "ng-tabs",
+  "display_name": "NGE Tabs",
+  "group": "molecules",
+  "icon": "tab",
+  "hint": "Highly customizable tabs component",
+  "docs": "https://no-gravity-elements.com/components/tabs",
+  "real_name": "nge-tabs",
+  "fields": [
+    {
+      "name": "tabs",
+      "label": "Tabs",
+      "type": "groups",
+      "fieldtype": "multi",
+      "items": [
+        {
+          "name": "label",
+          "label": "Label",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "content",
+          "label": "Content",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "disabled",
+          "label": "Disabled",
+          "type": "boolean",
+          "default_value": false
+        }
+      ],
+      "required": true
+    },
+    {
+      "name": "activeIndex",
+      "label": "Active Index",
+      "type": "number",
+      "default_value": 0,
+      "min": 0,
+      "hint": "Index of the initially active tab"
+    },
+    {
+      "name": "variant",
+      "label": "Variant",
+      "type": "option",
+      "default_value": "primary",
+      "options": [
+        {
+          "name": "Primary",
+          "value": "primary"
+        },
+        {
+          "name": "Secondary",
+          "value": "secondary"
+        }
+      ]
+    },
+    {
+      "name": "orientation",
+      "label": "Orientation",
+      "type": "option",
+      "default_value": "horizontal",
+      "options": [
+        {
+          "name": "Horizontal",
+          "value": "horizontal"
+        },
+        {
+          "name": "Vertical",
+          "value": "vertical"
+        }
+      ]
+    },
+    {
+      "name": "size",
+      "label": "Size",
+      "type": "option",
+      "default_value": "medium",
+      "options": [
+        {
+          "name": "Small",
+          "value": "small"
+        },
+        {
+          "name": "Medium",
+          "value": "medium"
+        },
+        {
+          "name": "Large",
+          "value": "large"
+        }
+      ]
+    },
+    {
+      "name": "disabled",
+      "label": "Disabled",
+      "type": "boolean",
+      "default_value": false
+    }
+  ]
+}
