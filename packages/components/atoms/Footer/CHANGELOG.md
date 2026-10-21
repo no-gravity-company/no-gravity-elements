@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.10](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/footer@1.1.9...@no-gravity-elements/footer@1.1.10) (2026-10-21)
+
+### Bug Fixes
+
+- **footer:** name the Powered by link and hide its logo from screen readers ([f99184e](https://github.com/no-gravity-company/no-gravity-elements/commit/f99184e44100023c3b54413a83c1fcbd4b173ec0))
+
 ## [1.1.9](https://github.com/no-gravity-company/no-gravity-elements/compare/@no-gravity-elements/footer@1.1.8...@no-gravity-elements/footer@1.1.9) (2024-12-25)
 
 ### Bug Fixes
