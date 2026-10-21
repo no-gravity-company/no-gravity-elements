@@ -32,9 +32,12 @@ exports[`Footer should match the snapshot 1`] = `
   >
     Powered by:
     <a
+      aria-label="No Gravity"
       href="https://www.no-gravity.es"
     >
       <svg
+        aria-hidden="true"
+        focusable="false"
         style="enable-background:new 0 0 1080 389.2;"
         viewBox="0 0 1080 389.2"
         x="0px"
