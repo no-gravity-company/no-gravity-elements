@@ -47,8 +47,10 @@ const Footer: FunctionComponent = () => {
       </div>
       <div className='powered'>
         Powered by:
-        <a href='https://www.no-gravity.es'>
+        <a href='https://www.no-gravity.es' aria-label='No Gravity'>
           <svg
+            aria-hidden='true'
+            focusable='false'
             x='0px'
             y='0px'
             viewBox='0 0 1080 389.2'
