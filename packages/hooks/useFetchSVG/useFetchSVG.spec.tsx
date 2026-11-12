@@ -59,6 +59,8 @@ describe('useFetchSVG Hook', () => {
     await act(async () => {
       wrapper = mount(<TestComponent />);
     });
+    // The CDN failure is retried once on S3 (#98): wait for the second request too.
+    await new Promise((resolve) => setTimeout(resolve, 0));
 
     expect(global.fetch).toHaveBeenCalled();
     expect(console.error).toHaveBeenCalled();
@@ -72,5 +74,80 @@ describe('useFetchSVG Hook', () => {
     mount(<TestComponent />);
 
     expect(global.fetch).not.toHaveBeenCalled();
+  });
+});
+
+describe('useFetchSVG S3 fallback (#98)', () => {
+  const cdnUrl = 'https://cdn.no-gravity.es/no-gravity-elements/icons/example.svg';
+  const s3Url =
+    'https://s3.eu-north-1.amazonaws.com/cdn.no-gravity.es/no-gravity-elements/icons/example.svg';
+  const okResponse = { ok: true, status: 200, text: () => Promise.resolve(exampleSVG) } as any;
+  const forbidden = { ok: false, status: 403, text: () => Promise.resolve('<html>blocked</html>') };
+
+  function TestComponent() {
+    const svgComponent = useFetchSVG('example');
+    return <div>{svgComponent}</div>;
+  }
+
+  const render = async () => {
+    const wrapper = mount(<TestComponent />);
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    return wrapper;
+  };
+
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
+  it('uses only the CDN when the CDN answers', async () => {
+    const fetchMock = jest.spyOn(global, 'fetch').mockResolvedValue(okResponse);
+
+    const wrapper = await render();
+
+    expect(fetchMock.mock.calls).toEqual([[cdnUrl]]);
+    expect(wrapper.html()).toContain(finalSVG);
+  });
+
+  it('fetches the same key from S3 once when the CDN request has a network error', async () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation();
+    const fetchMock = jest
+      .spyOn(global, 'fetch')
+      .mockRejectedValueOnce(new TypeError('Failed to fetch'))
+      .mockResolvedValueOnce(okResponse);
+
+    const wrapper = await render();
+
+    expect(fetchMock.mock.calls).toEqual([[cdnUrl], [s3Url]]);
+    expect(wrapper.html()).toContain(finalSVG);
+    expect(errorSpy).not.toHaveBeenCalled();
+  });
+
+  it('fetches the same key from S3 once when the CDN answers 403', async () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation();
+    const fetchMock = jest
+      .spyOn(global, 'fetch')
+      .mockResolvedValueOnce(forbidden as any)
+      .mockResolvedValueOnce(okResponse);
+
+    const wrapper = await render();
+
+    expect(fetchMock.mock.calls).toEqual([[cdnUrl], [s3Url]]);
+    expect(wrapper.html()).toContain(finalSVG);
+    expect(wrapper.html()).not.toContain('blocked');
+    expect(errorSpy).not.toHaveBeenCalled();
+  });
+
+  it('shows no icon and logs one error when the CDN and S3 both fail', async () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation();
+    const fetchMock = jest
+      .spyOn(global, 'fetch')
+      .mockRejectedValueOnce(new TypeError('Failed to fetch'))
+      .mockResolvedValueOnce(forbidden as any);
+
+    const wrapper = await render();
+
+    expect(fetchMock.mock.calls).toEqual([[cdnUrl], [s3Url]]);
+    expect(wrapper.html()).toBe('<div></div>');
+    expect(errorSpy).toHaveBeenCalledTimes(1);
   });
 });

@@ -11,6 +11,8 @@ import { IconProps } from './types';
  *
  * @element nge-icon
  *
+ * Loads `<name>.svg` from the CDN, and from S3 directly if the CDN request fails.
+ *
  * @prop {'string'} [name] - Icon name
  * @prop {'extra-small'|'small'|'medium'|'regular'|'large'|'extra-large'} [size] - Icon size
  *

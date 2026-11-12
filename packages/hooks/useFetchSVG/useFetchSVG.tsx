@@ -13,16 +13,26 @@ const convertDocToSVGElem = (node: HTMLElement): VNode | string | null | undefin
   return null;
 };
 
+const CDN_ORIGIN = 'https://cdn.no-gravity.es';
+// Same bucket and key, without Cloudflare: used when the CDN is blocked (#98).
+const S3_ORIGIN = 'https://s3.eu-north-1.amazonaws.com/cdn.no-gravity.es';
+
+const fetchText = async (url: string) => {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`HTTP ${response.status} for ${url}`);
+  return response.text();
+};
+
 export const useFetchSVG = (name: string) => {
   const [svgComponent, setSVGComponent] = useState<string | VNode | null | undefined>(null);
 
   useEffect(() => {
     const fetchSVG = async () => {
       try {
-        const response = await fetch(
-          `https://cdn.no-gravity.es/no-gravity-elements/icons/${name}.svg`,
+        const key = `/no-gravity-elements/icons/${name}.svg`;
+        const svgText = await fetchText(`${CDN_ORIGIN}${key}`).catch(() =>
+          fetchText(`${S3_ORIGIN}${key}`),
         );
-        const svgText = await response.text();
         const domParser = new DOMParser();
         const svgDoc = domParser.parseFromString(svgText, 'image/svg+xml');
         const svgElem = convertDocToSVGElem(svgDoc.documentElement);
