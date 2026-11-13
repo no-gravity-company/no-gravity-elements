@@ -82,6 +82,15 @@ CICD will run tests and deploy storybook on all pushes. When merging into master
 
 Upon opening a PR, another workflow will add the branch storybook link to the description
 
+### Publishing to npm
+The publish job uses npm trusted publishing (GitHub OIDC). There is no npm token. Every package that the job publishes needs a trusted-publisher rule on npmjs.com:
+
+1. On npmjs.com, open the package, then Settings, then Trusted publishers, then GitHub Actions.
+2. Organization `no-gravity-company`, repository `no-gravity-elements`, workflow filename `on-push.yml` (the calling workflow, not `publish.yml`), no environment.
+3. Allow the action `npm publish`.
+
+A new rule must be used for a publish within 2 days or it expires, so add it just before you merge a change to that package. After its first publish the rule stays. A version that lerna bumped but npm does not have yet is published by the next run on `main`.
+
 ### Node version
 The node version is fixed in this repo, if you are experiencing issues you need to run `nvm use`. If you do not have the correct node version installed, you will need to run `nvm install` before that.
 
