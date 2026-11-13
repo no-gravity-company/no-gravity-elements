@@ -22,3 +22,7 @@ jobs:
     needs: [unit-test]
     uses: ./.github/workflows/publish.yml
     secrets: inherit
+    # The called workflow needs these too; npm checks the OIDC token of this workflow (on-push.yml).
+    permissions:
+      contents: write
+      id-token: write

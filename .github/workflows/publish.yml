@@ -2,6 +2,9 @@ name: Publish
 on: workflow_call
 permissions:
   contents: write
+  # npm trusted publishing (OIDC): no NPM_TOKEN. Each package needs a trusted-publisher rule on npmjs.com
+  # with workflow file on-push.yml (the calling workflow). See README, "Publishing".
+  id-token: write
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -59,12 +62,30 @@ jobs:
             exit 0
           fi
 
-      - name: Set npm registry
-        run: |
-          echo -e "\n//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
-          git update-index --skip-worktree -- .npmrc
+      # Trusted publishing needs npm >= 11.5.1 and Node >= 22.14. The build above stays on Node 20.
+      - name: Set up Node for publishing
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
 
+      - name: Update npm
+        run: npm install -g npm@^11.5.1 && npm --version
+
+      # lerna publish uses its own npm client, which cannot use OIDC. Publish with the npm CLI instead:
+      # every package whose version (set by lerna version above) is not on npm yet.
       - name: Publish packages
         run: |
-          npx lerna publish from-package --yes --no-git-tag-version
-
+          set -euo pipefail
+          npx --no-install lerna ls --json --loglevel=error > "$RUNNER_TEMP/packages.json"
+          for row in $(jq -r '.[] | @base64' "$RUNNER_TEMP/packages.json"); do
+            name=$(echo "$row" | base64 -d | jq -r .name)
+            version=$(echo "$row" | base64 -d | jq -r .version)
+            location=$(echo "$row" | base64 -d | jq -r .location)
+            if npm view "$name@$version" version --registry=https://registry.npmjs.org >/dev/null 2>&1; then
+              echo "$name@$version is already on npm"
+            else
+              echo "Publishing $name@$version"
+              (cd "$location" && npm publish --access public --registry=https://registry.npmjs.org)
+            fi
+          done
